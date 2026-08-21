@@ -1,0 +1,4 @@
+schema_id: drosophila-pd-flygym.dataset.manifest.healthy
+inherits: ../manifest_schema.yaml
+dataset_type: healthy
+condition_rule: unperturbed computational baseline only

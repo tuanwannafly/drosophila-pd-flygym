@@ -1,0 +1,6 @@
+schema_id: drosophila-pd-flygym.dataset.manifest.pd
+inherits: ../manifest_schema.yaml
+dataset_type: pd
+required_additional:
+  - computational_definition
+  - scientific_scope

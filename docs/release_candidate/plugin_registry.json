@@ -1,0 +1,31 @@
+{
+  "capabilities": [
+    "analysis",
+    "comparison",
+    "export",
+    "report",
+    "statistics",
+    "toolbar",
+    "viewer",
+    "visualization"
+  ],
+  "example_plugins": [
+    "web/plugins/analysis_plugin.js",
+    "web/plugins/export_plugin.js",
+    "web/plugins/statistics_plugin.js"
+  ],
+  "hooks": [
+    "onAnalysis",
+    "onComparison",
+    "onExport",
+    "onFeatureExtraction",
+    "onImport",
+    "onNormalization",
+    "onQC",
+    "onReport",
+    "onStatistics",
+    "onValidation",
+    "onVisualization",
+    "onWorkspaceLoaded"
+  ]
+}

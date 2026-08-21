@@ -1,0 +1,16 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "drosophila-pd-flygym",
+  "version": "1.0.0",
+  "description": "Research software scaffold for an in-silico Drosophila melanogaster locomotion simulation using FlyGym, NeuroMechFly, and MuJoCo.",
+  "codeRepository": "https://github.com/TanVi3001/drosophila-pd-flygym",
+  "url": "https://github.com/TanVi3001/drosophila-pd-flygym/releases/tag/v1.0.0",
+  "license": "https://spdx.org/licenses/MIT.html",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python 3.12",
+  "softwareVersion": "v1.0.0",
+  "author": {"@type": "Person", "name": "TanVi3001"},
+  "keywords": ["Drosophila", "locomotion", "FlyGym", "NeuroMechFly", "MuJoCo", "computational simulation", "research software"],
+  "isPartOf": {"@type": "SoftwareApplication", "name": "drosophila-pd-flygym Release v1.0.0"}
+}

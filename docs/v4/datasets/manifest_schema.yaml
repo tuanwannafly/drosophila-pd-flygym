@@ -1,0 +1,28 @@
+schema_id: drosophila-pd-flygym.dataset.manifest
+schema_version: "1.0"
+description: Manifest contract for a curated dataset directory.
+required:
+  - dataset_id
+  - dataset_type
+  - dataset_version
+  - source_commit
+  - created_at
+  - entries
+  - checksums
+  - license
+  - citation
+properties:
+  dataset_id: string
+  dataset_type: [healthy, pd, candidate, control, validation, benchmark]
+  dataset_version: semantic-version-string
+  source_commit: full-git-commit
+  created_at: iso-8601-timestamp
+  entries: list-of-relative-file-records
+  checksums: sha256-map
+  license: string
+  citation: string-or-citation-record
+  notes: string
+rules:
+  - Relative paths only in entries.
+  - Every entry has a checksum and byte size.
+  - A manifest never claims that simulation output is biological evidence.

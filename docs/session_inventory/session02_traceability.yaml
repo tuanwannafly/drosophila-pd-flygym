@@ -1,0 +1,322 @@
+session:
+  id: 2
+  name: healthy_baseline_and_anatomy_investigation
+  notebook: notebooks/session_02_healthy_baseline/Session_02_Healthy_Baseline.ipynb
+  cell_count: 85
+  historical_status: protected_historical_execution_record
+  executed_during_phase_g1: false
+  stored_outputs_read: true
+  protected_file: true
+  repository_history:
+    created_commit: b5d3e85
+    organized_commit: 1de7c8b
+  scope_note: >-
+    Session 02 contains both exploratory attachment/compilation diagnostics
+    and the read-only anatomy sequence that led to Blocks 8.12-8.19. The
+    later canonical Milestone 8B intentionally consolidated Blocks 8.14-8.19
+    into one explicit materialization milestone.
+
+blocks:
+  - id: S02-B1
+    cells: [2, 3, 4]
+    title: Session initialization and runtime inspection
+    classification: HISTORICAL_SETUP
+    scientific_purpose: Initialize the Colab runtime and record environment state.
+    debug_cells: false
+    duplicated_work: Repeats Session 01 setup.
+    discarded_work: Notebook-local runtime checks are not canonical logic.
+    reusable_work: Environment/provenance fields for fresh-runtime execution.
+    canonical_implementation:
+      paths: [scripts/audit_block_8_12.py, scripts/audit_block_8_13.py, docs/report/reproducibility.md]
+      milestone: Block_8_12_and_Block_8_13
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/block_8_13_orientation.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:6]
+    history_support: [b5d3e85, 1de7c8b, cabb8d5]
+
+  - id: S02-B1.2
+    cells: [5, 6]
+    title: MuJoCo and FlyGym installation
+    classification: HISTORICAL_SETUP
+    scientific_purpose: Install and verify the pinned FlyGym/MuJoCo environment.
+    debug_cells: false
+    duplicated_work: Repeats Session 01 installation.
+    discarded_work: The notebook cell is not a source-level dependency manager.
+    reusable_work: Version assumptions used by all Colab evidence.
+    canonical_implementation:
+      paths: [docs/report/reproducibility.md, PROJECT_CONTEXT.md]
+      milestone: all_colab_verified_milestones
+      evidence_json: none
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:6]
+    history_support: [b5d3e85, 1de7c8b]
+
+  - id: S02-B2
+    cells: [7, 8, 9]
+    title: Load Session 01 environment
+    classification: API_CHECK
+    scientific_purpose: Determine whether runtime state can be reused across sessions.
+    debug_cells: true
+    duplicated_work: Reconstructs state rather than providing a persistent runtime API.
+    discarded_work: Cross-notebook state reuse is not part of the canonical workflow.
+    reusable_work: Fresh-runtime reconstruction as a reproducibility requirement.
+    canonical_implementation:
+      paths: [scripts/audit_block_8_12.py, scripts/run_healthy_baseline.py, docs/report/reproducibility.md]
+      milestone: Block_8_12_and_Milestone_C
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:2.2, docs/report/final_report.md:6]
+    history_support: [cabb8d5, 91bc44c]
+
+  - id: S02-B3
+    cells: [10, 11]
+    title: Recreate healthy fly
+    classification: REUSABLE_SETUP
+    scientific_purpose: Instantiate a fresh NeuroMechFly for the healthy setup.
+    debug_cells: false
+    duplicated_work: Repeated in later reconstruction cells and Session 01.
+    discarded_work: Notebook state is not shared with repository scripts.
+    reusable_work: Fresh fly creation before anatomy inspection or simulation.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/anatomy/materialization.py, src/drosophila_pd/experiments/healthy_baseline.py]
+      milestone: Block_8_12_Block_8_13_Milestone_8B_Milestone_C
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/block_8_13_orientation.json, results/baseline/milestone_8b_materialization.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:2.2]
+    history_support: [cabb8d5, 6d22ac5, a43823a, 91bc44c]
+
+  - id: S02-B4
+    cells: [12, 13]
+    title: Create FlatGroundWorld
+    classification: REUSABLE_SETUP
+    scientific_purpose: Create the flat-ground world used for later attachment.
+    debug_cells: false
+    duplicated_work: Repeated in Session 01.
+    discarded_work: The notebook-local world is not a canonical shared object.
+    reusable_work: FlatGroundWorld as the baseline world.
+    canonical_implementation:
+      paths: [src/drosophila_pd/experiments/healthy_baseline.py, configs/experiments/healthy_baseline.yaml]
+      milestone: Milestone_C
+      evidence_json: results/baseline/healthy_baseline.json
+      manuscript_sections: [docs/report/final_report.md:2.2, docs/report/final_report.md:3.1]
+    history_support: [91bc44c]
+
+  - id: S02-B5
+    cells: [14, 15, 16, 17, 18]
+    title: Rotation discovery and fly attachment
+    classification: REUSABLE_SETUP_AND_DIAGNOSTIC
+    scientific_purpose: Resolve the Rotation3D invocation and attach the fly to the world.
+    debug_cells: true
+    duplicated_work: Multiple attachment attempts are retained as history.
+    discarded_work: Failed invocation variants and repeated registry prints.
+    reusable_work: "Verified `Rotation3D`/`world.add_fly()` attachment pattern."
+    canonical_implementation:
+      paths: [src/drosophila_pd/experiments/healthy_baseline.py]
+      milestone: Milestone_C
+      evidence_json: results/baseline/healthy_baseline.json
+      manuscript_sections: [docs/report/final_report.md:2.2, docs/report/final_report.md:6]
+    history_support: [91bc44c]
+
+  - id: S02-B5.3
+    cells: [20, 21, 22]
+    title: Ground-contact sensor configuration
+    classification: DIAGNOSTIC
+    scientific_purpose: Determine the sensor configuration and attach without ground-contact sensors.
+    debug_cells: true
+    duplicated_work: Sensor/source checks recur in the nearby compile diagnostics.
+    discarded_work: Diagnostic source dumps and failed sensor API probes.
+    reusable_work: "The explicit `add_ground_contact_sensors=False` baseline choice."
+    canonical_implementation:
+      paths: [src/drosophila_pd/experiments/healthy_baseline.py, configs/experiments/healthy_baseline.yaml]
+      milestone: Milestone_C
+      evidence_json: results/baseline/healthy_baseline.json
+      manuscript_sections: [docs/report/final_report.md:2.2, docs/report/final_report.md:5]
+    history_support: [91bc44c]
+
+  - id: S02-B6_TO_B7.2
+    cells: [23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36]
+    title: Attached MjSpec and compilation diagnostics
+    classification: DEBUG_AND_SOURCE_TRACE
+    scientific_purpose: Explain attachment, root/body structure, compile behavior, and ground-sensor references.
+    debug_cells: true
+    duplicated_work: Several worlds, attachments, and compile attempts are rebuilt.
+    discarded_work: Failed child-spec compilation, direct collection probes, and printed source dumps are not canonical workflows.
+    reusable_work: FlyGym attachment semantics and the distinction between an attached MjSpec and a compiled model.
+    canonical_implementation:
+      paths: [src/drosophila_pd/experiments/healthy_baseline.py, src/drosophila_pd/anatomy/audit.py]
+      milestone: Milestone_C_and_Block_8_12
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:2.2]
+    history_support: [cabb8d5, 91bc44c]
+
+  - id: S02-B8.1_TO_B8.5
+    cells: [38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50]
+    title: MjSpec, body navigation, and construction source trace
+    classification: DEBUG_AND_SOURCE_TRACE
+    scientific_purpose: Establish that NeuroMechFly creates a structured MjSpec and inspect its body/joint APIs.
+    debug_cells: true
+    duplicated_work: Multiple navigation methods are tried and fail or return incomplete views.
+    discarded_work: Ad hoc MjsBody navigation experiments and raw inspection printouts.
+    reusable_work: The source/API observation that joints and actuators are added separately from initial MjSpec construction.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/anatomy/orientation.py]
+      milestone: Block_8_12_and_Block_8_13
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/block_8_13_orientation.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:6, docs/report/final_report.md:Appendix_A]
+    history_support: [cabb8d5, 6d22ac5]
+
+  - id: S02-B8.6_TO_B8.8
+    cells: [51, 52, 55, 56, 57, 58, 59, 60, 61]
+    title: Skeleton, JointDOF, and joint discovery
+    classification: STRUCTURAL_DISCOVERY
+    scientific_purpose: Relate the local skeleton and JointDOFs to the MjSpec body structure before materialization.
+    debug_cells: true
+    duplicated_work: Recreate/verify cycles repeat earlier object construction.
+    discarded_work: Recovery cells and intermediate discovery printouts were not retained as separate APIs.
+    reusable_work: "`_get_base_skeleton()`, `iter_jointdofs()`, and the pre-materialization empty mappings."
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/anatomy/orientation.py, src/drosophila_pd/anatomy/materialization.py]
+      milestone: Block_8_12_Block_8_13_Milestone_8B
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/block_8_13_orientation.json, results/baseline/milestone_8b_materialization.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:Appendix_A]
+    history_support: [6d22ac5, a43823a]
+
+  - id: S02-B8.9_TO_B8.11
+    cells: [62, 63, 64, 65]
+    title: Skeleton API, DOF count, and axis-order audit
+    classification: STRUCTURAL_DISCOVERY
+    scientific_purpose: "Verify `PITCH_ROLL_YAW`, 204 JointDOFs, and the source API used by the later audit."
+    debug_cells: false
+    duplicated_work: Some counts recur in Blocks 8.12, 8.15, and 8.19B.
+    discarded_work: Notebook-specific source-print formatting.
+    reusable_work: The axis-order and 204-DOF invariants.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, tests/test_block_8_12_invariants.py]
+      milestone: Block_8_12
+      evidence_json: results/baseline/block_8_12_audit.json
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:Appendix_A]
+    history_support: [cabb8d5]
+
+  - id: S02-B8.12
+    cells: [66, 67, 68]
+    title: JointDOF to MJCF/neutral/actuator mapping audit
+    classification: READ_ONLY
+    scientific_purpose: Establish the frozen pre-materialization anatomy and empty mapping state.
+    debug_cells: false
+    duplicated_work: Later read-only blocks repeat portions of the same audit.
+    discarded_work: Notebook output formatting and repeated summary prose.
+    reusable_work: All scientific invariants in the block.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, scripts/audit_block_8_12.py, tests/test_block_8_12_invariants.py]
+      milestone: Block_8_12
+      evidence_json: results/baseline/block_8_12_audit.json
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:6, docs/report/final_report.md:Appendix_A, docs/report/reproducibility.md:Block_8.12]
+    history_support: [cabb8d5]
+
+  - id: S02-B8.13
+    cells: [69]
+    title: Read-only orientation audit
+    classification: READ_ONLY
+    scientific_purpose: Inspect class/MRO, joint APIs, MjSpec/root objects, mappings, and the add_joints materialization boundary without calling it.
+    debug_cells: false
+    duplicated_work: It consolidates earlier source/API observations.
+    discarded_work: No mutation or simulation behavior was introduced.
+    reusable_work: Source inspection and the explicit skeleton-before/after safety checks.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/orientation.py, scripts/audit_block_8_13.py, tests/test_block_8_13_orientation.py]
+      milestone: Block_8_13
+      evidence_json: results/baseline/block_8_13_orientation.json
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:6, docs/report/reproducibility.md:Block_8.13]
+    history_support: [6d22ac5]
+
+  - id: S02-B8.14_TO_B8.15
+    cells: [70, 72]
+    title: Read-only skeleton/MJCF structural audits
+    classification: READ_ONLY
+    scientific_purpose: Compare the local base skeleton with MJCF body hierarchy and count 69 bodies, 68 anatomical joints, and 204 DOFs.
+    debug_cells: false
+    duplicated_work: Structural counts repeat Block 8.12 and Block 8.19B.
+    discarded_work: Notebook cell boundaries and repeated summaries.
+    reusable_work: Pre-state structural invariants used to define the materialization gate.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/materialization.py, tests/test_joint_materialization.py]
+      milestone: Milestone_8B
+      evidence_json: results/baseline/milestone_8b_materialization.json
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:Appendix_A]
+    history_support: [a43823a]
+
+  - id: S02-B8.16
+    cells: [74, 76]
+    title: Read-only add_joints source/API trace
+    classification: READ_ONLY_SOURCE_AUDIT
+    scientific_purpose: Inspect the signature and source path that creates MJCF joints and updates mappings.
+    debug_cells: false
+    duplicated_work: Source introspection repeats facts already visible in earlier traces.
+    discarded_work: Disassembly/source formatting is not a runtime implementation.
+    reusable_work: The exact FlyGym 2.1.0 materialization boundary.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/orientation.py, src/drosophila_pd/anatomy/materialization.py]
+      milestone: Block_8_13_and_Milestone_8B
+      evidence_json: [results/baseline/block_8_13_orientation.json, results/baseline/milestone_8b_materialization.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:Appendix_A, docs/report/reproducibility.md:Milestone_8B]
+    history_support: [6d22ac5, a43823a]
+
+  - id: S02-B8.17
+    cells: [77, 78]
+    title: Read-only add_actuators source/API trace
+    classification: READ_ONLY_SOURCE_AUDIT
+    scientific_purpose: Inspect actuator creation and neutral-action mapping without creating actuators.
+    debug_cells: false
+    duplicated_work: The source facts are used again by the later baseline implementation.
+    discarded_work: No actuator was created in this historical block.
+    reusable_work: The distinction between joint materialization and actuator setup.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/materialization.py, src/drosophila_pd/experiments/healthy_baseline.py]
+      milestone: Milestone_8B_and_Milestone_C
+      evidence_json: [results/baseline/milestone_8b_materialization.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:2.2, docs/report/reproducibility.md:Milestone_C]
+    history_support: [a43823a, 91bc44c]
+
+  - id: S02-B8.18
+    cells: [79, 80]
+    title: Pre-materialization MJCF joint inventory
+    classification: READ_ONLY
+    scientific_purpose: Verify that the MJCF has zero joints while the local skeleton exposes 204 JointDOFs.
+    debug_cells: false
+    duplicated_work: Repeats the pre-state portion of Blocks 8.12 and 8.15.
+    discarded_work: Standalone inventory output was folded into the 8B pre-state snapshot.
+    reusable_work: Zero-joint precondition for the explicit gate.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/materialization.py, tests/test_joint_materialization.py]
+      milestone: Milestone_8B
+      evidence_json: results/baseline/milestone_8b_materialization.json
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:Appendix_A]
+    history_support: [a43823a]
+
+  - id: S02-B8.19
+    cells: [81, 82]
+    title: Skeleton traversal API discovery
+    classification: READ_ONLY_API_DISCOVERY
+    scientific_purpose: Find the supported traversal API and recheck the pre-materialization hierarchy.
+    debug_cells: true
+    duplicated_work: Body-map and empty-MJCF checks repeat earlier blocks.
+    discarded_work: API discovery probes were not preserved as separate helpers.
+    reusable_work: "`iter_jointdofs(root='c_thorax')` and body mapping concepts."
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/anatomy/materialization.py]
+      milestone: Block_8_12_and_Milestone_8B
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/milestone_8b_materialization.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:Appendix_A]
+    history_support: [cabb8d5, a43823a]
+
+  - id: S02-B8.19B
+    cells: [83, 84]
+    title: Read-only body/anatomical-joint/JointDOF audit
+    classification: READ_ONLY
+    scientific_purpose: Reconfirm 69 body segments, 68 anatomical joints, 204 unique JointDOFs, balanced axes, and complete body mapping.
+    debug_cells: false
+    duplicated_work: Repeats Blocks 8.12, 8.15, and 8.18.
+    discarded_work: The repeated notebook summary was not retained as another implementation.
+    reusable_work: The final pre-materialization structural invariant set.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/anatomy/materialization.py, tests/test_joint_materialization.py]
+      milestone: Block_8_12_and_Milestone_8B
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/milestone_8b_materialization.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:Appendix_A]
+    history_support: [cabb8d5, a43823a]

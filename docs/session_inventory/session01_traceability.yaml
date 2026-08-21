@@ -1,0 +1,208 @@
+session:
+  id: 1
+  name: environment
+  notebook: notebooks/session_01_environment/FlyBrain_Session01_Setup.ipynb
+  cell_count: 29
+  historical_status: historical_execution_record
+  executed_during_phase_g1: false
+  stored_outputs_read: true
+  repository_history:
+    created_commit: 10e475d
+    organized_commit: 1de7c8b
+  scope_note: >-
+    Session 01 establishes a Colab/FlyGym environment and demonstrates a
+    complete fly/world/simulation build. Its exact cells are not the
+    canonical implementation.
+
+blocks:
+  - id: S01-B1
+    cells: [1, 2]
+    title: Colab, EGL, and GPU setup
+    classification: HISTORICAL_SETUP
+    scientific_purpose: Verify Colab execution and configure EGL rendering.
+    debug_cells: false
+    duplicated_work: false
+    discarded_work: Colab-specific runtime setup is not repository logic.
+    reusable_work: Record the GPU/EGL assumptions when rendering is needed.
+    canonical_implementation:
+      paths: [docs/report/reproducibility.md]
+      milestone: none
+      evidence_json: none
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:6]
+    history_support: [10e475d, 1de7c8b]
+
+  - id: S01-B2
+    cells: [3, 4]
+    title: FlyGym installation
+    classification: HISTORICAL_SETUP
+    scientific_purpose: Install FlyGym v2.1.0 and notebook dependencies.
+    debug_cells: false
+    duplicated_work: false
+    discarded_work: The notebook install command is not a scientific module.
+    reusable_work: Pin the FlyGym version in reproducibility instructions.
+    canonical_implementation:
+      paths: [docs/report/reproducibility.md, PROJECT_CONTEXT.md]
+      milestone: all_colab_verified_milestones
+      evidence_json: none
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:6]
+    history_support: [10e475d, 1de7c8b]
+
+  - id: S01-B3
+    cells: [5, 6]
+    title: FlyGym API imports
+    classification: API_CHECK
+    scientific_purpose: Verify FlyGym, Simulation, and NeuroMechFly imports.
+    debug_cells: false
+    duplicated_work: Repeated by Session 02.
+    discarded_work: No separate import wrapper was needed.
+    reusable_work: API/version checks for clean-runtime execution.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/experiments/healthy_baseline.py]
+      milestone: Block_8_12_and_Milestone_C
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:2.2]
+    history_support: [cabb8d5, 91bc44c]
+
+  - id: S01-B4
+    cells: [7, 8, 9]
+    title: NeuroMechFly construction
+    classification: REUSABLE_SETUP
+    scientific_purpose: Instantiate the healthy NeuroMechFly object and identify its body model.
+    debug_cells: false
+    duplicated_work: Rebuilt later in the full model cell and again in Session 02.
+    discarded_work: The notebook-local object is not shared with repository runs.
+    reusable_work: The object construction and root/body model assumptions.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/anatomy/materialization.py, src/drosophila_pd/experiments/healthy_baseline.py]
+      milestone: Block_8_12_Block_8_13_Milestone_8B_Milestone_C
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/block_8_13_orientation.json, results/baseline/milestone_8b_materialization.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:2.2, docs/report/final_report.md:Appendix_A]
+    history_support: [cabb8d5, 6d22ac5, a43823a, 91bc44c]
+
+  - id: S01-B5
+    cells: [10, 11]
+    title: FlatGroundWorld construction
+    classification: REUSABLE_SETUP
+    scientific_purpose: Create the flat-ground simulation world.
+    debug_cells: false
+    duplicated_work: Rebuilt in the full model cell and Session 02.
+    discarded_work: The standalone notebook world is not a reusable shared state.
+    reusable_work: FlatGroundWorld is the canonical numerical-baseline world.
+    canonical_implementation:
+      paths: [src/drosophila_pd/experiments/healthy_baseline.py, configs/experiments/healthy_baseline.yaml]
+      milestone: Milestone_C_and_later_perturbation_pipeline
+      evidence_json: results/baseline/healthy_baseline.json
+      manuscript_sections: [docs/report/final_report.md:2.2, docs/report/final_report.md:3.1]
+    history_support: [91bc44c]
+
+  - id: S01-B6
+    cells: [12, 13]
+    title: Empty-world lookup
+    classification: DIAGNOSTIC
+    scientific_purpose: Confirm that an unpopulated world has no fly lookup result.
+    debug_cells: true
+    duplicated_work: Superseded by the later attachment checks.
+    discarded_work: No frozen milestone depends on the empty-world probe.
+    reusable_work: none
+    canonical_implementation:
+      paths: []
+      milestone: none
+      evidence_json: none
+      manuscript_sections: none
+    history_support: [10e475d, 1de7c8b]
+
+  - id: S01-B8
+    cells: [14, 15]
+    title: Full fly materialization and actuation setup
+    classification: MATERIALIZATION_AND_SETUP
+    scientific_purpose: Materialize a legs-only skeleton, add 42 position actuators and six adhesion actuators, add a camera, and attach the fly.
+    debug_cells: false
+    duplicated_work: The fly/world are rebuilt after the earlier standalone objects.
+    discarded_work: Camera/colorization are visualization concerns, not anatomy evidence.
+    reusable_work: The state-transition idea, actuator counts, adhesion setup, and attachment sequence.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/materialization.py, src/drosophila_pd/experiments/healthy_baseline.py]
+      milestone: Milestone_8B_and_Milestone_C
+      evidence_json: [results/baseline/milestone_8b_materialization.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:2.2, docs/report/final_report.md:Appendix_A]
+    history_support: [a43823a, 91bc44c]
+
+  - id: S01-B7
+    cells: [16, 17, 18]
+    title: World to Simulation compilation
+    classification: REUSABLE_SETUP
+    scientific_purpose: Compile the attached world into a MuJoCo Simulation.
+    debug_cells: false
+    duplicated_work: Session 02 contains several earlier compile probes.
+    discarded_work: The notebook's printed object inspection is not itself evidence.
+    reusable_work: Construct a Simulation only after the world is assembled.
+    canonical_implementation:
+      paths: [src/drosophila_pd/experiments/healthy_baseline.py, scripts/run_healthy_baseline.py]
+      milestone: Milestone_C
+      evidence_json: results/baseline/healthy_baseline.json
+      manuscript_sections: [docs/report/final_report.md:2.2, docs/report/final_report.md:3.1]
+    history_support: [91bc44c]
+
+  - id: S01-B8.1
+    cells: [20, 21]
+    title: Fly and world validation
+    classification: DIAGNOSTIC
+    scientific_purpose: Check object identity, active DOFs, registration, and world type.
+    debug_cells: true
+    duplicated_work: Many checks recur in Session 02 and canonical tests.
+    discarded_work: Printed validation is not a separately maintained audit.
+    reusable_work: The 42 active-leg-DOF expectation for the unperturbed baseline.
+    canonical_implementation:
+      paths: [tests/test_healthy_baseline.py, src/drosophila_pd/experiments/healthy_baseline.py]
+      milestone: Milestone_C
+      evidence_json: results/baseline/healthy_baseline.json
+      manuscript_sections: [docs/report/final_report.md:3.1]
+    history_support: [91bc44c]
+
+  - id: S01-B8.2
+    cells: [22, 23]
+    title: Direct MJCF and MuJoCo count inspection
+    classification: DIAGNOSTIC
+    scientific_purpose: Inspect body, joint, velocity, configuration, actuator, and sensor counts.
+    debug_cells: true
+    duplicated_work: Repeated extensively in Session 02.
+    discarded_work: Direct printouts were replaced by structured evidence reports.
+    reusable_work: Count-based sanity checks, where they belong to a milestone contract.
+    canonical_implementation:
+      paths: [src/drosophila_pd/anatomy/audit.py, src/drosophila_pd/anatomy/materialization.py, src/drosophila_pd/metrics/locomotion.py]
+      milestone: Block_8_12_Milestone_8B_Milestone_C
+      evidence_json: [results/baseline/block_8_12_audit.json, results/baseline/milestone_8b_materialization.json, results/baseline/healthy_baseline.json]
+      manuscript_sections: [docs/report/final_report.md:2.1, docs/report/final_report.md:3.1, docs/report/final_report.md:Appendix_A]
+    history_support: [cabb8d5, a43823a, 91bc44c]
+
+  - id: S01-B9
+    cells: [24, 25, 26, 27]
+    title: Warp and CUDA verification
+    classification: OPTIONAL_RUNTIME
+    scientific_purpose: Check optional GPU/Warp readiness for accelerated execution or rendering.
+    debug_cells: false
+    duplicated_work: Not repeated in the canonical numerical baseline.
+    discarded_work: GPU availability is not a scientific baseline invariant.
+    reusable_work: Optional rendering environment information for future visual work.
+    canonical_implementation:
+      paths: [docs/report/reproducibility.md]
+      milestone: none
+      evidence_json: none
+      manuscript_sections: [docs/report/final_report.md:6]
+    history_support: [10e475d, 1de7c8b]
+
+  - id: S01-B10
+    cells: [28]
+    title: Google Drive project directory
+    classification: INFRASTRUCTURE
+    scientific_purpose: Create a Colab/Drive workspace for the historical session.
+    debug_cells: false
+    duplicated_work: Environment-specific and outside repository execution.
+    discarded_work: No canonical code or evidence depends on the Drive path.
+    reusable_work: none
+    canonical_implementation:
+      paths: []
+      milestone: none
+      evidence_json: none
+      manuscript_sections: none
+    history_support: [10e475d, 1de7c8b]

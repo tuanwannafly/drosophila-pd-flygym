@@ -1,0 +1,14 @@
+{
+  "simulation_executed": false,
+  "stages": [
+    "Import",
+    "Workspace",
+    "Plugin",
+    "Analysis",
+    "Statistics",
+    "Comparison",
+    "Export",
+    "Verification"
+  ],
+  "status": "caller_supplied_only"
+}

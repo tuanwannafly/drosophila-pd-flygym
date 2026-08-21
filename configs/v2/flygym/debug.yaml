@@ -1,0 +1,17 @@
+# Debug configuration for short, explicitly bounded local checks.
+fly:
+  name: debug_fly
+  factory: neuromechfly
+world:
+  kind: flat
+  spawn_position: [0.0, 0.0, 0.5]
+  spawn_orientation: [1.0, 0.0, 0.0, 0.0]
+  add_ground_contact_sensors: false
+simulation:
+  timestep: 0.0001
+renderer:
+  cameras: [track]
+  buffer_frames: false
+metadata:
+  mode: debug
+  scientific_scope: software integration only

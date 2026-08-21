@@ -1,0 +1,1054 @@
+{
+  "baseline": {
+    "action_transformation_summary": {
+      "action_dimensions_valid": true,
+      "adhesion_commands_preserved": true,
+      "applied_joint_angle_shape": [
+        5000,
+        42
+      ],
+      "controller_joint_angle_shape": [
+        5000,
+        42
+      ],
+      "expected_joint_angle_count": 42,
+      "expected_scale": null,
+      "expected_transform": "identity",
+      "joint_angle_transform_check": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      },
+      "joint_angle_transform_error_max": 0.0,
+      "perturbation_type": null,
+      "structural_checks": {
+        "action_dimensions_valid": {
+          "expected": true,
+          "observed": true,
+          "pass": true
+        },
+        "adhesion_commands_preserved": {
+          "expected": true,
+          "observed": true,
+          "pass": true
+        },
+        "joint_angle_transform_matches_expected": {
+          "expected": true,
+          "observed": true,
+          "pass": true
+        }
+      }
+    },
+    "actuator_summary": {
+      "actuator_type": "position",
+      "adhesion_actuator_count": 6,
+      "compiled_mj_model_nu": 48,
+      "position_actuator_count": 42
+    },
+    "checks": {
+      "body_height_below_numerical_floor": {
+        "expected": false,
+        "observed": false,
+        "pass": true
+      },
+      "derived_metrics_finite": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      },
+      "deterministic_seed_recorded": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      },
+      "expected_actuated_dofs": {
+        "expected": 42,
+        "observed": 42,
+        "pass": true
+      },
+      "expected_adhesion_actuators": {
+        "expected": 6,
+        "observed": 6,
+        "pass": true
+      },
+      "expected_step_count": {
+        "expected": 5000,
+        "observed": 5000,
+        "pass": true
+      },
+      "required_observations_finite": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      }
+    },
+    "condition_id": "baseline",
+    "configuration": {
+      "actuators": {
+        "expected_actuated_dofs": 42,
+        "forcerange": [
+          -65.0,
+          65.0
+        ],
+        "gain": 45.0,
+        "type": "position"
+      },
+      "controller": {
+        "convergence_coef": 20.0,
+        "coupling_strength": 10.0,
+        "gait": "tripod",
+        "intrinsic_amplitude": 1.0,
+        "intrinsic_frequency_hz": 12.0,
+        "official_source": "flygym_demo.complex_terrain.CPGController",
+        "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+        "type": "official_flygym_cpg_tripod"
+      },
+      "experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+      "fly": {
+        "add_adhesion": true,
+        "adhesion_gain": 40.0,
+        "colorize": false,
+        "joint_damping": 0.06,
+        "joint_stiffness": 0.05,
+        "name": "healthy_baseline",
+        "passive_tarsus_damping": 0.01,
+        "passive_tarsus_stiffness": 7.5
+      },
+      "pass_criteria": {
+        "minimum_body_height_mm": -1.0,
+        "require_finite_metrics": true,
+        "require_finite_observations": true
+      },
+      "random_seed": 0,
+      "simulation": {
+        "duration_s": 0.5,
+        "timestep_s": 0.0001,
+        "warmup_duration_s": 0.05
+      },
+      "world": {
+        "add_ground_contact_sensors": false,
+        "spawn_orientation_quat": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "spawn_position_mm": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "spawn_position_source": "FlyGym 2.1.0 tutorial 4a_cpg_controller.ipynb uses [0, 0, 0.5] for the flat-ground CPG walking demo.",
+        "type": "FlatGroundWorld"
+      }
+    },
+    "controller": {
+      "convergence_coef": 20.0,
+      "coupling_strength": 10.0,
+      "final_cpg_phases_rad": [
+        2.07470613951498,
+        5.216301742590055,
+        2.0747093193087025,
+        5.216294374321748,
+        2.0747026970365496,
+        5.216299999639041
+      ],
+      "gait": "tripod",
+      "initial_cpg_phases_rad": [
+        3.448296944257913,
+        4.493667318642264,
+        3.787273988239316,
+        3.4236020095353483,
+        2.661901610522322,
+        4.058272401214204
+      ],
+      "intrinsic_amplitude": 1.0,
+      "intrinsic_frequency_hz": 12.0,
+      "official_source": "flygym_demo.complex_terrain.CPGController",
+      "output_dof_count": 42,
+      "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+      "type": "official_flygym_cpg_tripod"
+    },
+    "derived_locomotion_metrics": {
+      "body_height_below_floor": false,
+      "body_height_mm": {
+        "count": 5001,
+        "final": 1.0115140447050612,
+        "initial": 1.1578572644678657,
+        "max": 1.1901951812195266,
+        "mean": 0.946592192150494,
+        "min": 0.7660532202481788
+      },
+      "controller_action_summary": {
+        "adhesion": {
+          "available": true,
+          "duty_factor_by_leg": [
+            0.6118,
+            0.6516,
+            0.6768,
+            0.64,
+            0.6436,
+            0.6986
+          ],
+          "leg_order": [
+            "lf",
+            "lm",
+            "lh",
+            "rf",
+            "rm",
+            "rh"
+          ],
+          "transition_count_by_leg": [
+            11,
+            12,
+            12,
+            12,
+            11,
+            12
+          ]
+        },
+        "joint_angle_action": {
+          "count": 210000,
+          "final": 0.02070400283313409,
+          "initial": 0.05525179810859182,
+          "max": 2.638809900444788,
+          "mean": 0.3196512073650523,
+          "min": -2.740937687492708
+        },
+        "joint_angle_action_abs": {
+          "count": 210000,
+          "final": 0.02070400283313409,
+          "initial": 0.05525179810859182,
+          "max": 2.740937687492708,
+          "mean": 1.0243701362137825,
+          "min": 1.4545261927401132e-06
+        }
+      },
+      "derived_metrics_are_finite": true,
+      "executed_duration_s": 0.5,
+      "final_thorax_position_mm": [
+        6.54682839938367,
+        1.8967958982826567,
+        1.0115140447050612
+      ],
+      "finite": {
+        "joint_angle_actions": true,
+        "thorax_positions": true,
+        "thorax_quaternions": true
+      },
+      "heading_yaw_change_rad": 0.2342730946151257,
+      "heading_yaw_final_rad": 0.23427610770176957,
+      "heading_yaw_initial_rad": 3.0130866438786077e-06,
+      "initial_thorax_position_mm": [
+        0.5557494750626403,
+        -3.504757870462532e-05,
+        1.1578572644678657
+      ],
+      "instability_height_floor_mm": -1.0,
+      "mean_planar_speed_mm_s": 12.568372100573873,
+      "observations_are_finite": true,
+      "planar_displacement_mm": 6.284186050286936,
+      "planar_displacement_vector_mm": [
+        5.991078924321029,
+        1.8968309458613613
+      ],
+      "requested_duration_s": 0.5,
+      "sample_count": 5001,
+      "step_count": 5000,
+      "timestep_s": 0.0001
+    },
+    "experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+    "flygym_version": "2.1.0",
+    "git_commit": "f886c204d8ad3a95dcd953418a8f9df51927137f",
+    "mujoco_version": "3.9.0",
+    "overall_pass": true,
+    "perturbation": null,
+    "python_major_minor": "3.12",
+    "python_version": "3.12.13",
+    "raw_observations": {
+      "stored_in_report": false,
+      "summary": {
+        "adhesion_action_samples": 5000,
+        "joint_action_samples": 5000,
+        "thorax_position_samples": 5001,
+        "thorax_quaternion_samples": 5001
+      }
+    },
+    "scientific_scope": "Milestone C validates an unperturbed deterministic FlyGym locomotion simulation baseline for future software comparisons. It is not a Parkinson's disease model and is not biological validation.",
+    "simulation_summary": {
+      "executed_duration_s": 0.5,
+      "ground_contact_sensors_enabled": false,
+      "rendering_enabled": false,
+      "requested_duration_s": 0.5,
+      "simulation_type": "flygym.simulation.Simulation",
+      "step_count": 5000,
+      "timestep_s": 0.0001,
+      "warmup_duration_s": 0.05,
+      "world_type": "flygym.compose.world.flat_ground.FlatGroundWorld"
+    },
+    "skeleton_materialization_summary": {
+      "axis_order": "AxisOrder.YAW_PITCH_ROLL",
+      "fly_type": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+      "joint_preset": "JointPreset.LEGS_ONLY",
+      "jointdof_count": 66,
+      "mjcf_joint_mapping_count": 66,
+      "neutral_angle_mapping_count": 66,
+      "skeleton_is_materialized": true,
+      "skeleton_type": "flygym.anatomy.Skeleton"
+    },
+    "timestamp": "2026-08-11T09:40:25.116001+00:00"
+  },
+  "baseline_config": {
+    "actuators": {
+      "expected_actuated_dofs": 42,
+      "forcerange": [
+        -65.0,
+        65.0
+      ],
+      "gain": 45.0,
+      "type": "position"
+    },
+    "controller": {
+      "convergence_coef": 20.0,
+      "coupling_strength": 10.0,
+      "gait": "tripod",
+      "intrinsic_amplitude": 1.0,
+      "intrinsic_frequency_hz": 12.0,
+      "official_source": "flygym_demo.complex_terrain.CPGController",
+      "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+      "type": "official_flygym_cpg_tripod"
+    },
+    "experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+    "fly": {
+      "add_adhesion": true,
+      "adhesion_gain": 40.0,
+      "colorize": false,
+      "joint_damping": 0.06,
+      "joint_stiffness": 0.05,
+      "name": "healthy_baseline",
+      "passive_tarsus_damping": 0.01,
+      "passive_tarsus_stiffness": 7.5
+    },
+    "pass_criteria": {
+      "minimum_body_height_mm": -1.0,
+      "require_finite_metrics": true,
+      "require_finite_observations": true
+    },
+    "random_seed": 0,
+    "simulation": {
+      "duration_s": 0.5,
+      "timestep_s": 0.0001,
+      "warmup_duration_s": 0.05
+    },
+    "world": {
+      "add_ground_contact_sensors": false,
+      "spawn_orientation_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "spawn_position_mm": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "spawn_position_source": "FlyGym 2.1.0 tutorial 4a_cpg_controller.ipynb uses [0, 0, 0.5] for the flat-ground CPG walking demo.",
+      "type": "FlatGroundWorld"
+    }
+  },
+  "checks": {
+    "action_dimensions_valid": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "adhesion_commands_preserved": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "baseline_metrics_finite": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "baseline_observations_finite": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "baseline_simulation_passed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "controlled_variables_match": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "joint_angle_transform_matches_expected": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_metadata_complete": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbed_metrics_finite": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbed_observations_finite": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbed_simulation_passed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    }
+  },
+  "comparison": {
+    "adhesion": {
+      "available": true,
+      "baseline_duty_factor_by_leg": [
+        0.6118,
+        0.6516,
+        0.6768,
+        0.64,
+        0.6436,
+        0.6986
+      ],
+      "baseline_transition_count_by_leg": [
+        11,
+        12,
+        12,
+        12,
+        11,
+        12
+      ],
+      "duty_factor_delta_by_leg": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "leg_order": [
+        "lf",
+        "lm",
+        "lh",
+        "rf",
+        "rm",
+        "rh"
+      ],
+      "perturbed_duty_factor_by_leg": [
+        0.6118,
+        0.6516,
+        0.6768,
+        0.64,
+        0.6436,
+        0.6986
+      ],
+      "perturbed_transition_count_by_leg": [
+        11,
+        12,
+        12,
+        12,
+        11,
+        12
+      ],
+      "transition_count_delta_by_leg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "relative_epsilon": 1e-09,
+    "scalars": {
+      "body_height_mean_mm": {
+        "absolute_delta": 0.5321613121790706,
+        "baseline": 0.946592192150494,
+        "perturbed": 1.4787535043295645,
+        "relative_delta": 0.5621864585319387
+      },
+      "body_height_min_mm": {
+        "absolute_delta": 0.3917972226323848,
+        "baseline": 0.7660532202481788,
+        "perturbed": 1.1578504428805636,
+        "relative_delta": 0.5114490903196699
+      },
+      "body_height_range_mm": {
+        "absolute_delta": -0.0011024944162713046,
+        "baseline": 0.4241419609713478,
+        "perturbed": 0.4230394665550765,
+        "relative_delta": -0.002599352381326359
+      },
+      "heading_yaw_change_rad": {
+        "absolute_delta": 0.03061053070618347,
+        "baseline": 0.2342730946151257,
+        "perturbed": 0.26488362532130916,
+        "relative_delta": 0.1306617422562835
+      },
+      "joint_angle_action_abs_mean": {
+        "absolute_delta": -0.20487402724275616,
+        "baseline": 1.0243701362137825,
+        "perturbed": 0.8194961089710263,
+        "relative_delta": -0.19999999999999968
+      },
+      "joint_angle_action_mean": {
+        "absolute_delta": -0.06393024147301052,
+        "baseline": 0.3196512073650523,
+        "perturbed": 0.2557209658920418,
+        "relative_delta": -0.20000000000000018
+      },
+      "mean_planar_speed_mm_s": {
+        "absolute_delta": -1.342898934901525,
+        "baseline": 12.568372100573873,
+        "perturbed": 11.225473165672348,
+        "relative_delta": -0.1068474838392323
+      },
+      "planar_displacement_mm": {
+        "absolute_delta": -0.6714494674507625,
+        "baseline": 6.284186050286936,
+        "perturbed": 5.612736582836174,
+        "relative_delta": -0.1068474838392323
+      }
+    }
+  },
+  "controlled_variables": {
+    "baseline": {
+      "actuators": {
+        "expected_actuated_dofs": 42,
+        "forcerange": [
+          -65.0,
+          65.0
+        ],
+        "gain": 45.0,
+        "type": "position"
+      },
+      "controller": {
+        "convergence_coef": 20.0,
+        "coupling_strength": 10.0,
+        "gait": "tripod",
+        "intrinsic_amplitude": 1.0,
+        "intrinsic_frequency_hz": 12.0,
+        "official_source": "flygym_demo.complex_terrain.CPGController",
+        "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+        "type": "official_flygym_cpg_tripod"
+      },
+      "fly": {
+        "add_adhesion": true,
+        "adhesion_gain": 40.0,
+        "colorize": false,
+        "joint_damping": 0.06,
+        "joint_stiffness": 0.05,
+        "name": "healthy_baseline",
+        "passive_tarsus_damping": 0.01,
+        "passive_tarsus_stiffness": 7.5
+      },
+      "metric_definitions": {
+        "comparison_module": "drosophila_pd.metrics.comparison",
+        "locomotion_module": "drosophila_pd.metrics.locomotion"
+      },
+      "random_seed": 0,
+      "simulation": {
+        "duration_s": 0.5,
+        "timestep_s": 0.0001,
+        "warmup_duration_s": 0.05
+      },
+      "skeleton": {
+        "axis_order": "AxisOrder.YAW_PITCH_ROLL",
+        "joint_preset": "JointPreset.LEGS_ONLY"
+      },
+      "world": {
+        "add_ground_contact_sensors": false,
+        "spawn_orientation_quat": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "spawn_position_mm": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "spawn_position_source": "FlyGym 2.1.0 tutorial 4a_cpg_controller.ipynb uses [0, 0, 0.5] for the flat-ground CPG walking demo.",
+        "type": "FlatGroundWorld"
+      }
+    },
+    "match": true,
+    "perturbed": {
+      "actuators": {
+        "expected_actuated_dofs": 42,
+        "forcerange": [
+          -65.0,
+          65.0
+        ],
+        "gain": 45.0,
+        "type": "position"
+      },
+      "controller": {
+        "convergence_coef": 20.0,
+        "coupling_strength": 10.0,
+        "gait": "tripod",
+        "intrinsic_amplitude": 1.0,
+        "intrinsic_frequency_hz": 12.0,
+        "official_source": "flygym_demo.complex_terrain.CPGController",
+        "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+        "type": "official_flygym_cpg_tripod"
+      },
+      "fly": {
+        "add_adhesion": true,
+        "adhesion_gain": 40.0,
+        "colorize": false,
+        "joint_damping": 0.06,
+        "joint_stiffness": 0.05,
+        "name": "healthy_baseline",
+        "passive_tarsus_damping": 0.01,
+        "passive_tarsus_stiffness": 7.5
+      },
+      "metric_definitions": {
+        "comparison_module": "drosophila_pd.metrics.comparison",
+        "locomotion_module": "drosophila_pd.metrics.locomotion"
+      },
+      "random_seed": 0,
+      "simulation": {
+        "duration_s": 0.5,
+        "timestep_s": 0.0001,
+        "warmup_duration_s": 0.05
+      },
+      "skeleton": {
+        "axis_order": "AxisOrder.YAW_PITCH_ROLL",
+        "joint_preset": "JointPreset.LEGS_ONLY"
+      },
+      "world": {
+        "add_ground_contact_sensors": false,
+        "spawn_orientation_quat": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "spawn_position_mm": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "spawn_position_source": "FlyGym 2.1.0 tutorial 4a_cpg_controller.ipynb uses [0, 0, 0.5] for the flat-ground CPG walking demo.",
+        "type": "FlatGroundWorld"
+      }
+    }
+  },
+  "environment": {
+    "flygym_version": "2.1.0",
+    "mujoco_version": "3.9.0",
+    "python_major_minor": "3.12",
+    "python_version": "3.12.13"
+  },
+  "experiment_id": "milestone_d_action_scale_080",
+  "git_commit": "f886c204d8ad3a95dcd953418a8f9df51927137f",
+  "identity_equivalence": null,
+  "identity_equivalence_pass": null,
+  "overall_pass": true,
+  "paired_execution": {
+    "baseline_condition_id": "baseline",
+    "fresh_fly_world_simulation_per_condition": true,
+    "perturbed_condition_id": "perturbed",
+    "raw_trajectories_stored_in_report": false
+  },
+  "perturbation": {
+    "config_id": "milestone_d_action_scale_080",
+    "description": "Generic motor-command perturbation that scales the joint-angle portion of each controller action. Adhesion commands are not scaled.",
+    "deterministic": true,
+    "intervention_stage": "post_controller_pre_simulation_action",
+    "intervention_target": "controller_joint_angle_commands",
+    "name": "action_scale_080",
+    "parameters": {
+      "scale": 0.8
+    },
+    "type": "global_action_scale"
+  },
+  "perturbed": {
+    "action_transformation_summary": {
+      "action_dimensions_valid": true,
+      "adhesion_commands_preserved": true,
+      "applied_joint_angle_shape": [
+        5000,
+        42
+      ],
+      "controller_joint_angle_shape": [
+        5000,
+        42
+      ],
+      "expected_joint_angle_count": 42,
+      "expected_scale": 0.8,
+      "expected_transform": "global_action_scale",
+      "joint_angle_transform_check": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      },
+      "joint_angle_transform_error_max": 0.0,
+      "perturbation_type": "global_action_scale",
+      "structural_checks": {
+        "action_dimensions_valid": {
+          "expected": true,
+          "observed": true,
+          "pass": true
+        },
+        "adhesion_commands_preserved": {
+          "expected": true,
+          "observed": true,
+          "pass": true
+        },
+        "joint_angle_transform_matches_expected": {
+          "expected": true,
+          "observed": true,
+          "pass": true
+        }
+      }
+    },
+    "actuator_summary": {
+      "actuator_type": "position",
+      "adhesion_actuator_count": 6,
+      "compiled_mj_model_nu": 48,
+      "position_actuator_count": 42
+    },
+    "checks": {
+      "body_height_below_numerical_floor": {
+        "expected": false,
+        "observed": false,
+        "pass": true
+      },
+      "derived_metrics_finite": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      },
+      "deterministic_seed_recorded": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      },
+      "expected_actuated_dofs": {
+        "expected": 42,
+        "observed": 42,
+        "pass": true
+      },
+      "expected_adhesion_actuators": {
+        "expected": 6,
+        "observed": 6,
+        "pass": true
+      },
+      "expected_step_count": {
+        "expected": 5000,
+        "observed": 5000,
+        "pass": true
+      },
+      "required_observations_finite": {
+        "expected": true,
+        "observed": true,
+        "pass": true
+      }
+    },
+    "condition_id": "perturbed",
+    "configuration": {
+      "actuators": {
+        "expected_actuated_dofs": 42,
+        "forcerange": [
+          -65.0,
+          65.0
+        ],
+        "gain": 45.0,
+        "type": "position"
+      },
+      "controller": {
+        "convergence_coef": 20.0,
+        "coupling_strength": 10.0,
+        "gait": "tripod",
+        "intrinsic_amplitude": 1.0,
+        "intrinsic_frequency_hz": 12.0,
+        "official_source": "flygym_demo.complex_terrain.CPGController",
+        "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+        "type": "official_flygym_cpg_tripod"
+      },
+      "experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+      "fly": {
+        "add_adhesion": true,
+        "adhesion_gain": 40.0,
+        "colorize": false,
+        "joint_damping": 0.06,
+        "joint_stiffness": 0.05,
+        "name": "healthy_baseline",
+        "passive_tarsus_damping": 0.01,
+        "passive_tarsus_stiffness": 7.5
+      },
+      "pass_criteria": {
+        "minimum_body_height_mm": -1.0,
+        "require_finite_metrics": true,
+        "require_finite_observations": true
+      },
+      "random_seed": 0,
+      "simulation": {
+        "duration_s": 0.5,
+        "timestep_s": 0.0001,
+        "warmup_duration_s": 0.05
+      },
+      "world": {
+        "add_ground_contact_sensors": false,
+        "spawn_orientation_quat": [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "spawn_position_mm": [
+          0.0,
+          0.0,
+          0.5
+        ],
+        "spawn_position_source": "FlyGym 2.1.0 tutorial 4a_cpg_controller.ipynb uses [0, 0, 0.5] for the flat-ground CPG walking demo.",
+        "type": "FlatGroundWorld"
+      }
+    },
+    "controller": {
+      "convergence_coef": 20.0,
+      "coupling_strength": 10.0,
+      "final_cpg_phases_rad": [
+        2.07470613951498,
+        5.216301742590055,
+        2.0747093193087025,
+        5.216294374321748,
+        2.0747026970365496,
+        5.216299999639041
+      ],
+      "gait": "tripod",
+      "initial_cpg_phases_rad": [
+        3.448296944257913,
+        4.493667318642264,
+        3.787273988239316,
+        3.4236020095353483,
+        2.661901610522322,
+        4.058272401214204
+      ],
+      "intrinsic_amplitude": 1.0,
+      "intrinsic_frequency_hz": 12.0,
+      "official_source": "flygym_demo.complex_terrain.CPGController",
+      "output_dof_count": 42,
+      "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+      "type": "official_flygym_cpg_tripod"
+    },
+    "derived_locomotion_metrics": {
+      "body_height_below_floor": false,
+      "body_height_mm": {
+        "count": 5001,
+        "final": 1.5792560420981665,
+        "initial": 1.1578572644678657,
+        "max": 1.5808899094356401,
+        "mean": 1.4787535043295645,
+        "min": 1.1578504428805636
+      },
+      "controller_action_summary": {
+        "adhesion": {
+          "available": true,
+          "duty_factor_by_leg": [
+            0.6118,
+            0.6516,
+            0.6768,
+            0.64,
+            0.6436,
+            0.6986
+          ],
+          "leg_order": [
+            "lf",
+            "lm",
+            "lh",
+            "rf",
+            "rm",
+            "rh"
+          ],
+          "transition_count_by_leg": [
+            11,
+            12,
+            12,
+            12,
+            11,
+            12
+          ]
+        },
+        "joint_angle_action": {
+          "count": 210000,
+          "final": 0.01656320226650727,
+          "initial": 0.04420143848687346,
+          "max": 2.1110479203558303,
+          "mean": 0.2557209658920418,
+          "min": -2.192750149994166
+        },
+        "joint_angle_action_abs": {
+          "count": 210000,
+          "final": 0.01656320226650727,
+          "initial": 0.04420143848687346,
+          "max": 2.192750149994166,
+          "mean": 0.8194961089710263,
+          "min": 1.1636209541920907e-06
+        }
+      },
+      "derived_metrics_are_finite": true,
+      "executed_duration_s": 0.5,
+      "final_thorax_position_mm": [
+        5.894127785435897,
+        1.733322666121461,
+        1.5792560420981665
+      ],
+      "finite": {
+        "joint_angle_actions": true,
+        "thorax_positions": true,
+        "thorax_quaternions": true
+      },
+      "heading_yaw_change_rad": 0.26488362532130916,
+      "heading_yaw_final_rad": 0.264886638407953,
+      "heading_yaw_initial_rad": 3.0130866438786077e-06,
+      "initial_thorax_position_mm": [
+        0.5557494750626403,
+        -3.504757870462532e-05,
+        1.1578572644678657
+      ],
+      "instability_height_floor_mm": -1.0,
+      "mean_planar_speed_mm_s": 11.225473165672348,
+      "observations_are_finite": true,
+      "planar_displacement_mm": 5.612736582836174,
+      "planar_displacement_vector_mm": [
+        5.3383783103732565,
+        1.7333577137001654
+      ],
+      "requested_duration_s": 0.5,
+      "sample_count": 5001,
+      "step_count": 5000,
+      "timestep_s": 0.0001
+    },
+    "experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+    "flygym_version": "2.1.0",
+    "git_commit": "f886c204d8ad3a95dcd953418a8f9df51927137f",
+    "mujoco_version": "3.9.0",
+    "overall_pass": true,
+    "perturbation": {
+      "config_id": "milestone_d_action_scale_080",
+      "description": "Generic motor-command perturbation that scales the joint-angle portion of each controller action. Adhesion commands are not scaled.",
+      "deterministic": true,
+      "intervention_stage": "post_controller_pre_simulation_action",
+      "intervention_target": "controller_joint_angle_commands",
+      "name": "action_scale_080",
+      "parameters": {
+        "scale": 0.8
+      },
+      "type": "global_action_scale"
+    },
+    "python_major_minor": "3.12",
+    "python_version": "3.12.13",
+    "raw_observations": {
+      "stored_in_report": false,
+      "summary": {
+        "adhesion_action_samples": 5000,
+        "joint_action_samples": 5000,
+        "thorax_position_samples": 5001,
+        "thorax_quaternion_samples": 5001
+      }
+    },
+    "scientific_scope": "This condition report records a controlled simulation perturbation condition for software comparison. It is not a Parkinson's disease model and is not biological validation.",
+    "simulation_summary": {
+      "executed_duration_s": 0.5,
+      "ground_contact_sensors_enabled": false,
+      "rendering_enabled": false,
+      "requested_duration_s": 0.5,
+      "simulation_type": "flygym.simulation.Simulation",
+      "step_count": 5000,
+      "timestep_s": 0.0001,
+      "warmup_duration_s": 0.05,
+      "world_type": "flygym.compose.world.flat_ground.FlatGroundWorld"
+    },
+    "skeleton_materialization_summary": {
+      "axis_order": "AxisOrder.YAW_PITCH_ROLL",
+      "fly_type": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+      "joint_preset": "JointPreset.LEGS_ONLY",
+      "jointdof_count": 66,
+      "mjcf_joint_mapping_count": 66,
+      "neutral_angle_mapping_count": 66,
+      "skeleton_is_materialized": true,
+      "skeleton_type": "flygym.anatomy.Skeleton"
+    },
+    "timestamp": "2026-08-11T09:40:31.403648+00:00"
+  },
+  "perturbed_config": {
+    "actuators": {
+      "expected_actuated_dofs": 42,
+      "forcerange": [
+        -65.0,
+        65.0
+      ],
+      "gain": 45.0,
+      "type": "position"
+    },
+    "controller": {
+      "convergence_coef": 20.0,
+      "coupling_strength": 10.0,
+      "gait": "tripod",
+      "intrinsic_amplitude": 1.0,
+      "intrinsic_frequency_hz": 12.0,
+      "official_source": "flygym_demo.complex_terrain.CPGController",
+      "preprogrammed_steps_source": "flygym_demo.complex_terrain.PreprogrammedSteps",
+      "type": "official_flygym_cpg_tripod"
+    },
+    "experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+    "fly": {
+      "add_adhesion": true,
+      "adhesion_gain": 40.0,
+      "colorize": false,
+      "joint_damping": 0.06,
+      "joint_stiffness": 0.05,
+      "name": "healthy_baseline",
+      "passive_tarsus_damping": 0.01,
+      "passive_tarsus_stiffness": 7.5
+    },
+    "pass_criteria": {
+      "minimum_body_height_mm": -1.0,
+      "require_finite_metrics": true,
+      "require_finite_observations": true
+    },
+    "random_seed": 0,
+    "simulation": {
+      "duration_s": 0.5,
+      "timestep_s": 0.0001,
+      "warmup_duration_s": 0.05
+    },
+    "world": {
+      "add_ground_contact_sensors": false,
+      "spawn_orientation_quat": [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "spawn_position_mm": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "spawn_position_source": "FlyGym 2.1.0 tutorial 4a_cpg_controller.ipynb uses [0, 0, 0.5] for the flat-ground CPG walking demo.",
+      "type": "FlatGroundWorld"
+    }
+  },
+  "scientific_scope": "This is a controlled simulation perturbation experiment. It is not a Parkinson's disease model and is not biological validation.",
+  "timestamp": "2026-08-11T09:40:31.409507+00:00"
+}

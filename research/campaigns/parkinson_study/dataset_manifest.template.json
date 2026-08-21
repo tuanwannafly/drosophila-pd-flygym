@@ -1,0 +1,21 @@
+{
+  "dataset_id": "parkinson_study_campaign",
+  "dataset_type": "pd",
+  "dataset_version": "0.1.0",
+  "status": "PLANNING_ONLY",
+  "source_commit": "REPLACE_WITH_EXECUTION_COMMIT",
+  "configuration": "PENDING_APPROVED_COMPUTATIONAL_CONFIGURATION",
+  "environment": {
+    "python": "3.12.x",
+    "flygym": "2.1.0",
+    "mujoco": "3.9.0"
+  },
+  "entries": [],
+  "checksums": {},
+  "citation": "CITATION.cff and the approved study report citation",
+  "scientific_scope": "Computational condition outputs only; not biological Parkinson's disease validation.",
+  "limitations": [
+    "No rollout has been executed in this planning package.",
+    "No approved computational PD configuration is present in the repository."
+  ]
+}

@@ -1,0 +1,530 @@
+schema_version: 1
+phase: G3
+title: "Adult Drosophila Parkinson locomotion literature database"
+scope: >
+  Peer-reviewed adult Drosophila Parkinson or Parkinson-relevant locomotion
+  evidence only. Larval locomotion and non-Parkinson disease models are
+  excluded from mapped evidence. Computational mappings are hypotheses about
+  measurable correspondence and do not validate a Parkinson's disease model.
+status_terms:
+  - SUPPORTED
+  - PARTIALLY_SUPPORTED
+  - NOT_SUPPORTED
+repository_observables:
+  currently_measured:
+    - mean_planar_speed_mm_s
+    - planar_displacement_mm
+    - planar_path_length_mm
+    - trajectory_efficiency
+    - heading_yaw_change_rad
+    - heading_yaw_abs_change_rad
+    - body_height_min_mm
+    - body_height_mean_mm
+    - body_height_range_mm
+    - joint_action_abs_mean
+    - adhesion_duty_factor_by_leg
+    - adhesion_transition_count_by_leg
+  not_currently_measured:
+    - negative_geotaxis_performance_index
+    - climbing_success_fraction
+    - climbing_velocity
+    - movement_bout_distance
+    - angular_velocity
+    - open_field_center_avoidance
+    - stop_or_freeze_duration
+    - trial_reactivity_fraction
+    - tremor_amplitude_or_frequency
+    - inter_leg_coordination_phase
+papers:
+  - paper_id: riemensperger_2011_dopamine_deficiency
+    title: "Behavioral consequences of dopamine deficiency in the Drosophila central nervous system"
+    authors:
+      - "Riemensperger T"
+      - "Isabel G"
+      - "Coulom H"
+      - "Neuser K"
+      - "Seugnet L"
+      - "Kume K"
+      - "Iche-Torres M"
+      - "Cassar M"
+      - "Strauss R"
+      - "Preat T"
+      - "Hirsh J"
+      - "Birman S"
+    year: 2011
+    journal: "Proceedings of the National Academy of Sciences of the United States of America"
+    pmid: "21187381"
+    doi: "10.1073/pnas.1010930108"
+    source_url: "https://doi.org/10.1073/pnas.1010930108"
+    peer_reviewed: true
+    genotype_or_model: "adult neural dopamine deficiency, DTHg FS+/-; ple context"
+    fly_age: "5-day-old adults for open-arena walking; adult age series for SING/climbing"
+    endpoints:
+      - endpoint_id: riemensperger_2011_walking_speed
+        behavior_category: adult_walking
+        behavior_paradigm: "spontaneous walking in open arena"
+        exact_endpoint_wording: "walking speed"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: mean_planar_speed_mm_s
+        currently_measured: "yes"
+        validation_status: SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Direction-only mapping to simulated mean planar speed; no numeric calibration."
+      - endpoint_id: riemensperger_2011_covered_distance
+        behavior_category: adult_walking
+        behavior_paradigm: "spontaneous walking in open arena"
+        exact_endpoint_wording: "covered distance"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: planar_path_length_mm
+        currently_measured: "yes"
+        validation_status: PARTIALLY_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Path length is the closest current metric; assay duration and arena differ."
+      - endpoint_id: riemensperger_2011_negative_geotaxis
+        behavior_category: negative_geotaxis
+        behavior_paradigm: "startle-induced negative geotaxis"
+        exact_endpoint_wording: "climbing abilities"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Current repository evidence is flat-ground walking, not vertical climbing."
+
+  - paper_id: chen_2014_a30p_walking
+    title: "Walking deficits and centrophobism in an alpha-synuclein fly model of Parkinson's disease"
+    authors:
+      - "Chen AY"
+      - "Wilburn P"
+      - "Hao X"
+      - "Tully T"
+    year: 2014
+    journal: "Genes, Brain and Behavior"
+    pmid: "25113870"
+    doi: "10.1111/gbb.12172"
+    source_url: "https://doi.org/10.1111/gbb.12172"
+    peer_reviewed: true
+    genotype_or_model: "old adult pan-neuronal human alpha-synuclein A30P expression"
+    fly_age: "old adults; young adults were reported as not showing the same walking abnormalities"
+    endpoints:
+      - endpoint_id: chen_2014_total_moving_distance
+        behavior_category: adult_open_field
+        behavior_paradigm: "horizontal open-field walking"
+        exact_endpoint_wording: "total moving distance"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: planar_path_length_mm
+        currently_measured: "yes"
+        validation_status: PARTIALLY_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Qualitative distance mapping only; current arena and tracking protocol differ."
+      - endpoint_id: chen_2014_distance_per_movement
+        behavior_category: adult_open_field
+        behavior_paradigm: "horizontal open-field walking"
+        exact_endpoint_wording: "distance per movement"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Movement bouts are not segmented in frozen repository metrics."
+      - endpoint_id: chen_2014_velocity
+        behavior_category: adult_walking
+        behavior_paradigm: "horizontal open-field walking"
+        exact_endpoint_wording: "velocity"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: mean_planar_speed_mm_s
+        currently_measured: "yes"
+        validation_status: SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Direction-only mapping to mean planar speed."
+      - endpoint_id: chen_2014_angular_velocity
+        behavior_category: adult_turning
+        behavior_paradigm: "horizontal open-field walking"
+        exact_endpoint_wording: "angular velocity"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Current yaw change is not angular velocity."
+      - endpoint_id: chen_2014_centrophobism
+        behavior_category: adult_open_field
+        behavior_paradigm: "horizontal open-field walking"
+        exact_endpoint_wording: "centrophobism"
+        direction_of_change: increased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "The current world has no open-field center-avoidance endpoint."
+
+  - paper_id: riemensperger_2013_alpha_syn_dopamine_pathway
+    title: "A single dopamine pathway underlies progressive locomotor deficits in a Drosophila model of Parkinson disease"
+    authors:
+      - "Riemensperger T"
+      - "Issa AR"
+      - "Pech U"
+      - "Coulom H"
+      - "Nguyen MV"
+      - "Cassar M"
+      - "Jacquet M"
+      - "Fiala A"
+      - "Birman S"
+    year: 2013
+    journal: "Cell Reports"
+    pmid: "24239353"
+    doi: "10.1016/j.celrep.2013.10.032"
+    source_url: "https://doi.org/10.1016/j.celrep.2013.10.032"
+    peer_reviewed: true
+    genotype_or_model: "human alpha-synuclein A30P expression in all neurons or selected PAM dopamine neurons"
+    fly_age: "adult; progressive/age-dependent locomotor assay"
+    endpoints:
+      - endpoint_id: riemensperger_2013_progressive_locomotor_deficits
+        behavior_category: negative_geotaxis
+        behavior_paradigm: "startle-induced negative geotaxis/climbing"
+        exact_endpoint_wording: "progressive locomotor deficits"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "The repository does not currently run SING or vertical climbing."
+      - endpoint_id: riemensperger_2013_climbing_impairments
+        behavior_category: climbing
+        behavior_paradigm: "climbing assay"
+        exact_endpoint_wording: "climbing impairments"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "No current climbing success or climb velocity metric."
+
+  - paper_id: aggarwal_2019_automated_climbing
+    title: "A locomotor assay reveals deficits in heterozygous Parkinson's disease model and proprioceptive mutants in adult Drosophila"
+    authors:
+      - "Aggarwal A"
+      - "Reichert H"
+      - "VijayRaghavan K"
+    year: 2019
+    journal: "Proceedings of the National Academy of Sciences of the United States of America"
+    pmid: "31748267"
+    doi: "10.1073/pnas.1807456116"
+    source_url: "https://doi.org/10.1073/pnas.1807456116"
+    peer_reviewed: true
+    genotype_or_model: "heterozygous mutants of fly Parkinson genes including parkin/PINK1 context"
+    fly_age: "adult"
+    endpoints:
+      - endpoint_id: aggarwal_2019_climbing_behavior
+        behavior_category: climbing
+        behavior_paradigm: "automated adult climbing assay"
+        exact_endpoint_wording: "climbing behavior"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Current simulation metrics do not include automated vertical climbing parameters."
+      - endpoint_id: aggarwal_2019_locomotor_defects
+        behavior_category: adult_locomotion
+        behavior_paradigm: "fine-scale adult climbing behavior assay"
+        exact_endpoint_wording: "prominent locomotor defects"
+        direction_of_change: impaired
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Assay-specific climbing features cannot be inferred from flat-ground baseline output."
+
+  - paper_id: liu_2008_lrrk2_parkinsonism
+    title: "A Drosophila model for LRRK2-linked parkinsonism"
+    authors:
+      - "Liu Z"
+      - "Wang X"
+      - "Yu Y"
+      - "Li X"
+      - "Wang T"
+      - "Jiang H"
+      - "Ren Q"
+      - "Jiao Y"
+      - "Sawa A"
+      - "Moran T"
+      - "Ross CA"
+      - "Montell C"
+      - "Smith WW"
+    year: 2008
+    journal: "Proceedings of the National Academy of Sciences of the United States of America"
+    pmid: "18258746"
+    doi: "10.1073/pnas.0708452105"
+    source_url: "https://doi.org/10.1073/pnas.0708452105"
+    peer_reviewed: true
+    genotype_or_model: "human LRRK2 or LRRK2-G2019S expressed with ddc-GAL4 or elav-GAL4"
+    fly_age: "adult; weekly assays, including 5-week-old actometer assay"
+    endpoints:
+      - endpoint_id: liu_2008_climbing
+        behavior_category: climbing
+        behavior_paradigm: "weekly climbing assays"
+        exact_endpoint_wording: "climbing assays"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Vertical climbing is absent from the current flat-ground evidence."
+      - endpoint_id: liu_2008_actometer_activity
+        behavior_category: adult_locomotion
+        behavior_paradigm: "actometer locomotor activity"
+        exact_endpoint_wording: "locomotor activity"
+        direction_of_change: decreased
+        experimental_confidence: MODERATE
+        repository_observable: planar_path_length_mm
+        currently_measured: "yes"
+        validation_status: PARTIALLY_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Both are locomotor-output summaries, but apparatus and behavioral context differ."
+      - endpoint_id: liu_2008_ldopa_locomotor_impairment
+        behavior_category: adult_locomotion
+        behavior_paradigm: "L-DOPA-treated climbing assay"
+        exact_endpoint_wording: "locomotor impairment"
+        direction_of_change: improved_with_ldopa
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "The repository has computational reversibility only, not biological L-DOPA rescue."
+
+  - paper_id: cording_2017_lrrk2_per
+    title: "Targeted kinase inhibition relieves slowness and tremor in a Drosophila model of LRRK2 Parkinson's disease"
+    authors:
+      - "Cording AC"
+      - "Shiaelis N"
+      - "Petridi S"
+      - "Middleton CA"
+      - "Wilson LG"
+      - "Elliott CJH"
+    year: 2017
+    journal: "NPJ Parkinson's Disease"
+    pmid: "29214211"
+    doi: "10.1038/s41531-017-0036-y"
+    source_url: "https://doi.org/10.1038/s41531-017-0036-y"
+    peer_reviewed: true
+    genotype_or_model: "human LRRK2-G2019S, LRRK2-I2020T, or LRRK2-R1441C in dopaminergic neurons"
+    fly_age: "adult; drugs fed from eclosion until testing where used"
+    endpoints:
+      - endpoint_id: cording_2017_per_speed
+        behavior_category: adult_locomotion
+        behavior_paradigm: "proboscis extension response high-speed video"
+        exact_endpoint_wording: "speed of proboscis extension"
+        direction_of_change: decreased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "PER is a reflex motor assay, not whole-body walking speed."
+      - endpoint_id: cording_2017_per_duration_variability
+        behavior_category: adult_locomotion
+        behavior_paradigm: "proboscis extension response high-speed video"
+        exact_endpoint_wording: "duration more variable"
+        direction_of_change: increased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Current runs do not measure PER duration or motor variability."
+      - endpoint_id: cording_2017_tremor
+        behavior_category: tremor
+        behavior_paradigm: "proboscis extension response high-speed video"
+        exact_endpoint_wording: "increases the tremor"
+        direction_of_change: increased
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "No tremor amplitude or frequency metric exists in current evidence."
+
+  - paper_id: coulom_2004_rotenone
+    title: "Chronic exposure to rotenone models sporadic Parkinson's disease in Drosophila melanogaster"
+    authors:
+      - "Coulom H"
+      - "Birman S"
+    year: 2004
+    journal: "The Journal of Neuroscience"
+    pmid: "15574749"
+    doi: "10.1523/JNEUROSCI.2993-04.2004"
+    source_url: "https://doi.org/10.1523/JNEUROSCI.2993-04.2004"
+    peer_reviewed: true
+    genotype_or_model: "sublethal chronic rotenone exposure, sporadic Parkinson model"
+    fly_age: "adult; 7 days of rotenone exposure in cited assay"
+    endpoints:
+      - endpoint_id: coulom_2004_negative_geotaxis
+        behavior_category: negative_geotaxis
+        behavior_paradigm: "negative geotaxis assay"
+        exact_endpoint_wording: "locomotor impairments"
+        direction_of_change: dose_dependent_decrease
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Current repository evidence does not include toxin exposure or SING."
+      - endpoint_id: coulom_2004_ldopa_behavior
+        behavior_category: negative_geotaxis
+        behavior_paradigm: "negative geotaxis after L-DOPA feeding"
+        exact_endpoint_wording: "behavioral deficits"
+        direction_of_change: rescued_by_ldopa
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "The current computational restoration experiment is not an L-DOPA assay."
+
+  - paper_id: park_2005_dj1
+    title: "Drosophila DJ-1 mutants show oxidative stress-sensitive locomotive dysfunction"
+    authors:
+      - "Park J"
+      - "Kim SY"
+      - "Cha GH"
+      - "Lee SB"
+      - "Kim S"
+      - "Chung J"
+    year: 2005
+    journal: "Gene"
+    pmid: "16203113"
+    doi: "10.1016/j.gene.2005.06.040"
+    source_url: "https://doi.org/10.1016/j.gene.2005.06.040"
+    peer_reviewed: true
+    genotype_or_model: "homozygous DJ-1 mutant flies"
+    fly_age: "adult; exact age not recovered from accessible metadata"
+    endpoints:
+      - endpoint_id: park_2005_locomotive_dysfunction
+        behavior_category: adult_locomotion
+        behavior_paradigm: "locomotor ability assay"
+        exact_endpoint_wording: "locomotive dysfunction"
+        direction_of_change: impaired
+        experimental_confidence: MODERATE
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Endpoint wording is broad; current measured speed/distance cannot be linked without assay details."
+
+  - paper_id: poddighe_2014_pink1b9_mucuna
+    title: "Mucuna pruriens (Velvet bean) rescues motor, olfactory, mitochondrial and synaptic impairment in PINK1B9 Drosophila melanogaster genetic model of Parkinson's disease"
+    authors:
+      - "Poddighe S"
+      - "De Rose F"
+      - "Marotta R"
+      - "Ruffilli R"
+      - "Fanti M"
+      - "Secci PP"
+      - "Mostallino MC"
+      - "Setzu MD"
+    year: 2014
+    journal: "PLOS ONE"
+    pmid: "25340511"
+    doi: "10.1371/journal.pone.0110802"
+    source_url: "https://doi.org/10.1371/journal.pone.0110802"
+    peer_reviewed: true
+    caution: "PLOS ONE expression of concern exists for this article."
+    genotype_or_model: "PINK1B9 mutant Drosophila, Mucuna pruriens or L-DOPA treatment"
+    fly_age: "3-6, 10-15, and 20-25 day-old adults"
+    endpoints:
+      - endpoint_id: poddighe_2014_climbing_behavior
+        behavior_category: climbing
+        behavior_paradigm: "climbing assay"
+        exact_endpoint_wording: "climbing behavior"
+        direction_of_change: improved_with_treatment
+        experimental_confidence: LIMITED
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Treatment/rescue climbing evidence is outside current flat-ground computational evidence."
+
+  - paper_id: kajtor_2025_trial_based_behavior
+    title: "Altered reactivity to threatening stimuli in Drosophila models of Parkinson's disease, revealed by a trial-based assay"
+    authors:
+      - "Kajtor M"
+      - "Billes VA"
+      - "Kiraly B"
+      - "Karkusova P"
+      - "Kovacs T"
+      - "Stabb H"
+      - "Sviatko K"
+      - "Vizi A"
+      - "Ujvari E"
+      - "Balazsfi D"
+      - "Seidenbecher SE"
+      - "Kvitsiani D"
+      - "Vellai T"
+      - "Hangya B"
+    year: 2025
+    journal: "eLife"
+    pmid: "not_found_in_pubmed_search_2026-08-12"
+    doi: "10.7554/eLife.90905.3"
+    source_url: "https://doi.org/10.7554/eLife.90905.3"
+    peer_reviewed: true
+    genotype_or_model: "Ddc-Gal4/UAS-Parkin-R275W and Ddc-Gal4/UAS-alpha-Syn-A53T adult flies; dopamine receptor mutants"
+    fly_age: "adult; age-dependent trends reported across lifespan"
+    endpoints:
+      - endpoint_id: kajtor_2025_walking_speed
+        behavior_category: adult_walking
+        behavior_paradigm: "single-animal trial-based passing-shadow assay"
+        exact_endpoint_wording: "mean speed"
+        direction_of_change: decreased_in_parkin_r275w
+        experimental_confidence: HIGH
+        repository_observable: mean_planar_speed_mm_s
+        currently_measured: "yes"
+        validation_status: PARTIALLY_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Speed is measured, but the repository lacks threat-stimulus trials."
+      - endpoint_id: kajtor_2025_stop_duration
+        behavior_category: freezing_pause
+        behavior_paradigm: "single-animal trial-based passing-shadow assay"
+        exact_endpoint_wording: "stop durations"
+        direction_of_change: increased_in_alpha_syn_a53t
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "Current runs do not segment stop/freezing bouts."
+      - endpoint_id: kajtor_2025_reactivity
+        behavior_category: adult_locomotion
+        behavior_paradigm: "single-animal trial-based passing-shadow assay"
+        exact_endpoint_wording: "reactivity"
+        direction_of_change: decreased_in_parkin_r275w
+        experimental_confidence: HIGH
+        repository_observable: none
+        currently_measured: "no"
+        validation_status: NOT_SUPPORTED
+        observation_or_hypothesis: observation
+        mapping_note: "The repository has no stimulus-response reactivity endpoint."
+
+excluded_reviewed_items:
+  - title: "parkin-induced defects in neurophysiology and locomotion are generated by metabolic dysfunction and not oxidative stress"
+    reason: "Larval locomotion; excluded by G3 adult-only scope."
+    doi: "10.1093/hmg/ddr609"
+    pmid: "22215442"
+  - title: "Drosophila PINK1 and parkin loss-of-function mutants display a range of non-motor Parkinson's disease phenotypes"
+    reason: "Primarily non-motor memory/circadian endpoints; not mapped as adult locomotion phenotype evidence."
+    doi: "10.1016/j.nbd.2017.04.014"
+    pmid: "28435104"

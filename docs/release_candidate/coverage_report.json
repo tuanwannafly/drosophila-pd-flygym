@@ -1,0 +1,4 @@
+{
+  "reason": "Coverage tooling is not part of the release builder; pytest remains the regression gate.",
+  "status": "not_measured"
+}

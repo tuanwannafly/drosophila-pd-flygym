@@ -1,0 +1,35 @@
+schema_version: 1
+phase: H1
+title: "Behavioral assay framework defaults"
+scope: >
+  Analysis-only configuration for behavioral assays computed from existing
+  rollout outputs. These settings must not introduce perturbations, modify
+  controllers, rerun simulations, or create biological Parkinson's disease
+  claims.
+
+open_field:
+  enabled: true
+  arena_center_xy_mm: [0.0, 0.0]
+  arena_size_mm: [100.0, 100.0]
+  center_fraction: 0.5
+  border_width_mm: 10.0
+  grid_bins: 8
+
+freezing:
+  enabled: true
+  immobility_speed_threshold_mm_s: 1.0
+  min_freezing_duration_s: 0.0
+
+turning:
+  enabled: true
+  turn_rate_threshold_rad_s: 0.5
+  min_turn_duration_s: 0.0
+  turn_angle_histogram_bins: 16
+
+gait:
+  enabled: true
+  implemented_scope: "adhesion command summaries only"
+  planned_metrics_require:
+    - foot contact sensors
+    - foot trajectories
+    - per-leg gait-event extraction

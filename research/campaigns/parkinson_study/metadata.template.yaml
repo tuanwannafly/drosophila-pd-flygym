@@ -1,0 +1,18 @@
+schema_id: drosophila-pd-flygym.parkinson-study.metadata
+schema_version: "1.0"
+status: PLANNED
+experiment_id: PD_001
+seed: 0
+condition: computational_condition_pending_approval
+source: approved_real_rollout_required
+provenance:
+  source_commit: REPLACE_WITH_EXECUTION_COMMIT
+  configuration: PENDING_APPROVED_COMPUTATIONAL_CONFIGURATION
+  environment: RECORD_AT_EXECUTION
+timing:
+  duration_s: RECORD_AT_EXECUTION
+  timestep_s: RECORD_AT_EXECUTION
+observables: []
+limitations:
+  - Planning template only.
+  - Does not establish biological validity.

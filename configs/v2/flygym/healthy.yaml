@@ -1,0 +1,12 @@
+# Healthy baseline adapter configuration; no rollout is created by this file.
+fly:
+  name: healthy_baseline
+  factory: canonical_locomotion
+world:
+  kind: flat
+  spawn_position: [0.0, 0.0, 0.5]
+  spawn_orientation: [1.0, 0.0, 0.0, 0.0]
+simulation:
+  timestep: 0.0001
+metadata:
+  condition: healthy computational baseline

@@ -1,0 +1,36 @@
+campaign_id: experimental_campaign_01_healthy_baseline
+name: Healthy Baseline
+status: PLANNING_ONLY
+execution_enabled: false
+purpose: >-
+  Prepare a deterministic plan for future unperturbed computational baseline
+  rollouts using the existing canonical pipeline.
+configuration: configs/experiments/healthy_baseline.yaml
+experiment_matrix: experiment_matrix.csv
+seed_policy: Healthy_001 uses seed 0; IDs increment one seed per experiment through Healthy_100/99.
+experiment_count: 100
+status_values:
+  planned: PLANNED
+  running: RESERVED_FOR_EXECUTION
+  complete: RESERVED_FOR_EXECUTION
+validation_profile: computational_baseline_reproducibility
+expected_outputs:
+  - rollout/trajectory and observations
+  - measurements/locomotion metrics
+  - validation/validation report
+  - reports/experiment report
+  - metadata/manifest and checksums
+publication_targets:
+  - publication/healthy_baseline/figures/
+  - publication/healthy_baseline/tables/
+  - publication/healthy_baseline/methods/
+  - publication/healthy_baseline/results/
+  - publication/healthy_baseline/discussion/
+  - publication/healthy_baseline/supplementary/
+  - publication/healthy_baseline/references/
+  - publication/healthy_baseline/assets/
+guardrails:
+  - Do not overwrite frozen evidence.
+  - Do not generate rollout data during planning validation.
+  - Do not interpret computational outputs as biological evidence.
+  - Require explicit authorization before execution.

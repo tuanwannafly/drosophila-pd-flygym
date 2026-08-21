@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TanVi3001/drosophila-pd-flygym/blob/main/docs/api/viewer_pose.schema.json",
+  "title": "Fly Studio viewer pose document",
+  "description": "Schema only. This file does not contain rollout or synthetic pose data.",
+  "type": "object",
+  "required": [
+    "metadata",
+    "fps",
+    "frame_count",
+    "joint_names",
+    "mesh",
+    "frames"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object"
+    },
+    "fps": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "frame_count": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "joint_names": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "frames": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "frame_index",
+          "time",
+          "thorax",
+          "position",
+          "orientation",
+          "COM",
+          "joint_angles",
+          "joint_velocity",
+          "joint_acceleration",
+          "contacts",
+          "trajectory",
+          "visibility"
+        ],
+        "properties": {
+          "frame_index": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "time": {
+            "type": "number",
+            "minimum": 0
+          },
+          "thorax": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            }
+          },
+          "position": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "number"
+            }
+          },
+          "orientation": {
+            "type": "array",
+            "minItems": 4,
+            "maxItems": 4,
+            "items": {
+              "type": "number"
+            }
+          },
+          "COM": {
+            "oneOf": [
+              {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 3,
+                "items": {
+                  "type": "number"
+                }
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "joint_angles": {
+            "type": "object"
+          },
+          "joint_velocity": {
+            "type": "object"
+          },
+          "joint_velocities": {
+            "type": "object"
+          },
+          "joint_acceleration": {
+            "type": "object"
+          },
+          "contacts": {
+            "type": "object"
+          },
+          "trajectory": {
+            "type": "object"
+          },
+          "visibility": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "mesh": {
+      "type": "object",
+      "required": [
+        "renderer",
+        "render_mode",
+        "scientific_mesh",
+        "visibility"
+      ],
+      "properties": {
+        "renderer": {
+          "type": "string"
+        },
+        "render_mode": {
+          "type": "string"
+        },
+        "scientific_mesh": {
+          "type": "boolean"
+        },
+        "asset": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "asset_status": {
+          "type": "string"
+        },
+        "body_parts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "body_hierarchy": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "mesh_instances": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "bones": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "materials": {
+          "type": "object"
+        },
+        "visibility": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "boolean"
+          }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

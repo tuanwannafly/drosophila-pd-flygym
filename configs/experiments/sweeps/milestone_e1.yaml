@@ -1,0 +1,25 @@
+# Milestone E0/E1 - parameter-response characterization.
+# These conditions are generic computational proxies, not disease severity levels.
+
+experiment_id: milestone_e1_parameter_response
+
+scientific_frame:
+  biological_evidence: "Dopaminergic/Parkinson-related locomotor dysfunction may involve motor-output and coordination changes, but this config does not encode a direct biological mechanism."
+  computational_hypothesis: "Motor-vigor and coordination can be explored as phenomenological simulation proxies before selecting any disease-like computational phenotype."
+  simulation_interventions: "Global joint-command scaling and CPG coupling-weight scaling."
+  unsupported_mappings: "No concentration, neuron-loss percentage, stage label, or disease-severity mapping is defined."
+
+families:
+  - family: motor_vigor_proxy
+    perturbation_type: global_action_scale
+    parameter_name: scale
+    baseline_equivalent_value: 1.0
+    values: [1.0, 0.9, 0.8, 0.7, 0.6]
+    description: "Scales only the 42 joint-angle controller commands; adhesion commands are unchanged."
+
+  - family: coordination_proxy
+    perturbation_type: cpg_coupling_scale
+    parameter_name: scale
+    baseline_equivalent_value: 1.0
+    values: [1.0, 0.75, 0.5, 0.25, 0.0]
+    description: "Scales FlyGym CPG inter-leg coupling weights; intrinsic frequency, intrinsic amplitude, phase bias, actuator gains, and adhesion are unchanged."

@@ -1,0 +1,23 @@
+# Milestone E3 - multi-seed robustness validation.
+# This validates a frozen computational candidate from E2, not a disease model.
+
+experiment_id: milestone_e3_candidate_robustness
+
+validation_design:
+  duration_s: 1.0
+  seeds: [0, 1, 2, 3, 4]
+  timestep_policy: "Use the canonical baseline timestep unchanged."
+  rendering_required: false
+
+candidate:
+  motor_scale: 0.8
+  coupling_scale: 0.75
+  preregistered_parameter_source: "Milestone E2 combined phenotype characterization"
+  selected_before_e3_execution: true
+  post_hoc_tuning_permitted: false
+  description: "Leading computational candidate from E2 for robustness validation only."
+
+scientific_frame:
+  validation_question: "Does the frozen computational candidate remain stable and show consistent locomotor-output direction across five simulation seeds at 1.0 s duration?"
+  unsupported_mapping: "No dopamine concentration, dopaminergic neuron-loss percentage, disease stage, Parkinson's condition, or biological severity mapping is defined."
+  pass_semantics: "PASS means software/simulation validation completed successfully; it does not require a desired biological phenotype."

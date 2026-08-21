@@ -1,0 +1,148 @@
+record_type,id,type,path,from_id,to_id,relation,support,notes
+node,notebook_session01,notebook,notebooks/session_01_environment/FlyBrain_Session01_Setup.ipynb,,,,,historical notebook
+node,notebook_session02,notebook,notebooks/session_02_healthy_baseline/Session_02_Healthy_Baseline.ipynb,,,,,protected historical notebook
+node,inventory_session01,inventory,docs/session_inventory/session01_traceability.yaml,,,,,Phase G1 output
+node,inventory_session02,inventory,docs/session_inventory/session02_traceability.yaml,,,,,Phase G1 output
+node,inventory_mapping,inventory,docs/session_inventory/canonical_mapping.csv,,,,,Phase G1 output
+node,module_anatomy_audit,canonical_module,src/drosophila_pd/anatomy/audit.py,,,,,
+node,module_anatomy_orientation,canonical_module,src/drosophila_pd/anatomy/orientation.py,,,,,
+node,module_anatomy_materialization,canonical_module,src/drosophila_pd/anatomy/materialization.py,,,,,
+node,module_experiment_baseline,canonical_module,src/drosophila_pd/experiments/healthy_baseline.py,,,,,
+node,module_controller_baseline,canonical_module,src/drosophila_pd/controllers/healthy_baseline.py,,,,,
+node,module_metrics_locomotion,canonical_module,src/drosophila_pd/metrics/locomotion.py,,,,,
+node,module_metrics_comparison,canonical_module,src/drosophila_pd/metrics/comparison.py,,,,,
+node,module_perturbation_base,canonical_module,src/drosophila_pd/perturbations/base.py,,,,,
+node,module_perturbation_validation,canonical_module,src/drosophila_pd/perturbations/validation.py,,,,,
+node,module_experiment_perturbation,canonical_module,src/drosophila_pd/experiments/perturbation_experiment.py,,,,,
+node,module_experiment_e1,canonical_module,src/drosophila_pd/experiments/parameter_sweep.py,,,,,
+node,module_experiment_e2,canonical_module,src/drosophila_pd/experiments/combined_phenotype.py,,,,,
+node,module_experiment_e3,canonical_module,src/drosophila_pd/experiments/candidate_robustness.py,,,,,
+node,module_experiment_e4,canonical_module,src/drosophila_pd/experiments/phenotype_concordance.py,,,,,
+node,module_experiment_e5,canonical_module,src/drosophila_pd/experiments/computational_rescue.py,,,,,
+node,module_analysis_e6,canonical_module,src/drosophila_pd/analysis/evidence_synthesis.py,,,,,
+node,config_baseline,config,configs/experiments/healthy_baseline.yaml,,,,,
+node,config_identity,config,configs/experiments/perturbations/identity.yaml,,,,,
+node,config_action_scale,config,configs/experiments/perturbations/action_scale_080.yaml,,,,,
+node,config_e1,config,configs/experiments/sweeps/milestone_e1.yaml,,,,,
+node,config_e2,config,configs/experiments/sweeps/milestone_e2.yaml,,,,,
+node,config_e3,config,configs/experiments/validation/milestone_e3.yaml,,,,,
+node,config_e4,config,docs/scientific/e4_evidence_matrix.yaml,,,,,
+node,config_e5,config,configs/experiments/validation/milestone_e5.yaml,,,,,
+node,config_e6,config,configs/analysis/milestone_e6.yaml,,,,,
+node,script_audit_812,script,scripts/audit_block_8_12.py,,,,,
+node,script_audit_813,script,scripts/audit_block_8_13.py,,,,,
+node,script_materialization_8b,script,scripts/run_joint_materialization_milestone.py,,,,,
+node,script_baseline,script,scripts/run_healthy_baseline.py,,,,,
+node,script_perturbation,script,scripts/run_perturbation_experiment.py,,,,,
+node,script_e1,script,scripts/run_parameter_sweep.py,,,,,
+node,script_e2,script,scripts/run_combined_phenotype_sweep.py,,,,,
+node,script_e3,script,scripts/run_candidate_robustness.py,,,,,
+node,script_e4,script,scripts/run_phenotype_concordance.py,,,,,
+node,script_e5,script,scripts/run_computational_rescue.py,,,,,
+node,script_e6,script,scripts/run_evidence_synthesis.py,,,,,
+node,script_build_report,script,scripts/build_final_report.py,,,,,
+node,milestone_812,milestone,Block_8.12,,,,,frozen
+node,milestone_813,milestone,Block_8.13,,,,,frozen
+node,milestone_8b,milestone,Milestone_8B,,,,,frozen
+node,milestone_c,milestone,Milestone_C,,,,,frozen
+node,milestone_d,milestone,Milestone_D,,,,,frozen
+node,milestone_e1,milestone,Milestone_E1,,,,,frozen
+node,milestone_e2,milestone,Milestone_E2,,,,,frozen
+node,milestone_e3,milestone,Milestone_E3,,,,,frozen
+node,milestone_e4,milestone,Milestone_E4,,,,,frozen
+node,milestone_e5,milestone,Milestone_E5,,,,,frozen
+node,milestone_e6,milestone,Milestone_E6,,,,,frozen by release docs; JSON retains historical review status
+node,milestone_f,milestone,Milestone_F,,,,,frozen
+node,evidence_812,evidence_json,results/baseline/block_8_12_audit.json,,,,,overall_pass true
+node,evidence_813,evidence_json,results/baseline/block_8_13_orientation.json,,,,,overall_pass true
+node,evidence_8b,evidence_json,results/baseline/milestone_8b_materialization.json,,,,,overall_pass true
+node,evidence_c,evidence_json,results/baseline/healthy_baseline.json,,,,,overall_pass true
+node,evidence_d_identity,evidence_json,results/perturbations/identity.json,,,,,overall_pass true
+node,evidence_d_action,evidence_json,results/perturbations/action_scale_080.json,,,,,overall_pass true
+node,evidence_e1,evidence_json,results/sweeps/milestone_e1.json,,,,,overall_pass true
+node,evidence_e2,evidence_json,results/sweeps/milestone_e2_combined.json,,,,,overall_pass true
+node,evidence_e3,evidence_json,results/validation/milestone_e3_candidate_robustness.json,,,,,overall_pass true
+node,evidence_e4,evidence_json,results/validation/milestone_e4_concordance.json,,,,,overall_pass true
+node,evidence_e5,evidence_json,results/validation/milestone_e5_computational_rescue.json,,,,,overall_pass true
+node,evidence_e6,evidence_json,results/analysis/milestone_e6_synthesis.json,,,,,overall_pass true
+node,figure_e1,figure,results/analysis/figures/e1_parameter_response.png,,,,,
+node,figure_e2,figure,results/analysis/figures/e2_condition_comparison.png,,,,,
+node,figure_e3,figure,results/analysis/figures/e3_paired_seed_robustness.png,,,,,
+node,figure_e5,figure,results/analysis/figures/e5_computational_reversibility.png,,,,,
+node,table_evidence_manifest,table,results/analysis/tables/evidence_manifest.csv,,,,,
+node,table_e1,table,results/analysis/tables/e1_parameter_response.csv,,,,,
+node,table_e2,table,results/analysis/tables/e2_condition_summary.csv,,,,,
+node,table_e3,table,results/analysis/tables/e3_seed_summary.csv,,,,,
+node,table_e5,table,results/analysis/tables/e5_reversibility_summary.csv,,,,,
+node,manuscript_source,manuscript_source,docs/report/final_report.md,,,,,source commit 004488c
+node,release_docx,release_artifact,dist/Drosophila_PD_FlyGym_Final_Report.docx,,,,,
+node,release_pdf,release_artifact,dist/Drosophila_PD_FlyGym_Final_Report.pdf,,,,,
+node,release_manifest,release_artifact,dist/final_report_manifest.json,,,,,
+node,release_notes,release_artifact,docs/release/v1.0.0.md,,,,,
+edge,edge_001,,,notebook_session01,inventory_session01,inventoried_by,docs/session_inventory/session01_traceability.yaml,
+edge,edge_002,,,notebook_session02,inventory_session02,inventoried_by,docs/session_inventory/session02_traceability.yaml,
+edge,edge_003,,,notebook_session01,module_experiment_baseline,historical_setup_reused_by,docs/session_inventory/canonical_mapping.csv:S01-B5,
+edge,edge_004,,,notebook_session02,module_anatomy_audit,historical_block_canonicalized_by,docs/session_inventory/canonical_mapping.csv:S02-B8.12,
+edge,edge_005,,,notebook_session02,module_anatomy_orientation,historical_block_canonicalized_by,docs/session_inventory/canonical_mapping.csv:S02-B8.13,
+edge,edge_006,,,notebook_session02,module_anatomy_materialization,historical_blocks_consolidated_by,docs/session_inventory/canonical_mapping.csv:S02-B8.14_TO_B8.19B,
+edge,edge_007,,,module_anatomy_audit,script_audit_812,implementation_entrypoint,scripts/audit_block_8_12.py,
+edge,edge_008,,,module_anatomy_orientation,script_audit_813,implementation_entrypoint,scripts/audit_block_8_13.py,
+edge,edge_009,,,module_anatomy_materialization,script_materialization_8b,implementation_entrypoint,scripts/run_joint_materialization_milestone.py,
+edge,edge_010,,,module_experiment_baseline,script_baseline,implementation_entrypoint,scripts/run_healthy_baseline.py,
+edge,edge_011,,,module_experiment_perturbation,script_perturbation,implementation_entrypoint,scripts/run_perturbation_experiment.py,
+edge,edge_012,,,module_experiment_e1,script_e1,implementation_entrypoint,scripts/run_parameter_sweep.py,
+edge,edge_013,,,module_experiment_e2,script_e2,implementation_entrypoint,scripts/run_combined_phenotype_sweep.py,
+edge,edge_014,,,module_experiment_e3,script_e3,implementation_entrypoint,scripts/run_candidate_robustness.py,
+edge,edge_015,,,module_experiment_e4,script_e4,implementation_entrypoint,scripts/run_phenotype_concordance.py,
+edge,edge_016,,,module_experiment_e5,script_e5,implementation_entrypoint,scripts/run_computational_rescue.py,
+edge,edge_017,,,module_analysis_e6,script_e6,implementation_entrypoint,scripts/run_evidence_synthesis.py,
+edge,edge_018,,,config_baseline,script_baseline,runtime_configuration,docs/report/reproducibility.md:Milestone_C,
+edge,edge_019,,,config_identity,script_perturbation,perturbation_configuration,docs/report/reproducibility.md:Milestone_D,
+edge,edge_020,,,config_action_scale,script_perturbation,perturbation_configuration,docs/report/reproducibility.md:Milestone_D,
+edge,edge_021,,,config_e1,script_e1,sweep_configuration,docs/report/reproducibility.md:Milestone_E1,
+edge,edge_022,,,config_e2,script_e2,sweep_configuration,docs/report/reproducibility.md:Milestone_E2,
+edge,edge_023,,,config_e3,script_e3,validation_configuration,docs/report/reproducibility.md:Milestone_E3,
+edge,edge_024,,,config_e4,script_e4,literature_matrix_configuration,docs/report/reproducibility.md:Milestone_E4,
+edge,edge_025,,,config_e5,script_e5,validation_configuration,docs/report/reproducibility.md:Milestone_E5,
+edge,edge_026,,,config_e6,script_e6,synthesis_configuration,docs/report/reproducibility.md:Milestone_E6,
+edge,edge_027,,,script_audit_812,evidence_812,writes_evidence,docs/report/reproducibility.md:Block_8.12,
+edge,edge_028,,,script_audit_813,evidence_813,writes_evidence,docs/report/reproducibility.md:Block_8.13,
+edge,edge_029,,,script_materialization_8b,evidence_8b,writes_evidence,docs/report/reproducibility.md:Milestone_8B,
+edge,edge_030,,,script_baseline,evidence_c,writes_evidence,docs/report/reproducibility.md:Milestone_C,
+edge,edge_031,,,script_perturbation,evidence_d_identity,writes_evidence,docs/report/reproducibility.md:Milestone_D,
+edge,edge_032,,,script_perturbation,evidence_d_action,writes_evidence,docs/report/reproducibility.md:Milestone_D,
+edge,edge_033,,,script_e1,evidence_e1,writes_evidence,docs/report/reproducibility.md:Milestone_E1,
+edge,edge_034,,,script_e2,evidence_e2,writes_evidence,docs/report/reproducibility.md:Milestone_E2,
+edge,edge_035,,,script_e3,evidence_e3,writes_evidence,docs/report/reproducibility.md:Milestone_E3,
+edge,edge_036,,,script_e4,evidence_e4,writes_evidence,docs/report/reproducibility.md:Milestone_E4,
+edge,edge_037,,,script_e5,evidence_e5,writes_evidence,docs/report/reproducibility.md:Milestone_E5,
+edge,edge_038,,,script_e6,evidence_e6,writes_evidence,docs/report/reproducibility.md:Milestone_E6,
+edge,edge_039,,,evidence_e1,figure_e1,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.figures,
+edge,edge_040,,,evidence_e1,table_e1,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.tables,
+edge,edge_041,,,evidence_e2,figure_e2,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.figures,
+edge,edge_042,,,evidence_e2,table_e2,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.tables,
+edge,edge_043,,,evidence_e3,figure_e3,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.figures,
+edge,edge_044,,,evidence_e3,table_e3,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.tables,
+edge,edge_045,,,evidence_e5,figure_e5,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.figures,
+edge,edge_046,,,evidence_e5,table_e5,synthesized_into,results/analysis/milestone_e6_synthesis.json:artifacts.tables,
+edge,edge_047,,,evidence_e6,table_evidence_manifest,writes_artifact,results/analysis/milestone_e6_synthesis.json:artifacts.tables,
+edge,edge_048,,,evidence_c,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T01,
+edge,edge_049,,,evidence_d_identity,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T02,
+edge,edge_050,,,evidence_d_action,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T03,
+edge,edge_051,,,evidence_e1,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T04-T05,
+edge,edge_052,,,evidence_e2,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T06,
+edge,edge_053,,,evidence_e3,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T07,
+edge,edge_054,,,evidence_e4,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T08,
+edge,edge_055,,,evidence_e5,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T09,
+edge,edge_056,,,evidence_e6,manuscript_source,supports_report_claim,docs/report/evidence_traceability.md:T11-T12,
+edge,edge_057,,,figure_e1,manuscript_source,embedded_in,docs/report/final_report.md:Figure_1,
+edge,edge_058,,,figure_e2,manuscript_source,embedded_in,docs/report/final_report.md:Figure_2,
+edge,edge_059,,,figure_e3,manuscript_source,embedded_in,docs/report/final_report.md:Figure_3,
+edge,edge_060,,,figure_e5,manuscript_source,embedded_in,docs/report/final_report.md:Figure_4,
+edge,edge_061,,,manuscript_source,script_build_report,canonical_build_input,dist/final_report_manifest.json:build.command,
+edge,edge_062,,,script_build_report,release_docx,builds,dist/final_report_manifest.json:artifacts,
+edge,edge_063,,,script_build_report,release_pdf,builds,dist/final_report_manifest.json:artifacts,
+edge,edge_064,,,manuscript_source,release_manifest,provenance_recorded_by,dist/final_report_manifest.json:manuscript,
+edge,edge_065,,,release_docx,release_manifest,hashed_by,dist/final_report_manifest.json:artifacts,
+edge,edge_066,,,release_pdf,release_manifest,hashed_by,dist/final_report_manifest.json:artifacts,
+edge,edge_067,,,release_manifest,release_notes,release_inventory,docs/release/v1.0.0.md:Included_final_artifacts,

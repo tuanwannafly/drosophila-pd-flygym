@@ -1,0 +1,65 @@
+# Milestone E2 - combined phenotype characterization.
+# These conditions are phenomenological computational proxies, not disease labels.
+
+experiment_id: milestone_e2_combined_phenotype_characterization
+
+scientific_frame:
+  biological_evidence: "Drosophila dopamine-deficiency and alpha-synuclein model literature supports locomotor impairment as a broad phenomenon, but this config does not encode a direct biological mechanism."
+  computational_goal: "Characterize interactions between motor-vigor and coordination simulation proxies before selecting any disease-like computational phenotype."
+  simulation_interventions: "Ordered composition of CPG coupling-weight scaling and global joint-command scaling."
+  unsupported_mappings: "No dopamine concentration, dopaminergic neuron-loss percentage, disease stage, Parkinson's condition, or biological severity mapping is defined."
+
+conditions:
+  - condition_id: control_motor_100_coupling_100
+    category: control
+    motor_scale: 1.0
+    coupling_scale: 1.0
+    description: "Baseline-equivalent composite control."
+
+  - condition_id: motor_080_coupling_100
+    category: motor_only
+    motor_scale: 0.8
+    coupling_scale: 1.0
+    description: "Motor-vigor proxy only; CPG coupling remains baseline-equivalent."
+
+  - condition_id: motor_070_coupling_100
+    category: motor_only
+    motor_scale: 0.7
+    coupling_scale: 1.0
+    description: "Motor-vigor proxy only; CPG coupling remains baseline-equivalent."
+
+  - condition_id: motor_060_coupling_100
+    category: motor_only
+    motor_scale: 0.6
+    coupling_scale: 1.0
+    description: "Motor-vigor proxy only; CPG coupling remains baseline-equivalent."
+
+  - condition_id: motor_100_coupling_075
+    category: coordination_only
+    motor_scale: 1.0
+    coupling_scale: 0.75
+    description: "Coordination proxy only; motor-vigor scaling remains baseline-equivalent."
+
+  - condition_id: motor_100_coupling_050
+    category: coordination_only
+    motor_scale: 1.0
+    coupling_scale: 0.5
+    description: "Coordination proxy only; motor-vigor scaling remains baseline-equivalent."
+
+  - condition_id: combined_motor_080_coupling_075
+    category: combined
+    motor_scale: 0.8
+    coupling_scale: 0.75
+    description: "Combined motor-vigor and coordination simulation proxies."
+
+  - condition_id: combined_motor_070_coupling_075
+    category: combined
+    motor_scale: 0.7
+    coupling_scale: 0.75
+    description: "Combined motor-vigor and coordination simulation proxies."
+
+  - condition_id: combined_motor_070_coupling_050
+    category: combined
+    motor_scale: 0.7
+    coupling_scale: 0.5
+    description: "Combined motor-vigor and coordination simulation proxies."

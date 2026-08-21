@@ -1,0 +1,5 @@
+schema_id: drosophila-pd-flygym.dataset.metadata.pd
+inherits: ../metadata_schema.yaml
+required_additional:
+  - perturbation_or_condition_id
+  - biological_evidence_status

@@ -1,0 +1,24 @@
+schema_id: drosophila-pd-flygym.dataset.metadata
+schema_version: "1.0"
+description: Metadata contract shared by curated dataset entries.
+required:
+  - subject_id
+  - trial_id
+  - condition
+  - source
+  - provenance
+properties:
+  subject_id: string
+  trial_id: string
+  condition: string
+  source: string
+  provenance:
+    commit: full-git-commit
+    configuration: relative-path-or-id
+    seed: integer-or-null
+    environment: mapping
+  timing:
+    duration_s: finite-number-or-null
+    timestep_s: finite-number-or-null
+  observables: list-of-measured-fields
+  limitations: list-of-strings

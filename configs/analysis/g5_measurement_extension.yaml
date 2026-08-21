@@ -1,0 +1,24 @@
+schema_version: 1
+phase: G5
+title: "Measurement extension defaults"
+scope: >
+  Analysis-only configuration for computing additional measurements from
+  existing locomotion rollout arrays. This configuration must not introduce
+  perturbations, modify controllers, rerun simulations, or create biological
+  Parkinson's disease claims.
+
+walking_bouts:
+  speed_threshold_mm_s: 1.0
+  min_bout_duration_s: 0.0
+
+turning:
+  turn_rate_threshold_rad_s: 0.5
+  min_turn_duration_s: 0.0
+
+open_field:
+  enabled: false
+  arena_center_xy_mm: [0.0, 0.0]
+  arena_size_mm: [100.0, 100.0]
+  center_fraction: 0.5
+  border_width_mm: 10.0
+  grid_bins: 8

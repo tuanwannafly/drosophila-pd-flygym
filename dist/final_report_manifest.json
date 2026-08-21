@@ -1,0 +1,75 @@
+{
+  "manifest_version": 1,
+  "milestone": "F",
+  "status": "FROZEN - FINAL SUBMISSION PACKAGE",
+  "manuscript": {
+    "source_path": "docs/report/final_report.md",
+    "source_commit": "004488cf7fd5e980137a209d360b977716865e1a"
+  },
+  "build": {
+    "implementation_commit": "82746cf1276d3edf7e8ce3206d83f49b3470e1dd",
+    "command": "python scripts/build_final_report.py",
+    "timestamp_utc": "2026-08-11T15:38:58.6205179Z"
+  },
+  "artifacts": [
+    {
+      "filename": "Drosophila_PD_FlyGym_Final_Report.docx",
+      "path": "dist/Drosophila_PD_FlyGym_Final_Report.docx",
+      "format": "docx",
+      "bytes": 315731,
+      "sha256": "ea94dfc42e4a903e10564049d213479fdb54accdfb443a3b4b28a06cb77a2ce1"
+    },
+    {
+      "filename": "Drosophila_PD_FlyGym_Final_Report.pdf",
+      "path": "dist/Drosophila_PD_FlyGym_Final_Report.pdf",
+      "format": "pdf",
+      "bytes": 422224,
+      "sha256": "66eecdf0569a7718a9fca4f1a1462a731f2bf181f1375ef1de39e8be245ceb27"
+    }
+  ],
+  "pdf": {
+    "page_count": 14,
+    "figures": [
+      "e1_parameter_response.png",
+      "e2_condition_comparison.png",
+      "e3_paired_seed_robustness.png",
+      "e5_computational_reversibility.png"
+    ],
+    "manuscript_tables": 4,
+    "references_present": true,
+    "appendices_present": ["A", "B", "C"]
+  },
+  "validation": {
+    "source_and_local_assets": "PASS",
+    "artifact_existence_and_nonzero_size": "PASS",
+    "embedded_figures_and_relationships": "PASS",
+    "references_and_appendices": "PASS",
+    "source_commit_metadata": "PASS",
+    "scientific_boundary": "PASS",
+    "compileall": {
+      "command": "python -m compileall -q src scripts tests",
+      "result": "PASS"
+    },
+    "pytest": {
+      "command": "pytest -q -rs -p no:cacheprovider",
+      "result": "89 passed, 3 skipped"
+    },
+    "git_diff_check": {
+      "command": "git diff --check",
+      "result": "PASS; line-ending warnings only"
+    }
+  },
+  "scientific_scope": {
+    "model": "computational/phenomenological only",
+    "e4_status": "PARTIAL_PHENOTYPE_CONCORDANCE remains qualitative",
+    "excluded_claims": [
+      "Parkinson's disease validation",
+      "biological rescue",
+      "dopamine equivalence",
+      "disease severity mapping",
+      "mechanistic equivalence",
+      "statistical significance"
+    ]
+  },
+  "intermediate_qa_files_version_controlled": false
+}

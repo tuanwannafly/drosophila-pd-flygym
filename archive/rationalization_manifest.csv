@@ -1,0 +1,11 @@
+path,status,reason,required_before_move
+docs/v2,REVIEW_REQUIRED,Scoped V2 module documentation with cross-links,Call-site and link audit
+docs/v4,REVIEW_REQUIRED,Scientific preparation and SOP documentation,Confirm historical provenance references
+docs/v5,REVIEW_REQUIRED,Healthy campaign planning package,Confirm planning package remains cited
+docs/v6,REVIEW_REQUIRED,Execution runtime documentation,Confirm CLI and workflow references
+docs/v7,REVIEW_REQUIRED,Dataset adapter documentation,Confirm dataset workflow references
+docs/v8,REVIEW_REQUIRED,Experiment runtime documentation,Confirm runtime references
+docs/v9,REVIEW_REQUIRED,Research kernel documentation,Confirm kernel CLI references
+docs/v10,REVIEW_REQUIRED,Study preparation documentation,Confirm project planning references
+docs/release_candidate,KEEP,Frozen release health and provenance inventory,None
+notebooks,KEEP,Historical and Colab research records,Do not move protected scientific notebooks

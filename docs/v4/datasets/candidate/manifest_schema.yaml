@@ -1,0 +1,6 @@
+schema_id: drosophila-pd-flygym.dataset.manifest.candidate
+inherits: ../manifest_schema.yaml
+dataset_type: candidate
+required_additional:
+  - candidate_id
+  - parameter_record

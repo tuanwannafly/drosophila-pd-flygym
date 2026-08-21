@@ -1,0 +1,6 @@
+# Milestone D - generic motor-command perturbation.
+
+experiment_id: milestone_d_action_scale_080
+type: global_action_scale
+name: action_scale_080
+scale: 0.8

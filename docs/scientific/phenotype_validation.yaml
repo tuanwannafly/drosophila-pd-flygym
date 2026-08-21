@@ -1,0 +1,320 @@
+schema_version: 1
+phase: G6
+title: "Computational phenotype validation"
+status: "POST_RELEASE_EVIDENCE_ONLY"
+scope: >
+  G6 evaluates which behavioral phenotypes of the frozen computational
+  candidate are supported by existing frozen evidence, the G3 adult Drosophila
+  Parkinson locomotion literature database, the G4 biological endpoint mapping,
+  and the G5 analysis-only measurement modules. It does not rerun simulations,
+  introduce perturbations, tune parameters, reinterpret the frozen candidate, or
+  alter frozen milestone conclusions.
+source_inputs:
+  frozen_evidence:
+    - "results/validation/milestone_e3_candidate_robustness.json"
+    - "results/validation/milestone_e4_concordance.json"
+    - "results/validation/milestone_e5_computational_rescue.json"
+  literature_and_mapping:
+    - "docs/scientific/literature_database.yaml"
+    - "docs/scientific/biological_mapping.yaml"
+    - "docs/scientific/endpoint_support_matrix.csv"
+    - "docs/scientific/observable_mapping.csv"
+  g5_measurements:
+    - "src/drosophila_pd/metrics/trajectory.py"
+    - "src/drosophila_pd/metrics/bouts.py"
+    - "src/drosophila_pd/metrics/turning.py"
+    - "src/drosophila_pd/metrics/open_field.py"
+    - "src/drosophila_pd/metrics/measurement_extension.py"
+    - "configs/analysis/g5_measurement_extension.yaml"
+frozen_candidate:
+  motor_scale: 0.8
+  coupling_scale: 0.75
+  source: "results/validation/milestone_e3_candidate_robustness.json"
+  status: "unchanged"
+validation_policy:
+  support_levels:
+    - SUPPORTED
+    - PARTIALLY_SUPPORTED
+    - NOT_SUPPORTED
+  no_simulation_execution: true
+  no_new_perturbations: true
+  no_parameter_tuning: true
+  no_candidate_reinterpretation: true
+  no_direct_numeric_calibration: true
+  no_biological_pd_validation_claim: true
+  raw_trajectory_arrays_available_in_frozen_evidence: false
+  g5_capability_does_not_retroactively_validate_frozen_candidate: true
+candidate_evidence_summary:
+  e3:
+    overall_pass: true
+    robustness_classification: ROBUST
+    duration_s: 1.0
+    seeds: [0, 1, 2, 3, 4]
+    speed_delta_negative_seed_count: 5
+    displacement_delta_negative_seed_count: 5
+    trajectory_efficiency_negative_seed_count: 3
+    yaw_abs_change_positive_seed_count: 4
+    aggregate_findings:
+      mean_planar_speed_mm_s:
+        baseline_mean: 13.751281674590993
+        candidate_mean: 12.302040063313584
+        relative_delta_percent_mean: -10.53649998704906
+      planar_displacement_mm:
+        baseline_mean: 13.751281674590993
+        candidate_mean: 12.302040063313584
+        relative_delta_percent_mean: -10.53649998704906
+      planar_path_length_mm:
+        baseline_mean: 19.31485503067457
+        candidate_mean: 17.308442670909542
+        relative_delta_percent_mean: -10.386359062038665
+      trajectory_efficiency:
+        baseline_mean: 0.7119806020699851
+        candidate_mean: 0.7107636180753024
+        relative_delta_percent_mean: -0.16292589177790412
+      heading_yaw_abs_change_rad:
+        baseline_mean: 0.10385794490113649
+        candidate_mean: 0.21120580249246884
+        relative_delta_percent_mean: 260.9787273773441
+      body_height_mean_mm:
+        baseline_mean: 0.9465522152698778
+        candidate_mean: 1.4910686043526398
+        relative_delta_percent_mean: 57.52553496242726
+  e4:
+    overall_pass: true
+    status: PARTIAL_PHENOTYPE_CONCORDANCE
+    scope: "direction-only qualitative adult walking concordance"
+  e5:
+    overall_pass: true
+    scope: "computational reversibility only"
+phenotype_validations:
+  - endpoint_id: adult_walking_speed_velocity
+    behavioral_endpoint: "adult walking speed / velocity / mean speed"
+    simulator_observables:
+      frozen:
+        - mean_planar_speed_mm_s
+      g5:
+        - instantaneous_speed_mm_s
+    support_level: SUPPORTED
+    candidate_result: "Candidate mean planar speed decreased versus paired baseline across all 5 E3 seeds."
+    validation_evidence:
+      - "results/validation/milestone_e3_candidate_robustness.json"
+      - "results/validation/milestone_e4_concordance.json"
+    limitation: "Supported only as qualitative direction-only computational phenotype."
+
+  - endpoint_id: adult_walking_distance
+    behavioral_endpoint: "covered distance / total moving distance"
+    simulator_observables:
+      frozen:
+        - planar_path_length_mm
+        - planar_displacement_mm
+      g5:
+        - cumulative_distance_mm
+    support_level: PARTIALLY_SUPPORTED
+    candidate_result: "Candidate displacement and path length decreased in E3 aggregate summaries; displacement was negative in all 5 paired seeds."
+    validation_evidence:
+      - "results/validation/milestone_e3_candidate_robustness.json"
+      - "results/validation/milestone_e4_concordance.json"
+    limitation: "Path length is close to total distance, but assay geometry, duration, and tracking protocol differ."
+
+  - endpoint_id: adult_actometer_locomotor_activity
+    behavioral_endpoint: "actometer locomotor activity"
+    simulator_observables:
+      frozen:
+        - planar_path_length_mm
+        - mean_planar_speed_mm_s
+      g5:
+        - cumulative_distance_mm
+        - instantaneous_speed_mm_s
+    support_level: PARTIALLY_SUPPORTED
+    candidate_result: "Locomotor output decreased, but no actometer assay is simulated."
+    validation_evidence:
+      - "results/validation/milestone_e3_candidate_robustness.json"
+      - "docs/scientific/literature_database.yaml"
+    limitation: "Actometer activity is not equivalent to short flat-ground path length."
+
+  - endpoint_id: threat_assay_speed
+    behavioral_endpoint: "trial-based threat-assay mean speed"
+    simulator_observables:
+      frozen:
+        - mean_planar_speed_mm_s
+      g5:
+        - instantaneous_speed_mm_s
+    support_level: PARTIALLY_SUPPORTED
+    candidate_result: "Speed is measurable and decreased, but no threat stimulus or trial alignment exists."
+    validation_evidence:
+      - "results/validation/milestone_e3_candidate_robustness.json"
+      - "docs/scientific/literature_database.yaml"
+    limitation: "No stimulus-response phenotype can be validated from frozen evidence."
+
+  - endpoint_id: movement_bout_distance
+    behavioral_endpoint: "distance per movement / per-bout distance"
+    simulator_observables:
+      frozen: []
+      g5:
+        - walking_bouts.distance_mm
+        - walking_bouts.duration_s
+        - bout_count
+        - walking_duty_cycle
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated for the frozen candidate because raw trajectories are not stored in E3/E4/E5 evidence."
+    validation_evidence:
+      - "src/drosophila_pd/metrics/bouts.py"
+      - "tests/test_measurement_extension.py"
+    limitation: "G5 implements the measurement, but no no-rerun candidate evidence exists."
+
+  - endpoint_id: angular_velocity_turning
+    behavioral_endpoint: "angular velocity / time-resolved turning"
+    simulator_observables:
+      frozen:
+        - heading_yaw_change_rad
+        - heading_yaw_abs_change_rad
+      g5:
+        - yaw_rate_rad_s
+        - turn_bouts
+        - cumulative_turning_rad
+        - left_right_asymmetry
+    support_level: NOT_SUPPORTED
+    candidate_result: "Frozen evidence contains run-level yaw change only; E4 explicitly did not force angular velocity concordance."
+    validation_evidence:
+      - "results/validation/milestone_e4_concordance.json"
+      - "src/drosophila_pd/metrics/turning.py"
+    limitation: "G5 yaw-rate metrics require raw orientation time series from a future analyzed rollout."
+
+  - endpoint_id: centrophobism_center_avoidance
+    behavioral_endpoint: "centrophobism / open-field center avoidance"
+    simulator_observables:
+      frozen: []
+      g5:
+        - center_occupancy
+        - border_occupancy
+        - radial_distance_mm
+        - exploration_index
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated for the frozen candidate."
+    validation_evidence:
+      - "src/drosophila_pd/metrics/open_field.py"
+      - "docs/scientific/biological_mapping.yaml"
+    limitation: "Open-field metrics require declared virtual arena geometry and raw trajectories; FlatGroundWorld evidence is not an experimental open-field assay."
+
+  - endpoint_id: negative_geotaxis_sing
+    behavioral_endpoint: "negative geotaxis / SING performance / climbing abilities"
+    simulator_observables:
+      frozen: []
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated."
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/biological_mapping.yaml"
+    limitation: "Requires a separate vertical climbing/SING simulation design."
+
+  - endpoint_id: climbing_behavior
+    behavioral_endpoint: "climbing behavior / climbing assays / climbing impairments"
+    simulator_observables:
+      frozen: []
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated."
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/biological_mapping.yaml"
+    limitation: "No climb success, vertical displacement, climb velocity, or climbing arena metric exists."
+
+  - endpoint_id: freezing_pause_stop_duration
+    behavioral_endpoint: "stop durations / freezing / pause behavior"
+    simulator_observables:
+      frozen: []
+      g5:
+        - pause_bouts.duration_s
+        - pause_count
+        - walking_duty_cycle
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated for the frozen candidate because raw trajectories are absent from frozen evidence."
+    validation_evidence:
+      - "src/drosophila_pd/metrics/bouts.py"
+      - "docs/scientific/literature_database.yaml"
+    limitation: "Requires prespecified pause threshold sensitivity and candidate rerun or raw-array export."
+
+  - endpoint_id: stimulus_reactivity
+    behavioral_endpoint: "trial-based behavioral reactivity"
+    simulator_observables:
+      frozen: []
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated."
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+    limitation: "No sensory stimulus, trial window, or response classifier exists."
+
+  - endpoint_id: per_motor_endpoints
+    behavioral_endpoint: "proboscis extension speed and duration variability"
+    simulator_observables:
+      frozen: []
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated."
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+    limitation: "PER is outside the current whole-body walking simulation."
+
+  - endpoint_id: tremor
+    behavioral_endpoint: "tremor amplitude or frequency"
+    simulator_observables:
+      frozen: []
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not evaluated."
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+    limitation: "No prespecified high-frequency body, limb, joint, or PER oscillation metric exists."
+
+  - endpoint_id: biological_rescue_or_treatment
+    behavioral_endpoint: "L-DOPA, Mucuna, or drug-associated behavioral rescue"
+    simulator_observables:
+      frozen: []
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "E5 reports computational reversibility only; no biological rescue phenotype is validated."
+    validation_evidence:
+      - "results/validation/milestone_e5_computational_rescue.json"
+      - "docs/report/final_report.md:3.7"
+    limitation: "No drug, dopamine, toxin, or pharmacological bridge is implemented."
+
+  - endpoint_id: inter_leg_coordination
+    behavioral_endpoint: "inter-leg coordination phase or gait regularity"
+    simulator_observables:
+      frozen:
+        - adhesion_duty_factor_by_leg
+        - adhesion_transition_count_by_leg
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "Not validated as a behavioral endpoint."
+    validation_evidence:
+      - "docs/scientific/biological_mapping.yaml"
+    limitation: "Adhesion summaries are not inter-leg phase or gait regularity metrics; G3 found no directly curated adult PD gait paper."
+
+  - endpoint_id: body_height_posture
+    behavioral_endpoint: "body or thorax height as a Parkinson phenotype"
+    simulator_observables:
+      frozen:
+        - body_height_mean_mm
+        - body_height_min_mm
+        - body_height_range_mm
+      g5: []
+    support_level: NOT_SUPPORTED
+    candidate_result: "Candidate body height changed substantially, but this is a simulation confound, not a validated biological endpoint."
+    validation_evidence:
+      - "results/validation/milestone_e4_concordance.json"
+      - "docs/report/final_report.md:5.2"
+    limitation: "No curated adult PD body-height endpoint supports interpretation."
+summary:
+  supported_count: 1
+  partially_supported_count: 3
+  not_supported_count: 12
+  main_conclusion: >
+    The current simulator and frozen evidence support a computational phenotype
+    of reduced walking speed and partially support reduced distance-like
+    locomotor output. G5 adds analysis capability for bouts, turning, trajectory,
+    and optional open-field occupancy, but those endpoints are not yet validated
+    for the frozen candidate because raw trajectory arrays are not present in
+    frozen E3/E4/E5 evidence and no rerun was authorized.

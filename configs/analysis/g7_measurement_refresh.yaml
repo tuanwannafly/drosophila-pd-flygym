@@ -1,0 +1,24 @@
+schema_version: 1
+phase: G7
+title: "Measurement-enabled evidence refresh"
+scope: >
+  Configuration note for the G7 evidence package. G7 reruns the frozen E3
+  baseline/candidate conditions only to export raw rollout arrays and G5
+  measurements. It must not overwrite frozen evidence, tune parameters,
+  introduce perturbations, modify controllers, or make biological Parkinson's
+  disease claims.
+
+baseline_config: configs/experiments/healthy_baseline.yaml
+validation_config: configs/experiments/validation/milestone_e3.yaml
+measurement_config: configs/analysis/g5_measurement_extension.yaml
+output_dir: results/validation/g7_measurement_enabled_evidence_refresh
+
+frozen_constraints:
+  seeds: [0, 1, 2, 3, 4]
+  duration_s: 1.0
+  candidate:
+    motor_scale: 0.8
+    coupling_scale: 0.75
+  no_parameter_tuning: true
+  no_new_perturbations: true
+  no_biological_reinterpretation: true

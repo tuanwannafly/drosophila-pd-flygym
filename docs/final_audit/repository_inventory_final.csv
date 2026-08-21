@@ -1,0 +1,42 @@
+category,path,status,release_version,audit_note
+repository,README.md,PASS,v1.0.0,Public overview present
+repository,LICENSE,PASS,v1.0.0,MIT license present
+repository,CITATION.cff,PASS,v1.0.0,Machine-readable citation metadata present
+repository,docs/citation.md,PASS,v1.0.0,Human-readable citation guidance present
+repository,docs/release/v1.0.0.md,PASS,v1.0.0,Release notes present
+community,CONTRIBUTING.md,PASS,v1.0.0,Contribution guidance present
+community,CODE_OF_CONDUCT.md,PASS,v1.0.0,Code of conduct present
+community,SECURITY.md,PASS,v1.0.0,Security policy present
+community,SUPPORT.md,PASS,v1.0.0,Support guidance present
+workflows,.github/workflows/ci.yml,PASS,v1.0.0,Continuous Integration workflow present and previously green
+workflows,.github/workflows/markdown.yml,PASS,v1.0.0,Markdown Validation workflow present and previously green
+source,src/drosophila_pd,PASS,v1.0.0,Scientific implementation frozen
+scripts,scripts,PASS,v1.0.0,Execution entry points frozen
+configs,configs,PASS,v1.0.0,Experiment and analysis configs frozen
+tests,tests,PASS,v1.0.0,Automated tests present
+notebooks,notebooks,PASS,v1.0.0,Historical notebooks preserved
+manuscript,docs/report/final_report.md,PASS,v1.0.0,Canonical manuscript source present
+report,docs/report,PASS,v1.0.0,Modular report package present
+publication,docs/publication,PASS,v1.0.0,Publication package present
+publication,docs/publication_checklist.md,PASS,v1.0.0,Publication checklist present
+submission,docs/submission,PASS,v1.0.0,Journal submission package present
+archive,docs/archive,PASS,v1.0.0,Archive package present
+final_audit,docs/final_audit,PASS,v1.0.0,Certification package present
+release_artifact,dist/Drosophila_PD_FlyGym_Final_Report.docx,PASS,v1.0.0,Final DOCX present and hash-verified
+release_artifact,dist/Drosophila_PD_FlyGym_Final_Report.pdf,PASS,v1.0.0,Final PDF present and hash-verified
+release_artifact,dist/final_report_manifest.json,PASS,v1.0.0,Final report manifest present
+evidence,results/baseline/block_8_12_audit.json,PASS,v1.0.0,Block 8.12 evidence overall_pass true
+evidence,results/baseline/milestone_8b_materialization.json,PASS,v1.0.0,Milestone 8B evidence overall_pass true
+evidence,results/baseline/healthy_baseline.json,PASS,v1.0.0,Milestone C evidence overall_pass true
+evidence,results/perturbations/identity.json,PASS,v1.0.0,Milestone D identity evidence overall_pass true
+evidence,results/perturbations/action_scale_080.json,PASS,v1.0.0,Milestone D action-scale evidence overall_pass true
+evidence,results/sweeps/milestone_e1.json,PASS,v1.0.0,Milestone E1 evidence overall_pass true
+evidence,results/sweeps/milestone_e2_combined.json,PASS,v1.0.0,Milestone E2 evidence overall_pass true
+evidence,results/validation/milestone_e3_candidate_robustness.json,PASS,v1.0.0,Milestone E3 evidence overall_pass true
+evidence,results/validation/milestone_e4_concordance.json,PASS,v1.0.0,Milestone E4 evidence overall_pass true
+evidence,results/validation/milestone_e5_computational_rescue.json,PASS,v1.0.0,Milestone E5 evidence overall_pass true
+evidence,results/analysis/milestone_e6_synthesis.json,PASS,v1.0.0,Milestone E6 evidence overall_pass true
+figures,results/analysis/figures,PASS,v1.0.0,Four E6 figures present
+tables,results/analysis/tables,PASS,v1.0.0,Five E6 tables present
+tag,v1.0.0,PASS,v1.0.0,Local and remote tag resolve to 260f858628d49032e7487f831bf509f93fc7ed29
+branch,origin/main,PASS,v1.0.0,Remote main resolves to f921eb44d12a8021008e18337461fb7b0c5c5c15 at audit base

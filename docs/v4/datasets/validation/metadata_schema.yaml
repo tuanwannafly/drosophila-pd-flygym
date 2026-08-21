@@ -1,0 +1,5 @@
+schema_id: drosophila-pd-flygym.dataset.metadata.validation
+inherits: ../metadata_schema.yaml
+required_additional:
+  - validation_type
+  - observed_status

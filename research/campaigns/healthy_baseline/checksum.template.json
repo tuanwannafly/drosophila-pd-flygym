@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "status": "PLANNING_ONLY",
+  "algorithm": "sha256",
+  "source_commit": "REPLACE_WITH_EXECUTION_COMMIT",
+  "files": {},
+  "policy": "Every curated output must be hashed after writing; planning templates contain no output hashes."
+}

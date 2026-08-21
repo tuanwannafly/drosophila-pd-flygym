@@ -1,0 +1,111 @@
+# Milestone E5 - preregistered computational rescue.
+# This is a computational reversibility experiment, not biological rescue.
+
+experiment_id: milestone_e5_preregistered_computational_rescue
+
+validation_design:
+  duration_s: 1.0
+  seeds: [0, 1, 2, 3, 4]
+  timestep_policy: "Use the canonical baseline timestep unchanged."
+  rendering_required: false
+  fresh_fly_world_simulation_per_condition: true
+
+frozen_states:
+  control:
+    motor_scale: 1.0
+    coupling_scale: 1.0
+  impaired_candidate:
+    motor_scale: 0.8
+    coupling_scale: 0.75
+    source: "Frozen E3/E4 computational candidate."
+  selected_before_execution: true
+  post_hoc_tuning_permitted: false
+
+midpoint_derivation:
+  motor_partial_rescue:
+    formula: "(0.8 + 1.0) / 2"
+    impaired_value: 0.8
+    control_value: 1.0
+    midpoint_value: 0.9
+  coupling_partial_rescue:
+    formula: "(0.75 + 1.0) / 2"
+    impaired_value: 0.75
+    control_value: 1.0
+    midpoint_value: 0.875
+  derivation_selected_before_execution: true
+  alternative_rescue_values_permitted: false
+
+primary_endpoints:
+  - mean_planar_speed_mm_s
+  - planar_path_length_mm
+
+secondary_endpoints:
+  - planar_displacement_mm
+  - trajectory_efficiency
+  - heading_yaw_abs_change_rad
+  - body_height_min_mm
+  - body_height_mean_mm
+  - body_height_range_mm
+  - joint_angle_action_abs_mean
+  - adhesion_summary
+
+recovery_metric:
+  formula_for_decreased_impairment: "(rescue - impaired) / (control - impaired)"
+  zero_denominator_policy: "Report recovery_fraction as null and mark denominator_near_zero."
+  biological_percentage_claim_permitted: false
+
+classification_policy:
+  allowed_labels:
+    - DIRECTIONALLY_RESCUED
+    - MIXED
+    - NO_RESCUE
+    - UNSTABLE
+  threshold_fraction_required: null
+  no_arbitrary_recovery_thresholds: true
+  biological_rescue_claim_permitted: false
+
+scientific_frame:
+  validation_question: "Do preregistered partial returns toward unperturbed motor and/or coupling proxy values move supported locomotor-output endpoints back toward control?"
+  unsupported_mapping: "No dopamine concentration, dopaminergic neuron-loss percentage, disease stage, Parkinson's condition, pharmacological rescue, L-DOPA response, or biological recovery percentage is defined."
+  pass_semantics: "PASS means software/simulation execution and reporting checks completed; it does not require a desired rescue outcome."
+
+conditions:
+  - condition_id: control
+    category: control
+    motor_scale: 1.0
+    coupling_scale: 1.0
+    description: "Unperturbed control condition."
+
+  - condition_id: impaired_candidate
+    category: impaired_candidate
+    motor_scale: 0.8
+    coupling_scale: 0.75
+    description: "Frozen E3/E4 computational candidate."
+
+  - condition_id: motor_partial_rescue
+    category: partial_rescue
+    rescue_axis: motor
+    motor_scale: 0.9
+    coupling_scale: 0.75
+    description: "A priori midpoint return of motor proxy only."
+
+  - condition_id: coordination_partial_rescue
+    category: partial_rescue
+    rescue_axis: coordination
+    motor_scale: 0.8
+    coupling_scale: 0.875
+    description: "A priori midpoint return of coordination proxy only."
+
+  - condition_id: combined_partial_rescue
+    category: partial_rescue
+    rescue_axis: combined
+    motor_scale: 0.9
+    coupling_scale: 0.875
+    description: "A priori midpoint return of both computational proxies."
+
+  - condition_id: full_computational_restoration_reference
+    category: restoration_reference
+    rescue_axis: reference
+    motor_scale: 1.0
+    coupling_scale: 1.0
+    description: "Software/control-equivalence reference, not full biological rescue."

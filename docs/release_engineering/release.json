@@ -1,0 +1,128 @@
+{
+  "architecture": {
+    "api_module_count": 217,
+    "dependency_edge_count": 73,
+    "module_count": 217,
+    "plugin_capability_count": 8,
+    "plugin_hook_count": 12
+  },
+  "benchmark": {
+    "reason": "No simulation or scientific workload is executed by release tooling.",
+    "stages": [
+      {
+        "name": "Import",
+        "status": "caller-supplied operation required"
+      },
+      {
+        "name": "Workspace",
+        "status": "caller-supplied operation required"
+      },
+      {
+        "name": "Plugin",
+        "status": "caller-supplied operation required"
+      },
+      {
+        "name": "Analysis",
+        "status": "caller-supplied operation required"
+      },
+      {
+        "name": "Statistics",
+        "status": "caller-supplied operation required"
+      },
+      {
+        "name": "Comparison",
+        "status": "caller-supplied operation required"
+      },
+      {
+        "name": "Export",
+        "status": "caller-supplied operation required"
+      },
+      {
+        "name": "Verification",
+        "status": "caller-supplied operation required"
+      }
+    ],
+    "status": "not_run"
+  },
+  "build_information": {
+    "module_examples": [
+      "src/drosophila_pd/__init__.py",
+      "src/drosophila_pd/analysis/__init__.py",
+      "src/drosophila_pd/analysis/evidence_synthesis.py",
+      "src/drosophila_pd/anatomy/__init__.py",
+      "src/drosophila_pd/anatomy/audit.py",
+      "src/drosophila_pd/anatomy/materialization.py",
+      "src/drosophila_pd/anatomy/orientation.py",
+      "src/drosophila_pd/assays/__init__.py",
+      "src/drosophila_pd/assays/base.py",
+      "src/drosophila_pd/assays/freezing.py",
+      "src/drosophila_pd/assays/gait.py",
+      "src/drosophila_pd/assays/open_field.py"
+    ],
+    "python_module_count": 152,
+    "script_count": 18,
+    "source_root": ".",
+    "test_count": 95,
+    "web_module_count": 65
+  },
+  "compatibility": [
+    {
+      "component": "Python",
+      "scope": "repository tests",
+      "tested_target": "3.12"
+    },
+    {
+      "component": "FlyGym",
+      "scope": "Colab simulation checkpoints",
+      "tested_target": "2.1.0"
+    },
+    {
+      "component": "MuJoCo",
+      "scope": "Colab simulation checkpoints",
+      "tested_target": "3.9.0"
+    },
+    {
+      "component": "Web modules",
+      "scope": "web platform",
+      "tested_target": "browser ESM"
+    }
+  ],
+  "diagnostics": {
+    "module": "drosophila_pd.debug_utils",
+    "simulation_executed": false,
+    "status": "available"
+  },
+  "health": {
+    "overall_pass": true,
+    "summary": {
+      "fail": 0,
+      "info": 4,
+      "pass": 4,
+      "warn": 0
+    }
+  },
+  "metadata": {
+    "canonical_branch": "main",
+    "flygym": "2.1.0",
+    "generated_at": "2026-08-14T03:38:08.615172+00:00",
+    "mujoco": "3.9.0",
+    "python": "3.12",
+    "source_commit": "cd24cc7cb0f078600ad44b6dda5827491bd3b26e",
+    "version": "v1.0.0"
+  },
+  "migration": {
+    "backward_compatibility": true,
+    "legacy_plugin_registry": "Preserved in web/experiment_workspace.js",
+    "new_modules": [
+      "drosophila_pd.release_engineering",
+      "drosophila_pd.project_health",
+      "drosophila_pd.developer_tooling",
+      "drosophila_pd.debug_utils",
+      "drosophila_pd.benchmarking"
+    ],
+    "scientific_pipeline": "Unchanged; no simulation or evidence regeneration is performed."
+  },
+  "schema_version": 1,
+  "scientific_boundary": "Release tooling only; no new scientific result or biological claim is generated.",
+  "version": "v1.0.0"
+}

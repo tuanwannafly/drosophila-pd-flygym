@@ -1,0 +1,6 @@
+schema_id: drosophila-pd-flygym.dataset.manifest.control
+inherits: ../manifest_schema.yaml
+dataset_type: control
+required_additional:
+  - control_definition
+  - paired_experiment

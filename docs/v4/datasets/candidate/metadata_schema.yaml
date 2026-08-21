@@ -1,0 +1,5 @@
+schema_id: drosophila-pd-flygym.dataset.metadata.candidate
+inherits: ../metadata_schema.yaml
+required_additional:
+  - candidate_id
+  - paired_control_id

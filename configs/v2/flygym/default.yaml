@@ -1,0 +1,31 @@
+# FlyGym 2.1.0 adapter defaults. This file configures construction only.
+fly:
+  name: healthy_baseline
+  factory: canonical_locomotion
+  locomotion_kwargs:
+    joint_stiffness: 0.05
+    joint_damping: 0.06
+    passive_tarsus_stiffness: 7.5
+    passive_tarsus_damping: 0.01
+    actuator_gain: 45.0
+    actuator_forcerange: [-65.0, 65.0]
+    add_adhesion: true
+    adhesion_gain: 40.0
+    colorize: false
+world:
+  kind: flat
+  spawn_position: [0.0, 0.0, 0.5]
+  spawn_orientation: [1.0, 0.0, 0.0, 0.0]
+  add_ground_contact_sensors: false
+simulation:
+  timestep: 0.0001
+renderer:
+  cameras: [track]
+  camera_res: [240, 320]
+  playback_speed: 0.2
+  output_fps: 25
+  buffer_frames: true
+metadata:
+  flygym_version: 2.1.0
+  mujoco_version: 3.9.0
+  scientific_scope: computational simulation integration only

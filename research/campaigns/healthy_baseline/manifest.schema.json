@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/TanVi3001/drosophila-pd-flygym/tree/main/research/campaigns/healthy_baseline/manifest.schema.json",
+  "title": "Healthy Baseline Dataset Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "dataset_id",
+    "dataset_type",
+    "dataset_version",
+    "status",
+    "source_commit",
+    "configuration",
+    "entries",
+    "checksums",
+    "citation",
+    "scientific_scope"
+  ],
+  "properties": {
+    "dataset_id": {"type": "string", "minLength": 1},
+    "dataset_type": {"const": "healthy"},
+    "dataset_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["PLANNING_ONLY", "COMPLETE", "VALIDATED"]},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "configuration": {"type": "string", "minLength": 1},
+    "environment": {"type": "object"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["experiment_id", "relative_path", "byte_size", "sha256"],
+        "properties": {
+          "experiment_id": {"type": "string"},
+          "relative_path": {"type": "string", "pattern": "^(?!/)(?!.*\\\\).+"},
+          "byte_size": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    },
+    "checksums": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "citation": {"type": "string", "minLength": 1},
+    "scientific_scope": {"type": "string", "minLength": 1},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  }
+}

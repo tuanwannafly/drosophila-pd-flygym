@@ -1,0 +1,6 @@
+# Computational configuration only. This file defines no biological threshold.
+bootstrap_replicates: 0
+bootstrap_seed: 0
+index_weights: {}
+index_directions: {}
+behavior: {}

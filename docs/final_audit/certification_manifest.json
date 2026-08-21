@@ -1,0 +1,74 @@
+{
+  "manifest_version": 1,
+  "package": "final_v1_repository_certification",
+  "repository": "drosophila-pd-flygym",
+  "version": "v1.0.0",
+  "audit_date": "2026-08-12",
+  "audit_base_commit": "f921eb44d12a8021008e18337461fb7b0c5c5c15",
+  "release_tag": "v1.0.0",
+  "release_tag_commit": "260f858628d49032e7487f831bf509f93fc7ed29",
+  "manuscript_source_commit": "004488cf7fd5e980137a209d360b977716865e1a",
+  "final_report_build_commit": "82746cf1276d3edf7e8ce3206d83f49b3470e1dd",
+  "e6_synthesis_commit": "53e41d17365f56509ca708ba3352ddf724b0e89a",
+  "certification_status": "PASS",
+  "candidate": {
+    "motor_scale": 0.8,
+    "coupling_scale": 0.75,
+    "status": "frozen computational candidate only"
+  },
+  "scientific_scope": {
+    "model": "computational/phenomenological only",
+    "e4_status": "PARTIAL_PHENOTYPE_CONCORDANCE",
+    "e5_status": "computational reversibility only",
+    "excluded_claims": [
+      "biological Parkinson's disease validation",
+      "dopamine equivalence",
+      "neuron-loss equivalence",
+      "disease-severity mapping",
+      "pharmacological treatment response",
+      "biological rescue",
+      "mechanistic disease equivalence",
+      "inferential statistical significance"
+    ]
+  },
+  "artifact_audit": {
+    "release_artifact_hashes_match_manifest": true,
+    "pdf_page_count": 14,
+    "evidence_reports_checked": 11,
+    "evidence_overall_pass": true,
+    "figures_checked": 4,
+    "tables_checked": 5
+  },
+  "repository_statistics_at_audit_base": {
+    "source_modules": 36,
+    "scripts": 13,
+    "configs": 11,
+    "tests": 18,
+    "notebooks": 2,
+    "figures": 4,
+    "tables": 5,
+    "evidence_reports": 11,
+    "markdown_files_excluding_notebooks": 59,
+    "workflows": 2,
+    "version_controlled_release_artifacts": 3,
+    "tracked_files": 209
+  },
+  "validation": {
+    "compileall": "PASS",
+    "pytest": "105 passed, 3 skipped",
+    "git_diff_check": "PASS",
+    "markdown_links": "PASS",
+    "internal_references": "PASS",
+    "github_actions_at_audit_base": "PASS"
+  },
+  "documents": [
+    "docs/final_audit/repository_statistics.md",
+    "docs/final_audit/repository_certification.md",
+    "docs/final_audit/audit_summary.md",
+    "docs/final_audit/scientific_scope.md",
+    "docs/final_audit/reproducibility_certificate.md",
+    "docs/final_audit/release_certificate.md",
+    "docs/final_audit/repository_inventory_final.csv",
+    "docs/final_audit/certification_manifest.json"
+  ]
+}

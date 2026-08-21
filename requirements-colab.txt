@@ -1,0 +1,6 @@
+# Use a Google Colab runtime with Python 3.12.
+# FlyGym 2.1.0 metadata requires mujoco>=3.9,<3.10; this project targets 3.9.0.
+flygym==2.1.0
+mujoco==3.9.0
+# Required only for the CPU-only E6 report figures.
+matplotlib>=3.8,<4

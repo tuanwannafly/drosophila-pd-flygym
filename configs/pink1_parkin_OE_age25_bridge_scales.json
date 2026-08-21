@@ -1,0 +1,31 @@
+{
+  "model": "dn_rates",
+  "motor_scale": 0.782609,
+  "coupling_scale": 0.5,
+  "forward_rate_healthy": 57.5,
+  "forward_rate_pd": 45.0,
+  "turn_rate_healthy": 5.0,
+  "turn_rate_pd": 2.5,
+  "n_forward_dn": 4,
+  "n_turn_dn": 4,
+  "forward_dn_names": [
+    "P9_oDN1_left",
+    "P9_oDN1_right",
+    "P9_left",
+    "P9_right"
+  ],
+  "turn_dn_names": [
+    "DNa01_right",
+    "DNa01_left",
+    "DNa02_right",
+    "DNa02_left"
+  ],
+  "healthy_csv": "fly-brain\\data\\results\\pd\\healthy_p9_0.1s\\dn_rates.csv",
+  "pd_csv": "fly-brain\\data\\results\\pd\\pink1_parkin_OE_age25_p9_0.1s\\dn_rates.csv",
+  "source": "Gap 2 dn_rates.csv",
+  "clamp_range": [
+    0.0,
+    2.0
+  ],
+  "note": "Relative scale: pd_rate / healthy_rate. Clamped [0, 2]. Computational bridge, not biological mapping."
+}

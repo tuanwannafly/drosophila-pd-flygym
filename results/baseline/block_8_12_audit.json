@@ -1,0 +1,458 @@
+{
+  "checks": {
+    "anatomical_joint_count": {
+      "expected": 68,
+      "observed": 68,
+      "pass": true
+    },
+    "axis_count_pitch": {
+      "expected": 68,
+      "observed": 68,
+      "pass": true
+    },
+    "axis_count_roll": {
+      "expected": 68,
+      "observed": 68,
+      "pass": true
+    },
+    "axis_count_yaw": {
+      "expected": 68,
+      "observed": 68,
+      "pass": true
+    },
+    "axis_counts": {
+      "expected": {
+        "pitch": 68,
+        "roll": 68,
+        "yaw": 68
+      },
+      "observed": {
+        "pitch": 68,
+        "roll": 68,
+        "yaw": 68
+      },
+      "pass": true
+    },
+    "axis_order": {
+      "expected": "PITCH_ROLL_YAW",
+      "observed": "PITCH_ROLL_YAW",
+      "pass": true
+    },
+    "base_skeleton_type": {
+      "expected": "flygym.anatomy.Skeleton",
+      "observed": "flygym.anatomy.Skeleton",
+      "pass": true
+    },
+    "body_segment_count": {
+      "expected": 69,
+      "observed": 69,
+      "pass": true
+    },
+    "fly_type": {
+      "expected": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+      "observed": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+      "pass": true
+    },
+    "flygym_version": {
+      "expected": "2.1.0",
+      "observed": "2.1.0",
+      "pass": true
+    },
+    "jointdof_count": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "jointdof_roundtrip_failure_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "jointdof_roundtrip_supported": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "jointdof_to_mjcfjoint_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "jointdof_to_neutralangle_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "jointdof_unique_name_count": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "leg_jointdof_count_LF": {
+      "expected": 24,
+      "observed": 24,
+      "pass": true
+    },
+    "leg_jointdof_count_LH": {
+      "expected": 24,
+      "observed": 24,
+      "pass": true
+    },
+    "leg_jointdof_count_LM": {
+      "expected": 24,
+      "observed": 24,
+      "pass": true
+    },
+    "leg_jointdof_count_RF": {
+      "expected": 24,
+      "observed": 24,
+      "pass": true
+    },
+    "leg_jointdof_count_RH": {
+      "expected": 24,
+      "observed": 24,
+      "pass": true
+    },
+    "leg_jointdof_count_RM": {
+      "expected": 24,
+      "observed": 24,
+      "pass": true
+    },
+    "leg_jointdof_counts": {
+      "expected": {
+        "LF": 24,
+        "LH": 24,
+        "LM": 24,
+        "RF": 24,
+        "RH": 24,
+        "RM": 24
+      },
+      "observed": {
+        "LF": 24,
+        "LH": 24,
+        "LM": 24,
+        "RF": 24,
+        "RH": 24,
+        "RM": 24
+      },
+      "pass": true
+    },
+    "missing_child_mjcf_body_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "missing_parent_mjcf_body_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_ADHESION": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_CYLINDER": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_DAMPER": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_INTVELOCITY": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_MOTOR": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_MUSCLE": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_POSITION": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_TENDON": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_length_VELOCITY": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "mjcf_actuator_mapping_types": {
+      "expected": [
+        "ADHESION",
+        "CYLINDER",
+        "DAMPER",
+        "INTVELOCITY",
+        "MOTOR",
+        "MUSCLE",
+        "POSITION",
+        "TENDON",
+        "VELOCITY"
+      ],
+      "observed": [
+        "ADHESION",
+        "CYLINDER",
+        "DAMPER",
+        "INTVELOCITY",
+        "MOTOR",
+        "MUSCLE",
+        "POSITION",
+        "TENDON",
+        "VELOCITY"
+      ],
+      "pass": true
+    },
+    "mjcf_body_mapping_count": {
+      "expected": 69,
+      "observed": 69,
+      "pass": true
+    },
+    "mjcf_body_mapping_total": {
+      "expected": 69,
+      "observed": 69,
+      "pass": true
+    },
+    "mujoco_version": {
+      "expected": "3.9.0",
+      "observed": "3.9.0",
+      "pass": true
+    },
+    "neutral_action_mapping_length_ADHESION": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_CYLINDER": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_DAMPER": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_INTVELOCITY": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_MOTOR": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_MUSCLE": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_POSITION": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_TENDON": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_length_VELOCITY": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "neutral_action_mapping_types": {
+      "expected": [
+        "ADHESION",
+        "CYLINDER",
+        "DAMPER",
+        "INTVELOCITY",
+        "MOTOR",
+        "MUSCLE",
+        "POSITION",
+        "TENDON",
+        "VELOCITY"
+      ],
+      "observed": [
+        "ADHESION",
+        "CYLINDER",
+        "DAMPER",
+        "INTVELOCITY",
+        "MOTOR",
+        "MUSCLE",
+        "POSITION",
+        "TENDON",
+        "VELOCITY"
+      ],
+      "pass": true
+    },
+    "non_leg_jointdof_count": {
+      "expected": 60,
+      "observed": 60,
+      "pass": true
+    },
+    "python_major_minor": {
+      "expected": "3.12",
+      "observed": "3.12",
+      "pass": true
+    },
+    "skeleton_after_is_none": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "skeleton_before_is_none": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    }
+  },
+  "expected_actuator_types": [
+    "MOTOR",
+    "POSITION",
+    "VELOCITY",
+    "INTVELOCITY",
+    "DAMPER",
+    "CYLINDER",
+    "MUSCLE",
+    "ADHESION",
+    "TENDON"
+  ],
+  "expected_invariants": {
+    "anatomical_joint_count": 68,
+    "axis_counts": {
+      "pitch": 68,
+      "roll": 68,
+      "yaw": 68
+    },
+    "axis_order": "PITCH_ROLL_YAW",
+    "base_skeleton_type": "flygym.anatomy.Skeleton",
+    "body_segment_count": 69,
+    "fly_type": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+    "flygym_version": "2.1.0",
+    "jointdof_count": 204,
+    "jointdof_roundtrip_failure_count": 0,
+    "jointdof_roundtrip_supported": true,
+    "jointdof_to_mjcfjoint_length": 0,
+    "jointdof_to_neutralangle_length": 0,
+    "jointdof_unique_name_count": 204,
+    "leg_jointdof_counts": {
+      "LF": 24,
+      "LH": 24,
+      "LM": 24,
+      "RF": 24,
+      "RH": 24,
+      "RM": 24
+    },
+    "missing_child_mjcf_body_count": 0,
+    "missing_parent_mjcf_body_count": 0,
+    "mjcf_body_mapping_count": 69,
+    "mjcf_body_mapping_total": 69,
+    "mujoco_version": "3.9.0",
+    "non_leg_jointdof_count": 60,
+    "python_major_minor": "3.12",
+    "skeleton_after_is_none": true,
+    "skeleton_before_is_none": true
+  },
+  "git_commit": "1de7c8bfea84699fee2849d977a393013428739a",
+  "observed": {
+    "anatomical_joint_count": 68,
+    "axis_counts": {
+      "pitch": 68,
+      "roll": 68,
+      "yaw": 68
+    },
+    "axis_order": "PITCH_ROLL_YAW",
+    "base_skeleton_type": "flygym.anatomy.Skeleton",
+    "body_segment_count": 69,
+    "fly_type": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+    "flygym_version": "2.1.0",
+    "jointdof_count": 204,
+    "jointdof_first_names": [
+      "c_thorax-c_head-pitch",
+      "c_thorax-c_head-roll",
+      "c_thorax-c_head-yaw",
+      "c_head-c_rostrum-pitch",
+      "c_head-c_rostrum-roll",
+      "c_head-c_rostrum-yaw",
+      "c_rostrum-c_haustellum-pitch",
+      "c_rostrum-c_haustellum-roll",
+      "c_rostrum-c_haustellum-yaw",
+      "c_head-l_eye-pitch",
+      "c_head-l_eye-roll",
+      "c_head-l_eye-yaw",
+      "c_head-r_eye-pitch",
+      "c_head-r_eye-roll",
+      "c_head-r_eye-yaw"
+    ],
+    "jointdof_roundtrip_failure_count": 0,
+    "jointdof_roundtrip_failure_names": [],
+    "jointdof_roundtrip_supported": true,
+    "jointdof_to_mjcfactuator_by_type_lengths": {
+      "ADHESION": 0,
+      "CYLINDER": 0,
+      "DAMPER": 0,
+      "INTVELOCITY": 0,
+      "MOTOR": 0,
+      "MUSCLE": 0,
+      "POSITION": 0,
+      "TENDON": 0,
+      "VELOCITY": 0
+    },
+    "jointdof_to_mjcfjoint_length": 0,
+    "jointdof_to_neutralaction_by_type_lengths": {
+      "ADHESION": 0,
+      "CYLINDER": 0,
+      "DAMPER": 0,
+      "INTVELOCITY": 0,
+      "MOTOR": 0,
+      "MUSCLE": 0,
+      "POSITION": 0,
+      "TENDON": 0,
+      "VELOCITY": 0
+    },
+    "jointdof_to_neutralangle_length": 0,
+    "jointdof_unique_name_count": 204,
+    "leg_jointdof_counts": {
+      "LF": 24,
+      "LH": 24,
+      "LM": 24,
+      "RF": 24,
+      "RH": 24,
+      "RM": 24
+    },
+    "missing_child_mjcf_body_count": 0,
+    "missing_child_mjcf_body_names": [],
+    "missing_mjcf_body_segment_names": [],
+    "missing_parent_mjcf_body_count": 0,
+    "missing_parent_mjcf_body_names": [],
+    "mjcf_body_mapping_count": 69,
+    "mjcf_body_mapping_total": 69,
+    "mujoco_version": "3.9.0",
+    "non_leg_jointdof_count": 60,
+    "python_major_minor": "3.12",
+    "python_version": "3.12.13",
+    "root_segment": "c_thorax",
+    "skeleton_after_is_none": true,
+    "skeleton_before_is_none": true
+  },
+  "overall_pass": true,
+  "scientific_scope": "This audit validates software/anatomy invariants only. It does not validate a Parkinson's disease model, locomotor biology, or evidence from real flies.",
+  "timestamp": "2026-08-11T07:52:20.320298+00:00"
+}

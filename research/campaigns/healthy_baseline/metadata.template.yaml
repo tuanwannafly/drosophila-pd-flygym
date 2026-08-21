@@ -1,0 +1,21 @@
+experiment_id: Healthy_REPLACE
+campaign_id: experimental_campaign_01_healthy_baseline
+condition: healthy_unperturbed_computational_baseline
+seed: REPLACE_WITH_INTEGER
+configuration: configs/experiments/healthy_baseline.yaml
+source_commit: REPLACE_WITH_EXECUTION_COMMIT
+environment:
+  python: 3.12.x
+  flygym: 2.1.0
+  mujoco: 3.9.0
+timing:
+  duration_s: REPLACE_WITH_PROTOCOL_VALUE
+  timestep_s: REPLACE_WITH_PROTOCOL_VALUE
+expected_outputs:
+  - rollout
+  - measurements
+  - validation
+  - report
+status: PLANNED
+scientific_scope: Unperturbed computational baseline only; not biological validation.
+limitations: []

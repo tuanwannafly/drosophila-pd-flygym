@@ -1,0 +1,639 @@
+{
+  "checks": {
+    "fly_type": {
+      "expected": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+      "observed": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+      "pass": true
+    },
+    "flygym_version": {
+      "expected": "2.1.0",
+      "observed": "2.1.0",
+      "pass": true
+    },
+    "gate_rejects_second_materialization": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "materialization_gate_used": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "materialized_joint_count": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "mujoco_version": {
+      "expected": "3.9.0",
+      "observed": "3.9.0",
+      "pass": true
+    },
+    "post_actuator_mapping_total_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "post_all_neutral_angles_zero": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "post_anatomical_joint_count": {
+      "expected": 68,
+      "observed": 68,
+      "pass": true
+    },
+    "post_axis_counts": {
+      "expected": {
+        "pitch": 68,
+        "roll": 68,
+        "yaw": 68
+      },
+      "observed": {
+        "pitch": 68,
+        "roll": 68,
+        "yaw": 68
+      },
+      "pass": true
+    },
+    "post_body_segment_count": {
+      "expected": 69,
+      "observed": 69,
+      "pass": true
+    },
+    "post_bodyseg_to_mjcfbody_length": {
+      "expected": 69,
+      "observed": 69,
+      "pass": true
+    },
+    "post_created_joint_names_match_skeleton": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "post_joint_mapping_names_match_skeleton": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "post_jointdof_count": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "post_jointdof_to_mjcfjoint_length": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "post_jointdof_to_neutralangle_length": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "post_jointdof_unique_name_count": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "post_missing_child_mjcf_body_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "post_missing_parent_mjcf_body_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "post_mjcf_joint_names_match_skeleton": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "post_mjcf_root_actuator_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "post_mjcf_root_joint_count": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "post_neutralaction_mapping_total_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "post_neutralangle_names_match_skeleton": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "post_skeleton_is_materialized_skeleton": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "post_skeleton_is_none": {
+      "expected": false,
+      "observed": false,
+      "pass": true
+    },
+    "post_skeleton_type": {
+      "expected": "flygym.anatomy.Skeleton",
+      "observed": "flygym.anatomy.Skeleton",
+      "pass": true
+    },
+    "pre_actuator_mapping_total_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "pre_jointdof_to_mjcfjoint_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "pre_jointdof_to_neutralangle_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "pre_mjcf_root_actuator_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "pre_mjcf_root_joint_count": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "pre_neutralaction_mapping_total_length": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "pre_skeleton_is_none": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "python_major_minor": {
+      "expected": "3.12",
+      "observed": "3.12",
+      "pass": true
+    },
+    "source_add_joints_changes_self_skeleton": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "source_add_joints_creates_mjcf_joints": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "source_add_joints_populates_joint_mappings": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "source_add_joints_populates_neutral_angle_mapping": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "source_add_joints_rebuilds_neutral_keyframes": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "transition_actuator_mapping_delta": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "transition_joint_mapping_delta": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "transition_mjcf_root_actuator_delta": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "transition_mjcf_root_joint_delta": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "transition_neutralaction_mapping_delta": {
+      "expected": 0,
+      "observed": 0,
+      "pass": true
+    },
+    "transition_neutralangle_mapping_delta": {
+      "expected": 204,
+      "observed": 204,
+      "pass": true
+    },
+    "transition_skeleton_none_to_materialized": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    }
+  },
+  "dependency_graph": {
+    "actuator_non_goal": [
+      "Block 8.17 actuator path trace",
+      "FlyGym 2.1.0 BaseFly.add_actuators implementation"
+    ],
+    "materialization_source_boundary": [
+      "Block 8.16 add_joints source trace",
+      "FlyGym 2.1.0 BaseFly.add_joints implementation"
+    ],
+    "post_materialization_state": [
+      "Explicit gate calls fly.add_joints(base_skeleton) exactly once",
+      "Validate skeleton, MJCF joint, neutral-angle, and actuator mappings"
+    ],
+    "pre_materialization_state": [
+      "Block 8.12 frozen invariants",
+      "Blocks 8.14, 8.15, 8.18, 8.19B read-only structural audits"
+    ]
+  },
+  "expected_milestone": {
+    "fly_type": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+    "flygym_version": "2.1.0",
+    "gate_rejects_second_materialization": true,
+    "materialization_gate_used": true,
+    "materialized_joint_count": 204,
+    "mujoco_version": "3.9.0",
+    "post_actuator_mapping_total_length": 0,
+    "post_all_neutral_angles_zero": true,
+    "post_anatomical_joint_count": 68,
+    "post_axis_counts": {
+      "pitch": 68,
+      "roll": 68,
+      "yaw": 68
+    },
+    "post_body_segment_count": 69,
+    "post_bodyseg_to_mjcfbody_length": 69,
+    "post_created_joint_names_match_skeleton": true,
+    "post_joint_mapping_names_match_skeleton": true,
+    "post_jointdof_count": 204,
+    "post_jointdof_to_mjcfjoint_length": 204,
+    "post_jointdof_to_neutralangle_length": 204,
+    "post_jointdof_unique_name_count": 204,
+    "post_missing_child_mjcf_body_count": 0,
+    "post_missing_parent_mjcf_body_count": 0,
+    "post_mjcf_joint_names_match_skeleton": true,
+    "post_mjcf_root_actuator_count": 0,
+    "post_mjcf_root_joint_count": 204,
+    "post_neutralaction_mapping_total_length": 0,
+    "post_neutralangle_names_match_skeleton": true,
+    "post_skeleton_is_materialized_skeleton": true,
+    "post_skeleton_is_none": false,
+    "post_skeleton_type": "flygym.anatomy.Skeleton",
+    "pre_actuator_mapping_total_length": 0,
+    "pre_jointdof_to_mjcfjoint_length": 0,
+    "pre_jointdof_to_neutralangle_length": 0,
+    "pre_mjcf_root_actuator_count": 0,
+    "pre_mjcf_root_joint_count": 0,
+    "pre_neutralaction_mapping_total_length": 0,
+    "pre_skeleton_is_none": true,
+    "python_major_minor": "3.12",
+    "source_add_joints_changes_self_skeleton": true,
+    "source_add_joints_creates_mjcf_joints": true,
+    "source_add_joints_populates_joint_mappings": true,
+    "source_add_joints_populates_neutral_angle_mapping": true,
+    "source_add_joints_rebuilds_neutral_keyframes": true,
+    "transition_actuator_mapping_delta": 0,
+    "transition_joint_mapping_delta": 204,
+    "transition_mjcf_root_actuator_delta": 0,
+    "transition_mjcf_root_joint_delta": 204,
+    "transition_neutralaction_mapping_delta": 0,
+    "transition_neutralangle_mapping_delta": 204,
+    "transition_skeleton_none_to_materialized": true
+  },
+  "git_commit": "a43823a80149c671691b8324037bbd9e2f30542c",
+  "historical_blocks": [
+    {
+      "block": "8.14",
+      "classification": "READ_ONLY",
+      "purpose": "Create a local base skeleton via _get_base_skeleton(), inspect skeleton/MJCF body coverage, and confirm joint mappings remain empty."
+    },
+    {
+      "block": "8.15",
+      "classification": "READ_ONLY",
+      "purpose": "Use Skeleton.iter_jointdofs() to verify 204 unique JointDOFs, axis counts, leg counts, body coverage, and empty mappings."
+    },
+    {
+      "block": "8.16",
+      "classification": "DIAGNOSTIC_ONLY",
+      "purpose": "Inspect and disassemble BaseFly.add_joints() to locate the materialization boundary without calling it."
+    },
+    {
+      "block": "8.17",
+      "classification": "DIAGNOSTIC_ONLY",
+      "purpose": "Inspect BaseFly.add_actuators(), actuator enums, actuator mappings, and MJCF actuator state without creating actuators."
+    },
+    {
+      "block": "8.18",
+      "classification": "READ_ONLY",
+      "purpose": "Compare pre-materialization MJCF joint inventory with skeleton JointDOFs and confirm no MJCF joints or joint mappings exist yet."
+    },
+    {
+      "block": "8.19A",
+      "classification": "DIAGNOSTIC_ONLY",
+      "purpose": "Discover Skeleton traversal APIs and verify the pre-materialization MJCF/body mapping state."
+    },
+    {
+      "block": "8.19B",
+      "classification": "READ_ONLY",
+      "purpose": "Verify body segments, anatomical joints, JointDOFs, parent/child coverage, and the pre-materialization MJCF joint state."
+    }
+  ],
+  "observed": {
+    "fly_type": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+    "flygym_version": "2.1.0",
+    "historical_comparison": [
+      {
+        "blocks": "8.14/8.15/8.19B",
+        "canonical_invariant": {
+          "post_jointdofs": 204,
+          "pre_anatomical_joints": 68,
+          "pre_body_segments": 69,
+          "pre_jointdofs": 204
+        },
+        "discrepancy": null,
+        "equivalent": true,
+        "historical_invariant": "Local base skeleton exposes 69 body segments, 68 anatomical joints, and 204 JointDOFs.",
+        "source_api_justification": "Skeleton.iter_jointdofs() and Skeleton anatomical/body collections."
+      },
+      {
+        "blocks": "8.14/8.15/8.18/8.19",
+        "canonical_invariant": {
+          "pre_joint_mapping": 0,
+          "pre_neutral_mapping": 0,
+          "pre_skeleton_is_none": true
+        },
+        "discrepancy": null,
+        "equivalent": true,
+        "historical_invariant": "Before materialization, fly.skeleton is None and joint mappings are empty.",
+        "source_api_justification": "BaseFly initializes skeleton to None and joint mappings to empty dicts."
+      },
+      {
+        "blocks": "8.16",
+        "canonical_invariant": {
+          "changes_self_skeleton": true,
+          "creates_mjcf_joints": true,
+          "populates_joint_mappings": true
+        },
+        "discrepancy": null,
+        "equivalent": true,
+        "historical_invariant": "BaseFly.add_joints() is the materialization boundary.",
+        "source_api_justification": "Source inspection of BaseFly.add_joints()."
+      },
+      {
+        "blocks": "8.17",
+        "canonical_invariant": {
+          "post_actuator_mapping_total": 0,
+          "post_mjcf_root_actuators": 0
+        },
+        "discrepancy": null,
+        "equivalent": true,
+        "historical_invariant": "Actuator path is inspected but actuators are not created.",
+        "source_api_justification": "Milestone 8B never calls BaseFly.add_actuators()."
+      },
+      {
+        "blocks": "8.18/8.19",
+        "canonical_invariant": {
+          "post_mapping_names_match": true,
+          "post_mjcf_root_joints": 204,
+          "pre_mjcf_root_joints": 0
+        },
+        "discrepancy": "Historical cells stopped before the mutating call; this milestone executes it once by explicit authorization.",
+        "equivalent": true,
+        "historical_invariant": "Pre-materialization MJCF joints are absent; after the authorized gate, every skeleton JointDOF has a matching MJCF joint.",
+        "source_api_justification": "BaseFly.add_joints() adds hinge joints and updates joint mappings."
+      }
+    ],
+    "materialization": {
+      "created_joint_count": 204,
+      "created_joint_first_names": [
+        "c_thorax-c_head-pitch",
+        "c_thorax-c_head-roll",
+        "c_thorax-c_head-yaw",
+        "c_head-c_rostrum-pitch",
+        "c_head-c_rostrum-roll",
+        "c_head-c_rostrum-yaw",
+        "c_rostrum-c_haustellum-pitch",
+        "c_rostrum-c_haustellum-roll",
+        "c_rostrum-c_haustellum-yaw",
+        "c_head-l_eye-pitch",
+        "c_head-l_eye-roll",
+        "c_head-l_eye-yaw",
+        "c_head-r_eye-pitch",
+        "c_head-r_eye-roll",
+        "c_head-r_eye-yaw"
+      ],
+      "gate_function": "materialize_joints_explicit_gate",
+      "operation": "fly.add_joints(base_skeleton)"
+    },
+    "mujoco_version": "3.9.0",
+    "post": {
+      "actuator_mapping_total_length": 0,
+      "all_neutral_angles_zero": true,
+      "anatomical_joint_count": 68,
+      "axis_counts": {
+        "pitch": 68,
+        "roll": 68,
+        "yaw": 68
+      },
+      "body_segment_count": 69,
+      "bodyseg_to_mjcfbody_length": 69,
+      "created_joint_names_match_skeleton": true,
+      "joint_mapping_names_match_skeleton": true,
+      "jointdof_count": 204,
+      "jointdof_first_names": [
+        "c_thorax-c_head-pitch",
+        "c_thorax-c_head-roll",
+        "c_thorax-c_head-yaw",
+        "c_head-c_rostrum-pitch",
+        "c_head-c_rostrum-roll",
+        "c_head-c_rostrum-yaw",
+        "c_rostrum-c_haustellum-pitch",
+        "c_rostrum-c_haustellum-roll",
+        "c_rostrum-c_haustellum-yaw",
+        "c_head-l_eye-pitch",
+        "c_head-l_eye-roll",
+        "c_head-l_eye-yaw",
+        "c_head-r_eye-pitch",
+        "c_head-r_eye-roll",
+        "c_head-r_eye-yaw"
+      ],
+      "jointdof_to_mjcfactuator_by_type_lengths": {
+        "ADHESION": 0,
+        "CYLINDER": 0,
+        "DAMPER": 0,
+        "INTVELOCITY": 0,
+        "MOTOR": 0,
+        "MUSCLE": 0,
+        "POSITION": 0,
+        "TENDON": 0,
+        "VELOCITY": 0
+      },
+      "jointdof_to_mjcfjoint_length": 204,
+      "jointdof_to_neutralaction_by_type_lengths": {
+        "ADHESION": 0,
+        "CYLINDER": 0,
+        "DAMPER": 0,
+        "INTVELOCITY": 0,
+        "MOTOR": 0,
+        "MUSCLE": 0,
+        "POSITION": 0,
+        "TENDON": 0,
+        "VELOCITY": 0
+      },
+      "jointdof_to_neutralangle_length": 204,
+      "jointdof_unique_name_count": 204,
+      "missing_child_mjcf_body_count": 0,
+      "missing_child_mjcf_body_names": [],
+      "missing_parent_mjcf_body_count": 0,
+      "missing_parent_mjcf_body_names": [],
+      "mjcf_joint_names_match_skeleton": true,
+      "mjcf_root_actuator_count": 0,
+      "mjcf_root_joint_count": 204,
+      "neutralaction_mapping_total_length": 0,
+      "neutralangle_names_match_skeleton": true,
+      "skeleton_is_materialized_skeleton": true,
+      "skeleton_is_none": false,
+      "skeleton_type": "flygym.anatomy.Skeleton"
+    },
+    "pre": {
+      "actuator_mapping_total_length": 0,
+      "anatomical_joint_count": 68,
+      "axis_counts": {
+        "pitch": 68,
+        "roll": 68,
+        "yaw": 68
+      },
+      "axis_order": "PITCH_ROLL_YAW",
+      "base_skeleton_type": "flygym.anatomy.Skeleton",
+      "body_segment_count": 69,
+      "fly_type": "flygym.compose.fly.neuromechfly.NeuroMechFly",
+      "flygym_version": "2.1.0",
+      "jointdof_count": 204,
+      "jointdof_first_names": [
+        "c_thorax-c_head-pitch",
+        "c_thorax-c_head-roll",
+        "c_thorax-c_head-yaw",
+        "c_head-c_rostrum-pitch",
+        "c_head-c_rostrum-roll",
+        "c_head-c_rostrum-yaw",
+        "c_rostrum-c_haustellum-pitch",
+        "c_rostrum-c_haustellum-roll",
+        "c_rostrum-c_haustellum-yaw",
+        "c_head-l_eye-pitch",
+        "c_head-l_eye-roll",
+        "c_head-l_eye-yaw",
+        "c_head-r_eye-pitch",
+        "c_head-r_eye-roll",
+        "c_head-r_eye-yaw"
+      ],
+      "jointdof_roundtrip_failure_count": 0,
+      "jointdof_roundtrip_failure_names": [],
+      "jointdof_roundtrip_supported": true,
+      "jointdof_to_mjcfactuator_by_type_lengths": {
+        "ADHESION": 0,
+        "CYLINDER": 0,
+        "DAMPER": 0,
+        "INTVELOCITY": 0,
+        "MOTOR": 0,
+        "MUSCLE": 0,
+        "POSITION": 0,
+        "TENDON": 0,
+        "VELOCITY": 0
+      },
+      "jointdof_to_mjcfjoint_length": 0,
+      "jointdof_to_neutralaction_by_type_lengths": {
+        "ADHESION": 0,
+        "CYLINDER": 0,
+        "DAMPER": 0,
+        "INTVELOCITY": 0,
+        "MOTOR": 0,
+        "MUSCLE": 0,
+        "POSITION": 0,
+        "TENDON": 0,
+        "VELOCITY": 0
+      },
+      "jointdof_to_neutralangle_length": 0,
+      "jointdof_unique_name_count": 204,
+      "leg_jointdof_counts": {
+        "LF": 24,
+        "LH": 24,
+        "LM": 24,
+        "RF": 24,
+        "RH": 24,
+        "RM": 24
+      },
+      "missing_child_mjcf_body_count": 0,
+      "missing_child_mjcf_body_names": [],
+      "missing_mjcf_body_segment_names": [],
+      "missing_parent_mjcf_body_count": 0,
+      "missing_parent_mjcf_body_names": [],
+      "mjcf_body_mapping_count": 69,
+      "mjcf_body_mapping_total": 69,
+      "mjcf_root_actuator_count": 0,
+      "mjcf_root_joint_count": 0,
+      "mujoco_version": "3.9.0",
+      "neutralaction_mapping_total_length": 0,
+      "non_leg_jointdof_count": 60,
+      "python_major_minor": "3.12",
+      "python_version": "3.12.13",
+      "root_segment": "c_thorax",
+      "skeleton_after_is_none": true,
+      "skeleton_before_is_none": true
+    },
+    "python_major_minor": "3.12",
+    "python_version": "3.12.13",
+    "source": {
+      "docstring_first_line": "Add joints to the fly model based on a skeleton definition.",
+      "found": true,
+      "owner": "flygym.compose.fly.base_fly.BaseFly",
+      "owner_signature": "(self, skeleton: flygym.anatomy.Skeleton, neutral_pose: flygym.compose.pose.KinematicPose | flygym.compose.pose.KinematicPosePreset | None = None, *, stiffness: float = 10.0, damping: float = 0.5, armature: float = 1e-06, **kwargs: Any) -> dict[flygym.anatomy.JointDOF, mujoco._specs.MjsJoint]",
+      "signature": "(skeleton: flygym.anatomy.Skeleton, neutral_pose: flygym.compose.pose.KinematicPose | flygym.compose.pose.KinematicPosePreset | None = None, *, stiffness: float = 10.0, damping: float = 0.5, armature: float = 1e-06, **kwargs: Any) -> dict[flygym.anatomy.JointDOF, mujoco._specs.MjsJoint]",
+      "source_available": true,
+      "source_error": null,
+      "source_facts": {
+        "changes_self_skeleton": true,
+        "creates_mjcf_joints": true,
+        "parse_error": null,
+        "populates_joint_mappings": true,
+        "populates_neutral_angle_mapping": true,
+        "rebuilds_neutral_keyframes": true
+      },
+      "source_file": "/usr/local/lib/python3.12/dist-packages/flygym/compose/fly/base_fly.py",
+      "source_start_line": 347
+    },
+    "transition": {
+      "actuator_mapping_delta": 0,
+      "joint_mapping_delta": 204,
+      "materialization_gate_used": true,
+      "mjcf_root_actuator_delta": 0,
+      "mjcf_root_joint_delta": 204,
+      "neutralaction_mapping_delta": 0,
+      "neutralangle_mapping_delta": 204,
+      "skeleton_none_to_materialized": true
+    }
+  },
+  "overall_pass": true,
+  "scientific_scope": "Milestone 8B validates FlyGym/NeuroMechFly joint materialization and post-materialization anatomy mappings only. It does not create actuators, run locomotion, implement controllers, or validate a Parkinson's disease model.",
+  "timestamp": "2026-08-11T08:37:46.034415+00:00"
+}

@@ -1,0 +1,2942 @@
+{
+  "artifact_labels": [
+    "E1 computational proxy response curves",
+    "E2 combined computational condition comparison",
+    "E3 paired multi-seed computational robustness",
+    "E5 computational reversibility endpoints"
+  ],
+  "artifacts": {
+    "figures": [
+      "results/analysis/figures/e1_parameter_response.png",
+      "results/analysis/figures/e2_condition_comparison.png",
+      "results/analysis/figures/e3_paired_seed_robustness.png",
+      "results/analysis/figures/e5_computational_reversibility.png"
+    ],
+    "tables": [
+      "results/analysis/tables/evidence_manifest.csv",
+      "results/analysis/tables/e1_parameter_response.csv",
+      "results/analysis/tables/e2_condition_summary.csv",
+      "results/analysis/tables/e3_seed_summary.csv",
+      "results/analysis/tables/e5_reversibility_summary.csv"
+    ]
+  },
+  "baseline_numerical_summary": {
+    "actuation": {
+      "actuator_type": "position",
+      "adhesion_actuator_count": 6,
+      "compiled_mj_model_nu": 48,
+      "position_actuator_count": 42
+    },
+    "environment": {
+      "flygym_version": "2.1.0",
+      "mujoco_version": "3.9.0",
+      "python_version": "3.12.13"
+    },
+    "metrics": {
+      "body_height_mean_mm": 0.946592192150494,
+      "body_height_min_mm": 0.7660532202481788,
+      "body_height_range_mm": 0.4241419609713478,
+      "derived_metrics_are_finite": true,
+      "heading_yaw_change_rad": 0.2342730946151257,
+      "joint_angle_action_abs_mean": 1.0243701362137825,
+      "mean_planar_speed_mm_s": 12.568372100573873,
+      "observations_are_finite": true,
+      "planar_displacement_mm": 6.284186050286936,
+      "planar_path_length_mm": null,
+      "trajectory_efficiency": null
+    },
+    "simulation": {
+      "executed_duration_s": 0.5,
+      "ground_contact_sensors_enabled": false,
+      "rendering_enabled": false,
+      "requested_duration_s": 0.5,
+      "simulation_type": "flygym.simulation.Simulation",
+      "step_count": 5000,
+      "timestep_s": 0.0001,
+      "warmup_duration_s": 0.05,
+      "world_type": "flygym.compose.world.flat_ground.FlatGroundWorld"
+    },
+    "source_experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+    "source_git_commit": "91bc44c25dd25ea1ac409001efafc74dda018ce8"
+  },
+  "checks": {
+    "artifact_generation_completed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "baseline_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "baseline_environment_target": {
+      "expected": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "observed": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "pass": true
+    },
+    "baseline_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "baseline_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "baseline_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e1_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e1_condition_count": {
+      "expected": 10,
+      "observed": 10,
+      "pass": true
+    },
+    "e1_conditions_completed_and_passed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e1_environment_target": {
+      "expected": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "observed": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "pass": true
+    },
+    "e1_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e1_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e1_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e2_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e2_condition_count": {
+      "expected": 9,
+      "observed": 9,
+      "pass": true
+    },
+    "e2_conditions_completed_and_passed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e2_environment_target": {
+      "expected": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "observed": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "pass": true
+    },
+    "e2_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e2_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e2_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e3_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e3_environment_target": {
+      "expected": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "observed": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "pass": true
+    },
+    "e3_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e3_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e3_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e3_seed_pair_count": {
+      "expected": 5,
+      "observed": 5,
+      "pass": true
+    },
+    "e3_seed_pairs_completed_and_passed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e4_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e4_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e4_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e4_references_e3_provenance": {
+      "expected": "730ab3acd8e5535b93f320a62c19080feca0448f",
+      "observed": "730ab3acd8e5535b93f320a62c19080feca0448f",
+      "pass": true
+    },
+    "e4_references_passing_e3": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e4_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e5_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e5_environment_target": {
+      "expected": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "observed": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "pass": true
+    },
+    "e5_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e5_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e5_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e5_seed_run_count": {
+      "expected": 5,
+      "observed": 5,
+      "pass": true
+    },
+    "e5_seed_runs_completed_and_passed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "frozen_candidate_e2_condition_present": {
+      "expected": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "observed": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "pass": true
+    },
+    "frozen_candidate_e3": {
+      "expected": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "observed": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "pass": true
+    },
+    "frozen_candidate_e4": {
+      "expected": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "observed": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "pass": true
+    },
+    "frozen_candidate_e5": {
+      "expected": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "observed": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "pass": true
+    },
+    "no_prohibited_claims_in_artifact_labels": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_action_scale_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_action_scale_environment_target": {
+      "expected": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "observed": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "pass": true
+    },
+    "perturbation_action_scale_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_action_scale_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_action_scale_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_identity_all_top_level_checks_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_identity_environment_target": {
+      "expected": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "observed": {
+        "flygym": "2.1.0",
+        "mujoco": "3.9.0",
+        "python": "3.12"
+      },
+      "pass": true
+    },
+    "perturbation_identity_git_provenance_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_identity_overall_pass": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "perturbation_identity_schema_keys_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "scientific_boundary_fields_present": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    }
+  },
+  "e1_parameter_response_summary": {
+    "families": {
+      "coordination_proxy": {
+        "condition_order": [
+          "coordination_proxy_scale_100",
+          "coordination_proxy_scale_075",
+          "coordination_proxy_scale_050",
+          "coordination_proxy_scale_025",
+          "coordination_proxy_scale_000"
+        ],
+        "metrics": {
+          "body_height_mean_mm": {
+            "observed_monotonicity": "non_monotonic_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 0.946592192150494,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": 7.875226562603643e-05,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 0.94667094441612,
+                "parameter_value": 0.75,
+                "relative_delta": 8.319555800172499e-05
+              },
+              {
+                "absolute_delta": 0.00984129236122544,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 0.9564334845117194,
+                "parameter_value": 0.5,
+                "relative_delta": 0.01039654926676262
+              },
+              {
+                "absolute_delta": 0.0067188635186664625,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 0.9533110556691604,
+                "parameter_value": 0.25,
+                "relative_delta": 0.007097949438397928
+              },
+              {
+                "absolute_delta": 0.006075453845183265,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 0.9526676459956772,
+                "parameter_value": 0.0,
+                "relative_delta": 0.006418237859516761
+              }
+            ]
+          },
+          "body_height_min_mm": {
+            "observed_monotonicity": "non_monotonic_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 0.7660532202481788,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": 0.0169284098728415,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 0.7829816301210203,
+                "parameter_value": 0.75,
+                "relative_delta": 0.02209821644944876
+              },
+              {
+                "absolute_delta": 0.011954526223977635,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 0.7780077464721564,
+                "parameter_value": 0.5,
+                "relative_delta": 0.015605346871467649
+              },
+              {
+                "absolute_delta": -0.02863979104080605,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 0.7374134292073727,
+                "parameter_value": 0.25,
+                "relative_delta": -0.0373861636291113
+              },
+              {
+                "absolute_delta": -0.10767365744888069,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 0.6583795627992981,
+                "parameter_value": 0.0,
+                "relative_delta": -0.14055636684615408
+              }
+            ]
+          },
+          "body_height_range_mm": {
+            "observed_monotonicity": "non_monotonic_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 0.4241419609713478,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -0.015998768420061982,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 0.40814319255128584,
+                "parameter_value": 0.75,
+                "relative_delta": -0.03772031511200268
+              },
+              {
+                "absolute_delta": -0.009987061254002838,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 0.414154899717345,
+                "parameter_value": 0.5,
+                "relative_delta": -0.023546506059270795
+              },
+              {
+                "absolute_delta": 0.031880635423997106,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 0.4560225963953449,
+                "parameter_value": 0.25,
+                "relative_delta": 0.07516501161777471
+              },
+              {
+                "absolute_delta": 0.11229767812762981,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 0.5364396390989776,
+                "parameter_value": 0.0,
+                "relative_delta": 0.26476436773775347
+              }
+            ]
+          },
+          "heading_yaw_change_rad": {
+            "observed_monotonicity": "nondecreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 0.2342730946151257,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": 0.056941965741110545,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 0.29121506035623623,
+                "parameter_value": 0.75,
+                "relative_delta": 0.2430580679128235
+              },
+              {
+                "absolute_delta": 0.09703677830866975,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 0.33130987292379543,
+                "parameter_value": 0.5,
+                "relative_delta": 0.41420368168220983
+              },
+              {
+                "absolute_delta": 0.43806400102818743,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 0.6723370956433131,
+                "parameter_value": 0.25,
+                "relative_delta": 1.8698860906236738
+              },
+              {
+                "absolute_delta": 1.9921149846895745,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 2.2263880793047,
+                "parameter_value": 0.0,
+                "relative_delta": 8.503387842988586
+              }
+            ]
+          },
+          "joint_angle_action_abs_mean": {
+            "observed_monotonicity": "non_monotonic_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 1.0243701362137825,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -5.817222850024173e-05,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 1.0243119639852822,
+                "parameter_value": 0.75,
+                "relative_delta": -5.678829013432054e-05
+              },
+              {
+                "absolute_delta": 3.4554423662847e-05,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 1.0244046906374453,
+                "parameter_value": 0.5,
+                "relative_delta": 3.373236142022361e-05
+              },
+              {
+                "absolute_delta": 2.7382371097450786e-05,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 1.02439751858488,
+                "parameter_value": 0.25,
+                "relative_delta": 2.673093458059986e-05
+              },
+              {
+                "absolute_delta": -0.0004321038173817904,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 1.0239380323964007,
+                "parameter_value": 0.0,
+                "relative_delta": -0.0004218239112074347
+              }
+            ]
+          },
+          "joint_angle_action_mean": {
+            "observed_monotonicity": "non_monotonic_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 0.3196512073650523,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": 5.012167671036849e-05,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 0.3197013290417627,
+                "parameter_value": 0.75,
+                "relative_delta": 0.000156801149363806
+              },
+              {
+                "absolute_delta": 5.127980118019293e-05,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 0.3197024871662325,
+                "parameter_value": 0.5,
+                "relative_delta": 0.0001604242374145945
+              },
+              {
+                "absolute_delta": -1.1766066585927604e-05,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 0.3196394412984664,
+                "parameter_value": 0.25,
+                "relative_delta": -3.6809079130085574e-05
+              },
+              {
+                "absolute_delta": -0.000795631404843844,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 0.31885557596020847,
+                "parameter_value": 0.0,
+                "relative_delta": -0.002489061159513177
+              }
+            ]
+          },
+          "mean_planar_speed_mm_s": {
+            "observed_monotonicity": "nonincreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 12.568372100573873,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -0.1338995465136925,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 12.43447255406018,
+                "parameter_value": 0.75,
+                "relative_delta": -0.01065369050519905
+              },
+              {
+                "absolute_delta": -0.3572963926263242,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 12.211075707947549,
+                "parameter_value": 0.5,
+                "relative_delta": -0.028428215664462225
+              },
+              {
+                "absolute_delta": -0.839653591300193,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 11.72871850927368,
+                "parameter_value": 0.25,
+                "relative_delta": -0.06680686922547864
+              },
+              {
+                "absolute_delta": -5.757499705841803,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 6.81087239473207,
+                "parameter_value": 0.0,
+                "relative_delta": -0.45809430686563735
+              }
+            ]
+          },
+          "planar_displacement_mm": {
+            "observed_monotonicity": "nonincreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "coordination_proxy_scale_100",
+                "metric_value": 6.284186050286936,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -0.06694977325684626,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "coordination_proxy_scale_075",
+                "metric_value": 6.21723627703009,
+                "parameter_value": 0.75,
+                "relative_delta": -0.01065369050519905
+              },
+              {
+                "absolute_delta": -0.1786481963131621,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "coordination_proxy_scale_050",
+                "metric_value": 6.105537853973774,
+                "parameter_value": 0.5,
+                "relative_delta": -0.028428215664462225
+              },
+              {
+                "absolute_delta": -0.4198267956500965,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "coordination_proxy_scale_025",
+                "metric_value": 5.86435925463684,
+                "parameter_value": 0.25,
+                "relative_delta": -0.06680686922547864
+              },
+              {
+                "absolute_delta": -2.8787498529209015,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "coordination_proxy_scale_000",
+                "metric_value": 3.405436197366035,
+                "parameter_value": 0.0,
+                "relative_delta": -0.45809430686563735
+              }
+            ]
+          }
+        },
+        "parameter_name": "scale",
+        "perturbation_type": "cpg_coupling_scale"
+      },
+      "motor_vigor_proxy": {
+        "condition_order": [
+          "motor_vigor_proxy_scale_100",
+          "motor_vigor_proxy_scale_090",
+          "motor_vigor_proxy_scale_080",
+          "motor_vigor_proxy_scale_070",
+          "motor_vigor_proxy_scale_060"
+        ],
+        "metrics": {
+          "body_height_mean_mm": {
+            "observed_monotonicity": "nondecreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 0.946592192150494,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": 0.2259593949985016,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 1.1725515871489955,
+                "parameter_value": 0.9,
+                "relative_delta": 0.23870828100236163
+              },
+              {
+                "absolute_delta": 0.5321613121790706,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 1.4787535043295645,
+                "parameter_value": 0.8,
+                "relative_delta": 0.5621864585319387
+              },
+              {
+                "absolute_delta": 0.8174199617250798,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 1.7640121538755738,
+                "parameter_value": 0.7,
+                "relative_delta": 0.86353972545246
+              },
+              {
+                "absolute_delta": 1.0788440384097142,
+                "baseline_equivalent": false,
+                "baseline_value": 0.946592192150494,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 2.0254362305602083,
+                "parameter_value": 0.6,
+                "relative_delta": 1.1397136458085153
+              }
+            ]
+          },
+          "body_height_min_mm": {
+            "observed_monotonicity": "nondecreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 0.7660532202481788,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": 0.20917041305819561,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 0.9752236333063744,
+                "parameter_value": 0.9,
+                "relative_delta": 0.27304945339232506
+              },
+              {
+                "absolute_delta": 0.3917972226323848,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 1.1578504428805636,
+                "parameter_value": 0.8,
+                "relative_delta": 0.5114490903196699
+              },
+              {
+                "absolute_delta": 0.3917972226323848,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 1.1578504428805636,
+                "parameter_value": 0.7,
+                "relative_delta": 0.5114490903196699
+              },
+              {
+                "absolute_delta": 0.3917972226323848,
+                "baseline_equivalent": false,
+                "baseline_value": 0.7660532202481788,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 1.1578504428805636,
+                "parameter_value": 0.6,
+                "relative_delta": 0.5114490903196699
+              }
+            ]
+          },
+          "body_height_range_mm": {
+            "observed_monotonicity": "non_monotonic_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 0.4241419609713478,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -0.021343327884124297,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 0.4027986330872235,
+                "parameter_value": 0.9,
+                "relative_delta": -0.050321189243443205
+              },
+              {
+                "absolute_delta": -0.0011024944162713046,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 0.4230394665550765,
+                "parameter_value": 0.8,
+                "relative_delta": -0.002599352381326359
+              },
+              {
+                "absolute_delta": 0.26076607406607233,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 0.6849080350374201,
+                "parameter_value": 0.7,
+                "relative_delta": 0.6148084793800629
+              },
+              {
+                "absolute_delta": 0.7496653004987804,
+                "baseline_equivalent": false,
+                "baseline_value": 0.4241419609713478,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 1.1738072614701283,
+                "parameter_value": 0.6,
+                "relative_delta": 1.7674867602864286
+              }
+            ]
+          },
+          "heading_yaw_change_rad": {
+            "observed_monotonicity": "non_monotonic_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 0.2342730946151257,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": 0.02476864819399105,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 0.25904174280911674,
+                "parameter_value": 0.9,
+                "relative_delta": 0.10572553469992826
+              },
+              {
+                "absolute_delta": 0.03061053070618347,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 0.26488362532130916,
+                "parameter_value": 0.8,
+                "relative_delta": 0.1306617422562835
+              },
+              {
+                "absolute_delta": -0.11567684504429802,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 0.11859624957082766,
+                "parameter_value": 0.7,
+                "relative_delta": -0.4937692278933572
+              },
+              {
+                "absolute_delta": -0.11277475623767022,
+                "baseline_equivalent": false,
+                "baseline_value": 0.2342730946151257,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 0.12149833837745547,
+                "parameter_value": 0.6,
+                "relative_delta": -0.48138159622188637
+              }
+            ]
+          },
+          "joint_angle_action_abs_mean": {
+            "observed_monotonicity": "nonincreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 1.0243701362137825,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -0.10243701362137791,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 0.9219331225924046,
+                "parameter_value": 0.9,
+                "relative_delta": -0.09999999999999967
+              },
+              {
+                "absolute_delta": -0.20487402724275616,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 0.8194961089710263,
+                "parameter_value": 0.8,
+                "relative_delta": -0.19999999999999968
+              },
+              {
+                "absolute_delta": -0.30731104086413485,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 0.7170590953496476,
+                "parameter_value": 0.7,
+                "relative_delta": -0.3000000000000001
+              },
+              {
+                "absolute_delta": -0.4097480544855129,
+                "baseline_equivalent": false,
+                "baseline_value": 1.0243701362137825,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 0.6146220817282696,
+                "parameter_value": 0.6,
+                "relative_delta": -0.3999999999999999
+              }
+            ]
+          },
+          "joint_angle_action_mean": {
+            "observed_monotonicity": "nonincreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 0.3196512073650523,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -0.03196512073650526,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 0.28768608662854706,
+                "parameter_value": 0.9,
+                "relative_delta": -0.10000000000000009
+              },
+              {
+                "absolute_delta": -0.06393024147301052,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 0.2557209658920418,
+                "parameter_value": 0.8,
+                "relative_delta": -0.20000000000000018
+              },
+              {
+                "absolute_delta": -0.09589536220951572,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 0.2237558451555366,
+                "parameter_value": 0.7,
+                "relative_delta": -0.3000000000000001
+              },
+              {
+                "absolute_delta": -0.12786048294602095,
+                "baseline_equivalent": false,
+                "baseline_value": 0.3196512073650523,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 0.19179072441903136,
+                "parameter_value": 0.6,
+                "relative_delta": -0.4000000000000001
+              }
+            ]
+          },
+          "mean_planar_speed_mm_s": {
+            "observed_monotonicity": "nonincreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 12.568372100573873,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -1.011982667143167,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 11.556389433430706,
+                "parameter_value": 0.9,
+                "relative_delta": -0.08051819750761198
+              },
+              {
+                "absolute_delta": -1.342898934901525,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 11.225473165672348,
+                "parameter_value": 0.8,
+                "relative_delta": -0.1068474838392323
+              },
+              {
+                "absolute_delta": -2.0322708761081643,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 10.536101224465709,
+                "parameter_value": 0.7,
+                "relative_delta": -0.161697223780904
+              },
+              {
+                "absolute_delta": -3.2376767958119856,
+                "baseline_equivalent": false,
+                "baseline_value": 12.568372100573873,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 9.330695304761887,
+                "parameter_value": 0.6,
+                "relative_delta": -0.2576051035013638
+              }
+            ]
+          },
+          "planar_displacement_mm": {
+            "observed_monotonicity": "nonincreasing_in_config_order",
+            "points": [
+              {
+                "absolute_delta": 0.0,
+                "baseline_equivalent": true,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "motor_vigor_proxy_scale_100",
+                "metric_value": 6.284186050286936,
+                "parameter_value": 1.0,
+                "relative_delta": 0.0
+              },
+              {
+                "absolute_delta": -0.5059913335715835,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "motor_vigor_proxy_scale_090",
+                "metric_value": 5.778194716715353,
+                "parameter_value": 0.9,
+                "relative_delta": -0.08051819750761198
+              },
+              {
+                "absolute_delta": -0.6714494674507625,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "motor_vigor_proxy_scale_080",
+                "metric_value": 5.612736582836174,
+                "parameter_value": 0.8,
+                "relative_delta": -0.1068474838392323
+              },
+              {
+                "absolute_delta": -1.0161354380540821,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "motor_vigor_proxy_scale_070",
+                "metric_value": 5.268050612232854,
+                "parameter_value": 0.7,
+                "relative_delta": -0.161697223780904
+              },
+              {
+                "absolute_delta": -1.6188383979059928,
+                "baseline_equivalent": false,
+                "baseline_value": 6.284186050286936,
+                "condition_id": "motor_vigor_proxy_scale_060",
+                "metric_value": 4.665347652380944,
+                "parameter_value": 0.6,
+                "relative_delta": -0.2576051035013638
+              }
+            ]
+          }
+        },
+        "parameter_name": "scale",
+        "perturbation_type": "global_action_scale"
+      }
+    },
+    "source_experiment_id": "milestone_e1_parameter_response",
+    "source_git_commit": "7cb2ed580b8eabb6a363b27f481564751eeb9e48"
+  },
+  "e2_interaction_summary": {
+    "condition_summary": [
+      {
+        "body_height_mean_mm": 0.946592192150494,
+        "body_height_mean_mm_relative_delta": 0.0,
+        "body_height_min_mm": 0.7660532202481788,
+        "body_height_min_mm_relative_delta": 0.0,
+        "body_height_range_mm": 0.4241419609713478,
+        "body_height_range_mm_relative_delta": 0.0,
+        "category": "control",
+        "condition_id": "control_motor_100_coupling_100",
+        "coupling_scale": 1.0,
+        "heading_yaw_change_rad": 0.2342730946151257,
+        "heading_yaw_change_rad_relative_delta": 0.0,
+        "joint_angle_action_abs_mean": 1.0243701362137825,
+        "joint_angle_action_abs_mean_relative_delta": 0.0,
+        "mean_planar_speed_mm_s": 12.568372100573873,
+        "mean_planar_speed_mm_s_relative_delta": 0.0,
+        "motor_scale": 1.0,
+        "overall_pass": true,
+        "planar_displacement_mm": 6.284186050286936,
+        "planar_displacement_mm_relative_delta": 0.0,
+        "planar_path_length_mm": 9.073046329099236,
+        "planar_path_length_mm_relative_delta": 0.0,
+        "status": "completed",
+        "trajectory_efficiency": 0.6926213999516548,
+        "trajectory_efficiency_relative_delta": 0.0
+      },
+      {
+        "body_height_mean_mm": 1.4787535043295645,
+        "body_height_mean_mm_relative_delta": 0.5621864585319387,
+        "body_height_min_mm": 1.1578504428805636,
+        "body_height_min_mm_relative_delta": 0.5114490903196699,
+        "body_height_range_mm": 0.4230394665550765,
+        "body_height_range_mm_relative_delta": -0.002599352381326359,
+        "category": "motor_only",
+        "condition_id": "motor_080_coupling_100",
+        "coupling_scale": 1.0,
+        "heading_yaw_change_rad": 0.26488362532130916,
+        "heading_yaw_change_rad_relative_delta": 0.1306617422562835,
+        "joint_angle_action_abs_mean": 0.8194961089710263,
+        "joint_angle_action_abs_mean_relative_delta": -0.19999999999999968,
+        "mean_planar_speed_mm_s": 11.225473165672348,
+        "mean_planar_speed_mm_s_relative_delta": -0.1068474838392323,
+        "motor_scale": 0.8,
+        "overall_pass": true,
+        "planar_displacement_mm": 5.612736582836174,
+        "planar_displacement_mm_relative_delta": -0.1068474838392323,
+        "planar_path_length_mm": 8.060381570914583,
+        "planar_path_length_mm_relative_delta": -0.11161243109018602,
+        "status": "completed",
+        "trajectory_efficiency": 0.696336337610791,
+        "trajectory_efficiency_relative_delta": 0.005363590641864967
+      },
+      {
+        "body_height_mean_mm": 1.7640121538755738,
+        "body_height_mean_mm_relative_delta": 0.86353972545246,
+        "body_height_min_mm": 1.1578504428805636,
+        "body_height_min_mm_relative_delta": 0.5114490903196699,
+        "body_height_range_mm": 0.6849080350374201,
+        "body_height_range_mm_relative_delta": 0.6148084793800629,
+        "category": "motor_only",
+        "condition_id": "motor_070_coupling_100",
+        "coupling_scale": 1.0,
+        "heading_yaw_change_rad": 0.11859624957082766,
+        "heading_yaw_change_rad_relative_delta": -0.4937692278933572,
+        "joint_angle_action_abs_mean": 0.7170590953496476,
+        "joint_angle_action_abs_mean_relative_delta": -0.3000000000000001,
+        "mean_planar_speed_mm_s": 10.536101224465709,
+        "mean_planar_speed_mm_s_relative_delta": -0.161697223780904,
+        "motor_scale": 0.7,
+        "overall_pass": true,
+        "planar_displacement_mm": 5.268050612232854,
+        "planar_displacement_mm_relative_delta": -0.161697223780904,
+        "planar_path_length_mm": 7.832410224643633,
+        "planar_path_length_mm_relative_delta": -0.13673864978255576,
+        "status": "completed",
+        "trajectory_efficiency": 0.6725963606525149,
+        "trajectory_efficiency_relative_delta": -0.028911955796540007
+      },
+      {
+        "body_height_mean_mm": 2.0254362305602083,
+        "body_height_mean_mm_relative_delta": 1.1397136458085153,
+        "body_height_min_mm": 1.1578504428805636,
+        "body_height_min_mm_relative_delta": 0.5114490903196699,
+        "body_height_range_mm": 1.1738072614701283,
+        "body_height_range_mm_relative_delta": 1.7674867602864286,
+        "category": "motor_only",
+        "condition_id": "motor_060_coupling_100",
+        "coupling_scale": 1.0,
+        "heading_yaw_change_rad": 0.12149833837745547,
+        "heading_yaw_change_rad_relative_delta": -0.48138159622188637,
+        "joint_angle_action_abs_mean": 0.6146220817282696,
+        "joint_angle_action_abs_mean_relative_delta": -0.3999999999999999,
+        "mean_planar_speed_mm_s": 9.330695304761887,
+        "mean_planar_speed_mm_s_relative_delta": -0.2576051035013638,
+        "motor_scale": 0.6,
+        "overall_pass": true,
+        "planar_displacement_mm": 4.665347652380944,
+        "planar_displacement_mm_relative_delta": -0.2576051035013638,
+        "planar_path_length_mm": 8.41845531543986,
+        "planar_path_length_mm_relative_delta": -0.07214677297083337,
+        "status": "completed",
+        "trajectory_efficiency": 0.5541809604696085,
+        "trajectory_efficiency_relative_delta": -0.1998789518945119
+      },
+      {
+        "body_height_mean_mm": 0.94667094441612,
+        "body_height_mean_mm_relative_delta": 8.319555800172499e-05,
+        "body_height_min_mm": 0.7829816301210203,
+        "body_height_min_mm_relative_delta": 0.02209821644944876,
+        "body_height_range_mm": 0.40814319255128584,
+        "body_height_range_mm_relative_delta": -0.03772031511200268,
+        "category": "coordination_only",
+        "condition_id": "motor_100_coupling_075",
+        "coupling_scale": 0.75,
+        "heading_yaw_change_rad": 0.29121506035623623,
+        "heading_yaw_change_rad_relative_delta": 0.2430580679128235,
+        "joint_angle_action_abs_mean": 1.0243119639852822,
+        "joint_angle_action_abs_mean_relative_delta": -5.678829013432054e-05,
+        "mean_planar_speed_mm_s": 12.43447255406018,
+        "mean_planar_speed_mm_s_relative_delta": -0.01065369050519905,
+        "motor_scale": 1.0,
+        "overall_pass": true,
+        "planar_displacement_mm": 6.21723627703009,
+        "planar_displacement_mm_relative_delta": -0.01065369050519905,
+        "planar_path_length_mm": 9.055932497149564,
+        "planar_path_length_mm_relative_delta": -0.0018862277705762604,
+        "status": "completed",
+        "trajectory_efficiency": 0.6865373918132694,
+        "trajectory_efficiency_relative_delta": -0.008784031418622142
+      },
+      {
+        "body_height_mean_mm": 0.9564334845117194,
+        "body_height_mean_mm_relative_delta": 0.01039654926676262,
+        "body_height_min_mm": 0.7780077464721564,
+        "body_height_min_mm_relative_delta": 0.015605346871467649,
+        "body_height_range_mm": 0.414154899717345,
+        "body_height_range_mm_relative_delta": -0.023546506059270795,
+        "category": "coordination_only",
+        "condition_id": "motor_100_coupling_050",
+        "coupling_scale": 0.5,
+        "heading_yaw_change_rad": 0.33130987292379543,
+        "heading_yaw_change_rad_relative_delta": 0.41420368168220983,
+        "joint_angle_action_abs_mean": 1.0244046906374453,
+        "joint_angle_action_abs_mean_relative_delta": 3.373236142022361e-05,
+        "mean_planar_speed_mm_s": 12.211075707947549,
+        "mean_planar_speed_mm_s_relative_delta": -0.028428215664462225,
+        "motor_scale": 1.0,
+        "overall_pass": true,
+        "planar_displacement_mm": 6.105537853973774,
+        "planar_displacement_mm_relative_delta": -0.028428215664462225,
+        "planar_path_length_mm": 8.862567705248045,
+        "planar_path_length_mm_relative_delta": -0.02319823091568931,
+        "status": "completed",
+        "trajectory_efficiency": 0.688912971616378,
+        "trajectory_efficiency_relative_delta": -0.005354192543770228
+      },
+      {
+        "body_height_mean_mm": 1.478905964396374,
+        "body_height_mean_mm_relative_delta": 0.5623475205690797,
+        "body_height_min_mm": 1.1578504428805636,
+        "body_height_min_mm_relative_delta": 0.5114490903196699,
+        "body_height_range_mm": 0.4230342066907309,
+        "body_height_range_mm_relative_delta": -0.0026117535696775058,
+        "category": "combined",
+        "condition_id": "combined_motor_080_coupling_075",
+        "coupling_scale": 0.75,
+        "heading_yaw_change_rad": 0.30259921850584254,
+        "heading_yaw_change_rad_relative_delta": 0.29165160430806647,
+        "joint_angle_action_abs_mean": 0.8194495711882258,
+        "joint_angle_action_abs_mean_relative_delta": -0.20004543063210745,
+        "mean_planar_speed_mm_s": 11.026998979645066,
+        "mean_planar_speed_mm_s_relative_delta": -0.12263904255813904,
+        "motor_scale": 0.8,
+        "overall_pass": true,
+        "planar_displacement_mm": 5.513499489822533,
+        "planar_displacement_mm_relative_delta": -0.12263904255813904,
+        "planar_path_length_mm": 8.008309735911556,
+        "planar_path_length_mm_relative_delta": -0.11735160987471628,
+        "status": "completed",
+        "trajectory_efficiency": 0.6884723083447212,
+        "trajectory_efficiency_relative_delta": -0.0059904178635301645
+      },
+      {
+        "body_height_mean_mm": 1.7535528444304547,
+        "body_height_mean_mm_relative_delta": 0.8524902898751843,
+        "body_height_min_mm": 1.1578504428805636,
+        "body_height_min_mm_relative_delta": 0.5114490903196699,
+        "body_height_range_mm": 0.6821221143797171,
+        "body_height_range_mm_relative_delta": 0.6082401109702907,
+        "category": "combined",
+        "condition_id": "combined_motor_070_coupling_075",
+        "coupling_scale": 0.75,
+        "heading_yaw_change_rad": 0.15663928641475375,
+        "heading_yaw_change_rad_relative_delta": -0.33138166517974343,
+        "joint_angle_action_abs_mean": 0.7170183747896974,
+        "joint_angle_action_abs_mean_relative_delta": -0.30003975180309417,
+        "mean_planar_speed_mm_s": 10.273063706303866,
+        "mean_planar_speed_mm_s_relative_delta": -0.18262575104417883,
+        "motor_scale": 0.7,
+        "overall_pass": true,
+        "planar_displacement_mm": 5.136531853151933,
+        "planar_displacement_mm_relative_delta": -0.18262575104417883,
+        "planar_path_length_mm": 7.705537226553295,
+        "planar_path_length_mm_relative_delta": -0.1507221558166238,
+        "status": "completed",
+        "trajectory_efficiency": 0.6666026913024876,
+        "trajectory_efficiency_relative_delta": -0.03756555695648926
+      },
+      {
+        "body_height_mean_mm": 1.742194548438357,
+        "body_height_mean_mm_relative_delta": 0.8404911459077133,
+        "body_height_min_mm": 1.1578504428805636,
+        "body_height_min_mm_relative_delta": 0.5114490903196699,
+        "body_height_range_mm": 0.677217023501532,
+        "body_height_range_mm_relative_delta": 0.5966753724404086,
+        "category": "combined",
+        "condition_id": "combined_motor_070_coupling_050",
+        "coupling_scale": 0.5,
+        "heading_yaw_change_rad": 0.2533262746314835,
+        "heading_yaw_change_rad_relative_delta": 0.08132892958817667,
+        "joint_angle_action_abs_mean": 0.7170832834462115,
+        "joint_angle_action_abs_mean_relative_delta": -0.29997638734700605,
+        "mean_planar_speed_mm_s": 10.058959431254083,
+        "mean_planar_speed_mm_s_relative_delta": -0.1996609146545884,
+        "motor_scale": 0.7,
+        "overall_pass": true,
+        "planar_displacement_mm": 5.029479715627041,
+        "planar_displacement_mm_relative_delta": -0.1996609146545884,
+        "planar_path_length_mm": 7.563052776514528,
+        "planar_path_length_mm_relative_delta": -0.1664263024582857,
+        "status": "completed",
+        "trajectory_efficiency": 0.6650065607429099,
+        "trajectory_efficiency_relative_delta": -0.03987003464038577
+      }
+    ],
+    "interaction_analysis": {
+      "categorical_tolerance": 0.15,
+      "combined_conditions": [
+        {
+          "categorical_tolerance": 0.15,
+          "condition_id": "combined_motor_080_coupling_075",
+          "coordination_reference_condition_id": "motor_100_coupling_075",
+          "coupling_scale": 0.75,
+          "definition": "interaction_residual = combined_delta - (motor_only_delta + coordination_only_delta)",
+          "metrics": {
+            "body_height_mean_mm": {
+              "combined_delta": 0.5323137722458801,
+              "coordination_only_delta": 7.875226562603643e-05,
+              "expected_additive_delta": 0.5322400644446966,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": 7.370780118343134e-05,
+              "motor_only_delta": 0.5321613121790706,
+              "residual_relative_to_expected": 0.0001384860067990806,
+              "status": "completed"
+            },
+            "body_height_min_mm": {
+              "combined_delta": 0.3917972226323848,
+              "coordination_only_delta": 0.0169284098728415,
+              "expected_additive_delta": 0.4087256325052263,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.0169284098728415,
+              "motor_only_delta": 0.3917972226323848,
+              "residual_relative_to_expected": -0.041417539118066046,
+              "status": "completed"
+            },
+            "body_height_range_mm": {
+              "combined_delta": -0.001107754280616935,
+              "coordination_only_delta": -0.015998768420061982,
+              "expected_additive_delta": -0.017101262836333286,
+              "interaction_category": "sub_additive",
+              "interaction_residual": 0.01599350855571635,
+              "motor_only_delta": -0.0011024944162713046,
+              "residual_relative_to_expected": 0.9352238316422221,
+              "status": "completed"
+            },
+            "heading_yaw_change_rad": {
+              "combined_delta": 0.06832612389071685,
+              "coordination_only_delta": 0.056941965741110545,
+              "expected_additive_delta": 0.08755249644729401,
+              "interaction_category": "sub_additive",
+              "interaction_residual": -0.019226372556577165,
+              "motor_only_delta": 0.03061053070618347,
+              "residual_relative_to_expected": -0.2195982220581375,
+              "status": "completed"
+            },
+            "joint_angle_action_abs_mean": {
+              "combined_delta": -0.20492056502555667,
+              "coordination_only_delta": -5.817222850024173e-05,
+              "expected_additive_delta": -0.2049321994712564,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": 1.1634445699737483e-05,
+              "motor_only_delta": -0.20487402724275616,
+              "residual_relative_to_expected": 5.677217016045016e-05,
+              "status": "completed"
+            },
+            "mean_planar_speed_mm_s": {
+              "combined_delta": -1.5413731209288066,
+              "coordination_only_delta": -0.1338995465136925,
+              "expected_additive_delta": -1.4767984814152175,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.0645746395135891,
+              "motor_only_delta": -1.342898934901525,
+              "residual_relative_to_expected": -0.043726100971953306,
+              "status": "completed"
+            },
+            "planar_displacement_mm": {
+              "combined_delta": -0.7706865604644033,
+              "coordination_only_delta": -0.06694977325684626,
+              "expected_additive_delta": -0.7383992407076088,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.03228731975679455,
+              "motor_only_delta": -0.6714494674507625,
+              "residual_relative_to_expected": -0.043726100971953306,
+              "status": "completed"
+            },
+            "planar_path_length_mm": {
+              "combined_delta": -1.0647365931876802,
+              "coordination_only_delta": -0.017113831949671976,
+              "expected_additive_delta": -1.0297785901343257,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.0349580030533545,
+              "motor_only_delta": -1.0126647581846537,
+              "residual_relative_to_expected": -0.033947106094713554,
+              "status": "completed"
+            },
+            "trajectory_efficiency": {
+              "combined_delta": -0.004149091606933664,
+              "coordination_only_delta": -0.006084008138385388,
+              "expected_additive_delta": -0.00236907047924928,
+              "interaction_category": "super_additive",
+              "interaction_residual": -0.0017800211276843836,
+              "motor_only_delta": 0.0037149376591361083,
+              "residual_relative_to_expected": -0.7513584518804368,
+              "status": "completed"
+            }
+          },
+          "motor_reference_condition_id": "motor_080_coupling_100",
+          "motor_scale": 0.8,
+          "status": "completed"
+        },
+        {
+          "categorical_tolerance": 0.15,
+          "condition_id": "combined_motor_070_coupling_075",
+          "coordination_reference_condition_id": "motor_100_coupling_075",
+          "coupling_scale": 0.75,
+          "definition": "interaction_residual = combined_delta - (motor_only_delta + coordination_only_delta)",
+          "metrics": {
+            "body_height_mean_mm": {
+              "combined_delta": 0.8069606522799607,
+              "coordination_only_delta": 7.875226562603643e-05,
+              "expected_additive_delta": 0.8174987139907058,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.010538061710745117,
+              "motor_only_delta": 0.8174199617250798,
+              "residual_relative_to_expected": -0.012890615643053995,
+              "status": "completed"
+            },
+            "body_height_min_mm": {
+              "combined_delta": 0.3917972226323848,
+              "coordination_only_delta": 0.0169284098728415,
+              "expected_additive_delta": 0.4087256325052263,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.0169284098728415,
+              "motor_only_delta": 0.3917972226323848,
+              "residual_relative_to_expected": -0.041417539118066046,
+              "status": "completed"
+            },
+            "body_height_range_mm": {
+              "combined_delta": 0.25798015340836933,
+              "coordination_only_delta": -0.015998768420061982,
+              "expected_additive_delta": 0.24476730564601035,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": 0.013212847762358981,
+              "motor_only_delta": 0.26076607406607233,
+              "residual_relative_to_expected": 0.05398126080395635,
+              "status": "completed"
+            },
+            "heading_yaw_change_rad": {
+              "combined_delta": -0.07763380820037194,
+              "coordination_only_delta": 0.056941965741110545,
+              "expected_additive_delta": -0.05873487930318748,
+              "interaction_category": "super_additive",
+              "interaction_residual": -0.01889892889718446,
+              "motor_only_delta": -0.11567684504429802,
+              "residual_relative_to_expected": -0.32176671036691545,
+              "status": "completed"
+            },
+            "joint_angle_action_abs_mean": {
+              "combined_delta": -0.30735176142408505,
+              "coordination_only_delta": -5.817222850024173e-05,
+              "expected_additive_delta": -0.3073692130926351,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": 1.7451668550050314e-05,
+              "motor_only_delta": -0.30731104086413485,
+              "residual_relative_to_expected": 5.677754246906544e-05,
+              "status": "completed"
+            },
+            "mean_planar_speed_mm_s": {
+              "combined_delta": -2.295308394270007,
+              "coordination_only_delta": -0.1338995465136925,
+              "expected_additive_delta": -2.1661704226218568,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.12913797164815044,
+              "motor_only_delta": -2.0322708761081643,
+              "residual_relative_to_expected": -0.05961579490677671,
+              "status": "completed"
+            },
+            "planar_displacement_mm": {
+              "combined_delta": -1.1476541971350036,
+              "coordination_only_delta": -0.06694977325684626,
+              "expected_additive_delta": -1.0830852113109284,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.06456898582407522,
+              "motor_only_delta": -1.0161354380540821,
+              "residual_relative_to_expected": -0.05961579490677671,
+              "status": "completed"
+            },
+            "planar_path_length_mm": {
+              "combined_delta": -1.3675091025459416,
+              "coordination_only_delta": -0.017113831949671976,
+              "expected_additive_delta": -1.2577499364052755,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.10975916614066605,
+              "motor_only_delta": -1.2406361044556036,
+              "residual_relative_to_expected": -0.08726628637673742,
+              "status": "completed"
+            },
+            "trajectory_efficiency": {
+              "combined_delta": -0.02601870864916722,
+              "coordination_only_delta": -0.006084008138385388,
+              "expected_additive_delta": -0.02610904743752529,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": 9.033878835806863e-05,
+              "motor_only_delta": -0.020025039299139902,
+              "residual_relative_to_expected": 0.0034600568471230015,
+              "status": "completed"
+            }
+          },
+          "motor_reference_condition_id": "motor_070_coupling_100",
+          "motor_scale": 0.7,
+          "status": "completed"
+        },
+        {
+          "categorical_tolerance": 0.15,
+          "condition_id": "combined_motor_070_coupling_050",
+          "coordination_reference_condition_id": "motor_100_coupling_050",
+          "coupling_scale": 0.5,
+          "definition": "interaction_residual = combined_delta - (motor_only_delta + coordination_only_delta)",
+          "metrics": {
+            "body_height_mean_mm": {
+              "combined_delta": 0.795602356287863,
+              "coordination_only_delta": 0.00984129236122544,
+              "expected_additive_delta": 0.8272612540863052,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.03165889779844222,
+              "motor_only_delta": 0.8174199617250798,
+              "residual_relative_to_expected": -0.038269528086878536,
+              "status": "completed"
+            },
+            "body_height_min_mm": {
+              "combined_delta": 0.3917972226323848,
+              "coordination_only_delta": 0.011954526223977635,
+              "expected_additive_delta": 0.40375174885636245,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.011954526223977635,
+              "motor_only_delta": 0.3917972226323848,
+              "residual_relative_to_expected": -0.029608605431033174,
+              "status": "completed"
+            },
+            "body_height_range_mm": {
+              "combined_delta": 0.2530750625301842,
+              "coordination_only_delta": -0.009987061254002838,
+              "expected_additive_delta": 0.2507790128120695,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": 0.002296049718114701,
+              "motor_only_delta": 0.26076607406607233,
+              "residual_relative_to_expected": 0.009155669337590584,
+              "status": "completed"
+            },
+            "heading_yaw_change_rad": {
+              "combined_delta": 0.019053180016357807,
+              "coordination_only_delta": 0.09703677830866975,
+              "expected_additive_delta": -0.018640066735628277,
+              "interaction_category": "direction_reversal",
+              "interaction_residual": 0.037693246751986084,
+              "motor_only_delta": -0.11567684504429802,
+              "residual_relative_to_expected": 2.0221626503053187,
+              "status": "completed"
+            },
+            "joint_angle_action_abs_mean": {
+              "combined_delta": -0.30728685276757095,
+              "coordination_only_delta": 3.4554423662847e-05,
+              "expected_additive_delta": -0.307276486440472,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -1.0366327098942918e-05,
+              "motor_only_delta": -0.30731104086413485,
+              "residual_relative_to_expected": -3.373615475439629e-05,
+              "status": "completed"
+            },
+            "mean_planar_speed_mm_s": {
+              "combined_delta": -2.50941266931979,
+              "coordination_only_delta": -0.3572963926263242,
+              "expected_additive_delta": -2.3895672687344884,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.11984540058530158,
+              "motor_only_delta": -2.0322708761081643,
+              "residual_relative_to_expected": -0.0501535998393431,
+              "status": "completed"
+            },
+            "planar_displacement_mm": {
+              "combined_delta": -1.254706334659895,
+              "coordination_only_delta": -0.1786481963131621,
+              "expected_additive_delta": -1.1947836343672442,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.05992270029265079,
+              "motor_only_delta": -1.0161354380540821,
+              "residual_relative_to_expected": -0.0501535998393431,
+              "status": "completed"
+            },
+            "planar_path_length_mm": {
+              "combined_delta": -1.5099935525847084,
+              "coordination_only_delta": -0.21047862385119132,
+              "expected_additive_delta": -1.4511147283067949,
+              "interaction_category": "approximately_additive",
+              "interaction_residual": -0.058878824277913466,
+              "motor_only_delta": -1.2406361044556036,
+              "residual_relative_to_expected": -0.04057489261832183,
+              "status": "completed"
+            },
+            "trajectory_efficiency": {
+              "combined_delta": -0.027614839208744968,
+              "coordination_only_delta": -0.0037084283352768477,
+              "expected_additive_delta": -0.02373346763441675,
+              "interaction_category": "super_additive",
+              "interaction_residual": -0.0038813715743282184,
+              "motor_only_delta": -0.020025039299139902,
+              "residual_relative_to_expected": -0.16354001168795507,
+              "status": "completed"
+            }
+          },
+          "motor_reference_condition_id": "motor_070_coupling_100",
+          "motor_scale": 0.7,
+          "status": "completed"
+        }
+      ],
+      "definition": "For each combined condition, metric deltas relative to the baseline are compared with the sum of the matching motor-only and coordination-only deltas."
+    },
+    "interpretation_boundary": "Simulation response surfaces only; no disease severity or biological calibration is assigned.",
+    "source_experiment_id": "milestone_e2_combined_phenotype_characterization",
+    "source_git_commit": "433269ed11e0475eb973b62d31f469d66843872f"
+  },
+  "e3_robustness_summary": {
+    "aggregate_statistics": {
+      "completed_seed_count": 5,
+      "metrics": {
+        "body_height_mean_mm": {
+          "absolute_delta": {
+            "count": 5,
+            "max": 0.5595890069579647,
+            "mean": 0.5445163890827617,
+            "median": 0.5463294075095452,
+            "min": 0.5176683522149187,
+            "std": 0.014706397341106334
+          },
+          "baseline": {
+            "count": 5,
+            "max": 0.9487256527166658,
+            "mean": 0.9465522152698778,
+            "median": 0.9458922829023,
+            "min": 0.9452597333836624,
+            "std": 0.001375403386626804
+          },
+          "candidate": {
+            "count": 5,
+            "max": 1.5071718495936828,
+            "mean": 1.4910686043526398,
+            "median": 1.495055060226211,
+            "min": 1.4629689169259616,
+            "std": 0.01529399678153213
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": 0.590543625084492,
+            "mean": 0.5752553496242726,
+            "median": 0.5758560506350142,
+            "min": 0.5476230222851483,
+            "std": 0.015243955657489048
+          }
+        },
+        "body_height_min_mm": {
+          "absolute_delta": {
+            "count": 5,
+            "max": 0.42316490738700896,
+            "mean": 0.4032376138572643,
+            "median": 0.41116672152559564,
+            "min": 0.375739869877071,
+            "std": 0.017145151383507716
+          },
+          "baseline": {
+            "count": 5,
+            "max": 0.7821105730034926,
+            "mean": 0.7391778672503706,
+            "median": 0.746683721354968,
+            "min": 0.6663562861516591,
+            "std": 0.03986227135076467
+          },
+          "candidate": {
+            "count": 5,
+            "max": 1.1578504428805636,
+            "mean": 1.1424154811076348,
+            "median": 1.1578504428805636,
+            "min": 1.0806756340159203,
+            "std": 0.030869923545857336
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": 0.6217684990368115,
+            "mean": 0.5480547124864389,
+            "median": 0.5506571387139294,
+            "min": 0.48041783712773445,
+            "std": 0.04926477608225415
+          }
+        },
+        "body_height_range_mm": {
+          "absolute_delta": {
+            "count": 5,
+            "max": 0.0579765229139676,
+            "mean": 0.018154817079000705,
+            "median": 0.019798394956501375,
+            "min": -0.004464607534943044,
+            "std": 0.02264067688817341
+          },
+          "baseline": {
+            "count": 5,
+            "max": 0.49150097831620665,
+            "mean": 0.4335755892623704,
+            "median": 0.43805526821998964,
+            "min": 0.3757466914643731,
+            "std": 0.036965356437727796
+          },
+          "candidate": {
+            "count": 5,
+            "max": 0.5121766942414121,
+            "mean": 0.45173040634137107,
+            "median": 0.43522110647420664,
+            "min": 0.4335906606850466,
+            "std": 0.030464093366825745
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": 0.1542968287705195,
+            "mean": 0.04510483409609617,
+            "median": 0.04206647969661568,
+            "min": -0.010191881844235544,
+            "std": 0.05956729775643611
+          }
+        },
+        "heading_yaw_abs_change_rad": {
+          "absolute_delta": {
+            "count": 5,
+            "max": 0.2544946096623074,
+            "mean": 0.10734785759133234,
+            "median": 0.11398105291469102,
+            "min": -0.09216173931581556,
+            "std": 0.12347281008678221
+          },
+          "baseline": {
+            "count": 5,
+            "max": 0.2250561052136932,
+            "mean": 0.10385794490113649,
+            "median": 0.06243005318200347,
+            "min": 0.030289942055454013,
+            "std": 0.07380335416013852
+          },
+          "candidate": {
+            "count": 5,
+            "max": 0.31692466284431087,
+            "mean": 0.21120580249246884,
+            "median": 0.2432124440985085,
+            "min": 0.06054661772258841,
+            "std": 0.09056240907729757
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": 7.029478684813649,
+            "mean": 2.609787273773441,
+            "median": 2.33542524984088,
+            "min": -0.603514706746784,
+            "std": 2.750973309224384
+          }
+        },
+        "heading_yaw_change_rad": {
+          "absolute_delta": {
+            "count": 5,
+            "max": 0.2544946096623074,
+            "mean": 0.16373466012410967,
+            "median": 0.21159158694694652,
+            "min": 0.047502862652424344,
+            "std": 0.07947277699221902
+          },
+          "baseline": {
+            "count": 5,
+            "max": 0.2250561052136932,
+            "mean": 0.02325249527932379,
+            "median": 0.030289942055454013,
+            "min": -0.15270835703840396,
+            "std": 0.12527062412097803
+          },
+          "candidate": {
+            "count": 5,
+            "max": 0.31692466284431087,
+            "mean": 0.18698715540343344,
+            "median": 0.2432124440985085,
+            "min": -0.06054661772258841,
+            "std": 0.13358609455517353
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": 7.029478684813649,
+            "mean": 3.251193156472154,
+            "median": 4.076475938925995,
+            "min": 0.21107120203346566,
+            "std": 2.544980750731938
+          }
+        },
+        "joint_angle_action_abs_mean": {
+          "absolute_delta": {
+            "count": 5,
+            "max": -0.2050036499228085,
+            "mean": -0.20507768642687846,
+            "median": -0.2050762281056422,
+            "min": -0.20515196066016117,
+            "std": 5.820714354721082e-05
+          },
+          "baseline": {
+            "count": 5,
+            "max": 1.0258742448673535,
+            "mean": 1.0256368082597096,
+            "median": 1.025643456733028,
+            "min": 1.025284965816015,
+            "std": 0.00020824066526955673
+          },
+          "candidate": {
+            "count": 5,
+            "max": 0.8207980167617113,
+            "mean": 0.820559121832831,
+            "median": 0.8205629370611434,
+            "min": 0.8202611641411188,
+            "std": 0.0001819534110536961
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": -0.1998930664518777,
+            "mean": -0.19995156821323032,
+            "median": -0.19996762706036522,
+            "min": -0.2000226875269401,
+            "std": 4.769845623534453e-05
+          }
+        },
+        "mean_planar_speed_mm_s": {
+          "absolute_delta": {
+            "count": 5,
+            "max": -1.344954543199277,
+            "mean": -1.4492416112774094,
+            "median": -1.4705577755240427,
+            "min": -1.5704411834412628,
+            "std": 0.0823947639804847
+          },
+          "baseline": {
+            "count": 5,
+            "max": 13.87037838687909,
+            "mean": 13.751281674590993,
+            "median": 13.805072782973573,
+            "min": 13.55425266371172,
+            "std": 0.11382603147654745
+          },
+          "candidate": {
+            "count": 5,
+            "max": 12.458746818334713,
+            "mean": 12.302040063313584,
+            "median": 12.299937203437826,
+            "min": 12.209298120512443,
+            "std": 0.08823083898728849
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": -0.09907884112487704,
+            "mean": -0.1053649998704906,
+            "median": -0.10735717226221954,
+            "min": -0.11322266340814806,
+            "std": 0.0054684726886720415
+          }
+        },
+        "planar_displacement_mm": {
+          "absolute_delta": {
+            "count": 5,
+            "max": -1.344954543199277,
+            "mean": -1.4492416112774094,
+            "median": -1.4705577755240427,
+            "min": -1.5704411834412628,
+            "std": 0.0823947639804847
+          },
+          "baseline": {
+            "count": 5,
+            "max": 13.87037838687909,
+            "mean": 13.751281674590993,
+            "median": 13.805072782973573,
+            "min": 13.55425266371172,
+            "std": 0.11382603147654745
+          },
+          "candidate": {
+            "count": 5,
+            "max": 12.458746818334713,
+            "mean": 12.302040063313584,
+            "median": 12.299937203437826,
+            "min": 12.209298120512443,
+            "std": 0.08823083898728849
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": -0.09907884112487704,
+            "mean": -0.1053649998704906,
+            "median": -0.10735717226221954,
+            "min": -0.11322266340814806,
+            "std": 0.0054684726886720415
+          }
+        },
+        "planar_path_length_mm": {
+          "absolute_delta": {
+            "count": 5,
+            "max": -1.813529168493595,
+            "mean": -2.006412359765025,
+            "median": -2.0026138380982594,
+            "min": -2.141564313150642,
+            "std": 0.12570747360181764
+          },
+          "baseline": {
+            "count": 5,
+            "max": 19.53601837688188,
+            "mean": 19.31485503067457,
+            "median": 19.31296134878355,
+            "min": 19.10555863072271,
+            "std": 0.13711929575120466
+          },
+          "candidate": {
+            "count": 5,
+            "max": 17.471469785232507,
+            "mean": 17.308442670909542,
+            "median": 17.379790080694857,
+            "min": 17.102944792624452,
+            "std": 0.1374735552650161
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": -0.09403833377668909,
+            "mean": -0.10386359062038664,
+            "median": -0.10481838698387778,
+            "min": -0.11074281060089465,
+            "std": 0.006198532860838057
+          }
+        },
+        "trajectory_efficiency": {
+          "absolute_delta": {
+            "count": 5,
+            "max": 0.009077907140965902,
+            "mean": -0.0012169839946827743,
+            "median": -0.0020333217461637743,
+            "min": -0.010475192262273003,
+            "std": 0.0064275562026785025
+          },
+          "baseline": {
+            "count": 5,
+            "max": 0.718190138549246,
+            "mean": 0.7119806020699851,
+            "median": 0.7169539921471937,
+            "min": 0.7010311064774873,
+            "std": 0.006894043578865285
+          },
+          "candidate": {
+            "count": 5,
+            "max": 0.7149206704010299,
+            "mean": 0.7107636180753024,
+            "median": 0.7101090136184532,
+            "min": 0.707714946286973,
+            "std": 0.002833899351504739
+          },
+          "relative_delta": {
+            "count": 5,
+            "max": 0.01294936423945608,
+            "mean": -0.0016292589177790413,
+            "median": -0.0028360561046242485,
+            "min": -0.014585541766743048,
+            "std": 0.00905229789611079
+          }
+        }
+      },
+      "seed_count": 5,
+      "standard_deviation_definition": "population_standard_deviation"
+    },
+    "classification": "ROBUST",
+    "duration_s": 1.0,
+    "seed_summary": [
+      {
+        "baseline_body_height_mean_mm": 0.9452597333836624,
+        "baseline_body_height_min_mm": 0.7660532202481788,
+        "baseline_body_height_range_mm": 0.4241419609713478,
+        "baseline_heading_yaw_change_rad": 0.2250561052136932,
+        "baseline_joint_angle_action_abs_mean": 1.025643456733028,
+        "baseline_mean_planar_speed_mm_s": 13.55425266371172,
+        "baseline_planar_displacement_mm": 13.55425266371172,
+        "baseline_planar_path_length_mm": 19.334737843258594,
+        "baseline_trajectory_efficiency": 0.7010311064774873,
+        "candidate_body_height_mean_mm": 1.501100743442102,
+        "candidate_body_height_min_mm": 1.1578504428805636,
+        "candidate_body_height_range_mm": 0.4439403559278492,
+        "candidate_heading_yaw_change_rad": 0.27255896786611755,
+        "candidate_joint_angle_action_abs_mean": 0.8204914960728668,
+        "candidate_mean_planar_speed_mm_s": 12.209298120512443,
+        "candidate_planar_displacement_mm": 12.209298120512443,
+        "candidate_planar_path_length_mm": 17.193554632264657,
+        "candidate_trajectory_efficiency": 0.7101090136184532,
+        "delta_body_height_mean_mm": 0.5558410100584396,
+        "delta_body_height_min_mm": 0.3917972226323848,
+        "delta_body_height_range_mm": 0.019798394956501375,
+        "delta_heading_yaw_change_rad": 0.047502862652424344,
+        "delta_joint_angle_action_abs_mean": -0.20515196066016117,
+        "delta_mean_planar_speed_mm_s": -1.344954543199277,
+        "delta_planar_displacement_mm": -1.344954543199277,
+        "delta_planar_path_length_mm": -2.141183210993937,
+        "delta_trajectory_efficiency": 0.009077907140965902,
+        "overall_pass": true,
+        "same_seed_within_pair": true,
+        "seed": 0,
+        "status": "completed"
+      },
+      {
+        "baseline_body_height_mean_mm": 0.945300564711043,
+        "baseline_body_height_min_mm": 0.6663562861516591,
+        "baseline_body_height_range_mm": 0.49150097831620665,
+        "baseline_heading_yaw_change_rad": -0.04880526701612776,
+        "baseline_joint_angle_action_abs_mean": 1.0258742448673535,
+        "baseline_mean_planar_speed_mm_s": 13.69780653249892,
+        "baseline_planar_displacement_mm": 13.69780653249892,
+        "baseline_planar_path_length_mm": 19.10555863072271,
+        "baseline_trajectory_efficiency": 0.7169539921471937,
+        "candidate_body_height_mean_mm": 1.4629689169259616,
+        "candidate_body_height_min_mm": 1.0806756340159203,
+        "candidate_body_height_range_mm": 0.5121766942414121,
+        "candidate_heading_yaw_change_rad": 0.16278631993081877,
+        "candidate_joint_angle_action_abs_mean": 0.8207980167617113,
+        "candidate_mean_planar_speed_mm_s": 12.227248756974877,
+        "candidate_planar_displacement_mm": 12.227248756974877,
+        "candidate_planar_path_length_mm": 17.102944792624452,
+        "candidate_trajectory_efficiency": 0.7149206704010299,
+        "delta_body_height_mean_mm": 0.5176683522149187,
+        "delta_body_height_min_mm": 0.41431934786426117,
+        "delta_body_height_range_mm": 0.02067571592520545,
+        "delta_heading_yaw_change_rad": 0.21159158694694652,
+        "delta_joint_angle_action_abs_mean": -0.2050762281056422,
+        "delta_mean_planar_speed_mm_s": -1.4705577755240427,
+        "delta_planar_displacement_mm": -1.4705577755240427,
+        "delta_planar_path_length_mm": -2.0026138380982594,
+        "delta_trajectory_efficiency": -0.0020333217461637743,
+        "overall_pass": true,
+        "same_seed_within_pair": true,
+        "seed": 1,
+        "status": "completed"
+      },
+      {
+        "baseline_body_height_mean_mm": 0.9487256527166658,
+        "baseline_body_height_min_mm": 0.746683721354968,
+        "baseline_body_height_range_mm": 0.43805526821998964,
+        "baseline_heading_yaw_change_rad": -0.15270835703840396,
+        "baseline_joint_angle_action_abs_mean": 1.0255665869839519,
+        "baseline_mean_planar_speed_mm_s": 13.87037838687909,
+        "baseline_planar_displacement_mm": 13.87037838687909,
+        "baseline_planar_path_length_mm": 19.31296134878355,
+        "baseline_trajectory_efficiency": 0.718190138549246,
+        "candidate_body_height_mean_mm": 1.495055060226211,
+        "candidate_body_height_min_mm": 1.1578504428805636,
+        "candidate_body_height_range_mm": 0.4335906606850466,
+        "candidate_heading_yaw_change_rad": -0.06054661772258841,
+        "candidate_joint_angle_action_abs_mean": 0.8205629370611434,
+        "candidate_mean_planar_speed_mm_s": 12.299937203437826,
+        "candidate_planar_displacement_mm": 12.299937203437826,
+        "candidate_planar_path_length_mm": 17.379790080694857,
+        "candidate_trajectory_efficiency": 0.707714946286973,
+        "delta_body_height_mean_mm": 0.5463294075095452,
+        "delta_body_height_min_mm": 0.41116672152559564,
+        "delta_body_height_range_mm": -0.004464607534943044,
+        "delta_heading_yaw_change_rad": 0.09216173931581556,
+        "delta_joint_angle_action_abs_mean": -0.2050036499228085,
+        "delta_mean_planar_speed_mm_s": -1.5704411834412628,
+        "delta_planar_displacement_mm": -1.5704411834412628,
+        "delta_planar_path_length_mm": -1.9331712680886923,
+        "delta_trajectory_efficiency": -0.010475192262273003,
+        "overall_pass": true,
+        "same_seed_within_pair": true,
+        "seed": 2,
+        "status": "completed"
+      },
+      {
+        "baseline_body_height_mean_mm": 0.9458922829023,
+        "baseline_body_height_min_mm": 0.7346855354935546,
+        "baseline_body_height_range_mm": 0.4384330473399345,
+        "baseline_heading_yaw_change_rad": 0.030289942055454013,
+        "baseline_joint_angle_action_abs_mean": 1.0258147868981993,
+        "baseline_mean_planar_speed_mm_s": 13.805072782973573,
+        "baseline_planar_displacement_mm": 13.805072782973573,
+        "baseline_planar_path_length_mm": 19.53601837688188,
+        "baseline_trajectory_efficiency": 0.7066472050062119,
+        "candidate_body_height_mean_mm": 1.4890464515752406,
+        "candidate_body_height_min_mm": 1.1578504428805636,
+        "candidate_body_height_range_mm": 0.43522110647420664,
+        "candidate_heading_yaw_change_rad": 0.2432124440985085,
+        "candidate_joint_angle_action_abs_mean": 0.8206819951273152,
+        "candidate_mean_planar_speed_mm_s": 12.314969417308056,
+        "candidate_planar_displacement_mm": 12.314969417308056,
+        "candidate_planar_path_length_mm": 17.39445406373124,
+        "candidate_trajectory_efficiency": 0.7079825197265435,
+        "delta_body_height_mean_mm": 0.5431541686729406,
+        "delta_body_height_min_mm": 0.42316490738700896,
+        "delta_body_height_range_mm": -0.003211940865727847,
+        "delta_heading_yaw_change_rad": 0.2129225020430545,
+        "delta_joint_angle_action_abs_mean": -0.20513279177088406,
+        "delta_mean_planar_speed_mm_s": -1.490103365665517,
+        "delta_planar_displacement_mm": -1.490103365665517,
+        "delta_planar_path_length_mm": -2.141564313150642,
+        "delta_trajectory_efficiency": 0.0013353147203315485,
+        "overall_pass": true,
+        "same_seed_within_pair": true,
+        "seed": 3,
+        "status": "completed"
+      },
+      {
+        "baseline_body_height_mean_mm": 0.9475828426357181,
+        "baseline_body_height_min_mm": 0.7821105730034926,
+        "baseline_body_height_range_mm": 0.3757466914643731,
+        "baseline_heading_yaw_change_rad": 0.06243005318200347,
+        "baseline_joint_angle_action_abs_mean": 1.025284965816015,
+        "baseline_mean_planar_speed_mm_s": 13.828898006891661,
+        "baseline_planar_displacement_mm": 13.828898006891661,
+        "baseline_planar_path_length_mm": 19.284998953726102,
+        "baseline_trajectory_efficiency": 0.7170805681697869,
+        "candidate_body_height_mean_mm": 1.5071718495936828,
+        "candidate_body_height_min_mm": 1.1578504428805636,
+        "candidate_body_height_range_mm": 0.4337232143783407,
+        "candidate_heading_yaw_change_rad": 0.31692466284431087,
+        "candidate_joint_angle_action_abs_mean": 0.8202611641411188,
+        "candidate_mean_planar_speed_mm_s": 12.458746818334713,
+        "candidate_planar_displacement_mm": 12.458746818334713,
+        "candidate_planar_path_length_mm": 17.471469785232507,
+        "candidate_trajectory_efficiency": 0.7130909403435124,
+        "delta_body_height_mean_mm": 0.5595890069579647,
+        "delta_body_height_min_mm": 0.375739869877071,
+        "delta_body_height_range_mm": 0.0579765229139676,
+        "delta_heading_yaw_change_rad": 0.2544946096623074,
+        "delta_joint_angle_action_abs_mean": -0.2050238016748962,
+        "delta_mean_planar_speed_mm_s": -1.3701511885569477,
+        "delta_planar_displacement_mm": -1.3701511885569477,
+        "delta_planar_path_length_mm": -1.813529168493595,
+        "delta_trajectory_efficiency": -0.003989627826274544,
+        "overall_pass": true,
+        "same_seed_within_pair": true,
+        "seed": 4,
+        "status": "completed"
+      }
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "source_experiment_id": "milestone_e3_candidate_robustness",
+    "source_git_commit": "730ab3acd8e5535b93f320a62c19080feca0448f"
+  },
+  "e4_concordance_summary": {
+    "candidate": {
+      "coupling_scale": 0.75,
+      "motor_scale": 0.8,
+      "post_hoc_tuning_permitted": false,
+      "selected_before_e3_execution": true
+    },
+    "classification_counts": {
+      "CONCORDANT": 4,
+      "INSUFFICIENT_EVIDENCE": 1,
+      "NOT_COMPARABLE": 3
+    },
+    "concordance_assessments": [
+      {
+        "assessment_id": "adult_dopamine_deficiency_speed",
+        "biological_observation": "adult neural dopamine deficiency reduces walking speed",
+        "classification": "CONCORDANT",
+        "comparison_basis": "direction_only",
+        "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "riemensperger_2011_adult_dopamine_deficiency_walking",
+        "literature_endpoint": "walking_speed",
+        "rationale": "The frozen E3 candidate has lower mean planar speed than its paired baseline across all five seeds.\n",
+        "simulation_metric": "mean_planar_speed_mm_s",
+        "simulation_result_expected_direction": "decreased"
+      },
+      {
+        "assessment_id": "adult_dopamine_deficiency_distance",
+        "biological_observation": "adult neural dopamine deficiency reduces covered distance",
+        "classification": "CONCORDANT",
+        "comparison_basis": "direction_only",
+        "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "riemensperger_2011_adult_dopamine_deficiency_walking",
+        "literature_endpoint": "covered_distance",
+        "rationale": "The frozen E3 candidate has lower path length and lower planar displacement than its paired baseline across all five seeds.\n",
+        "simulation_metric": "planar_path_length_mm",
+        "simulation_result_expected_direction": "decreased",
+        "supplemental_simulation_metric": "planar_displacement_mm"
+      },
+      {
+        "assessment_id": "old_adult_a30p_velocity",
+        "biological_observation": "old adult A30P flies show reduced walking velocity",
+        "classification": "CONCORDANT",
+        "comparison_basis": "direction_only",
+        "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "chen_2014_old_adult_a30p_walking",
+        "literature_endpoint": "walking_velocity",
+        "rationale": "The frozen E3 candidate shows a lower mean planar speed than baseline.\n",
+        "simulation_metric": "mean_planar_speed_mm_s",
+        "simulation_result_expected_direction": "decreased"
+      },
+      {
+        "assessment_id": "old_adult_a30p_total_moving_distance",
+        "biological_observation": "old adult A30P flies show reduced total moving distance",
+        "classification": "CONCORDANT",
+        "comparison_basis": "direction_only",
+        "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "chen_2014_old_adult_a30p_walking",
+        "literature_endpoint": "total_moving_distance",
+        "rationale": "E3 path length and displacement are both lower in the candidate than in the paired baseline.\n",
+        "simulation_metric": "planar_path_length_mm",
+        "simulation_result_expected_direction": "decreased",
+        "supplemental_simulation_metric": "planar_displacement_mm"
+      },
+      {
+        "assessment_id": "old_adult_a30p_distance_per_movement",
+        "biological_observation": "old adult A30P flies show reduced distance per movement",
+        "classification": "NOT_COMPARABLE",
+        "comparison_basis": "not_comparable",
+        "computational_proxy": "NONE_CURRENTLY",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "chen_2014_old_adult_a30p_walking",
+        "literature_endpoint": "distance_per_movement",
+        "rationale": "E3 does not segment movement bouts, so distance per movement is currently unavailable.\n",
+        "simulation_metric": "NONE"
+      },
+      {
+        "assessment_id": "old_adult_a30p_angular_velocity",
+        "biological_observation": "old adult A30P flies show reduced angular velocity",
+        "classification": "NOT_COMPARABLE",
+        "comparison_basis": "not_comparable",
+        "computational_proxy": "NONE_CURRENTLY",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "chen_2014_old_adult_a30p_walking",
+        "literature_endpoint": "angular_velocity",
+        "rationale": "E3 yaw change is not angular velocity. The observed yaw response is variable and must not be treated as direct concordance.\n",
+        "simulation_metric": "heading_yaw_change_rad"
+      },
+      {
+        "assessment_id": "old_adult_a30p_centrophobism",
+        "biological_observation": "old adult A30P flies show increased centrophobism",
+        "classification": "NOT_COMPARABLE",
+        "comparison_basis": "not_comparable",
+        "computational_proxy": "NONE_CURRENTLY",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "chen_2014_old_adult_a30p_walking",
+        "literature_endpoint": "centrophobism",
+        "rationale": "The current flat-ground FlyGym report does not model an open-field arena center-avoidance endpoint.\n",
+        "simulation_metric": "NONE"
+      },
+      {
+        "assessment_id": "simulation_body_height",
+        "biological_observation": "no selected adult dopamine or alpha-synuclein walking target",
+        "classification": "INSUFFICIENT_EVIDENCE",
+        "comparison_basis": "unsupported_endpoint",
+        "computational_proxy": "frozen E3 candidate body-height response",
+        "direct_numeric_calibration_used": false,
+        "evidence_id": "none_currently_curated",
+        "literature_endpoint": "thorax_or_body_height",
+        "rationale": "E3 body height changes substantially, but this endpoint is not supported for Parkinson interpretation by the selected literature set.\n",
+        "simulation_metric": "body_height_mean_mm"
+      }
+    ],
+    "endpoint_mappings": [
+      {
+        "comparability": "HIGH_QUALITATIVE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "walking_speed",
+        "rationale": "Both endpoints describe walking speed, but the assay geometry, duration, animal preparation, and simulation controller differ.\n",
+        "simulation_metric": "mean_planar_speed_mm_s"
+      },
+      {
+        "comparability": "HIGH_QUALITATIVE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "walking_velocity",
+        "rationale": "The closest current simulation proxy for velocity is mean planar speed.\n",
+        "simulation_metric": "mean_planar_speed_mm_s"
+      },
+      {
+        "comparability": "MODERATE_QUALITATIVE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "covered_distance",
+        "rationale": "Covered distance is closer to path length than net displacement, but the E3 report records both and uses them only directionally.\n",
+        "simulation_metric": "planar_path_length_mm",
+        "supplemental_simulation_metric": "planar_displacement_mm"
+      },
+      {
+        "comparability": "MODERATE_QUALITATIVE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "total_moving_distance",
+        "rationale": "Total moving distance and simulation path length are directionally comparable, but not directly numerically calibrated.\n",
+        "simulation_metric": "planar_path_length_mm",
+        "supplemental_simulation_metric": "planar_displacement_mm"
+      },
+      {
+        "comparability": "NOT_AVAILABLE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "distance_per_movement",
+        "rationale": "The current E3 report does not segment movement bouts, so distance per movement is not available.\n",
+        "simulation_metric": "NONE"
+      },
+      {
+        "comparability": "LOW_QUALITATIVE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "angular_velocity",
+        "rationale": "E3 records net and absolute yaw change, not angular velocity. This endpoint must not be forced into concordance.\n",
+        "simulation_metric": "heading_yaw_change_rad"
+      },
+      {
+        "comparability": "NOT_COMPARABLE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "climbing_negative_geotaxis",
+        "rationale": "Current FlyGym evidence is flat-ground walking, not negative geotaxis.\n",
+        "simulation_metric": "NONE"
+      },
+      {
+        "comparability": "NOT_AVAILABLE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "pause_time_or_freezing",
+        "rationale": "Pause and freezing metrics are not currently computed.\n",
+        "simulation_metric": "NONE"
+      },
+      {
+        "comparability": "NOT_AVAILABLE",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "centrophobism",
+        "rationale": "The current simulation does not include open-field arena center avoidance.\n",
+        "simulation_metric": "NONE"
+      },
+      {
+        "comparability": "UNSUPPORTED_FOR_PD_INTERPRETATION",
+        "direct_numeric_calibration_permitted": false,
+        "literature_endpoint": "thorax_or_body_height",
+        "rationale": "Body height is an observed simulation phenotype and possible confound, but the selected literature set does not define a matching biological Parkinson-model target.\n",
+        "simulation_metric": "body_height_mean_mm"
+      }
+    ],
+    "interpretation_boundary": "Qualitative directional concordance only; unsupported endpoints remain unsupported.",
+    "overall_status": {
+      "label": "PARTIAL_PHENOTYPE_CONCORDANCE",
+      "reason": "Major adult walking speed and distance directions agree qualitatively with the selected literature, while unsupported endpoints remain explicitly limited.",
+      "scope": "Directional qualitative phenotype concordance only; not Parkinson's disease validation.",
+      "score_created": false
+    },
+    "source_experiment_id": "milestone_e4_literature_grounded_concordance",
+    "source_git_commit": "9a13b43b2619e2423c96cf390a3dcbddc9f248fe"
+  },
+  "e5_reversibility_summary": {
+    "classification_summary": {
+      "combined_partial_rescue": "DIRECTIONALLY_RESCUED",
+      "coordination_partial_rescue": "MIXED",
+      "full_computational_restoration_reference": "REFERENCE",
+      "motor_partial_rescue": "DIRECTIONALLY_RESCUED"
+    },
+    "condition_labels": [
+      "control",
+      "frozen candidate",
+      "motor partial restoration",
+      "coordination partial restoration",
+      "combined partial restoration",
+      "full restoration reference"
+    ],
+    "condition_order": [
+      "control",
+      "impaired_candidate",
+      "motor_partial_rescue",
+      "coordination_partial_rescue",
+      "combined_partial_rescue",
+      "full_computational_restoration_reference"
+    ],
+    "condition_summary": [
+      {
+        "aggregate_recovery_fraction": null,
+        "category": "control",
+        "classification": "REFERENCE",
+        "condition_id": "control",
+        "condition_label": "control",
+        "condition_mean": 13.751281674590993,
+        "control_mean": null,
+        "coupling_scale": 1.0,
+        "direction_toward_control_count": null,
+        "endpoint": "mean_planar_speed_mm_s",
+        "impaired_mean": null,
+        "motor_scale": 1.0,
+        "no_farther_count": null
+      },
+      {
+        "aggregate_recovery_fraction": null,
+        "category": "control",
+        "classification": "REFERENCE",
+        "condition_id": "control",
+        "condition_label": "control",
+        "condition_mean": 19.31485503067457,
+        "control_mean": null,
+        "coupling_scale": 1.0,
+        "direction_toward_control_count": null,
+        "endpoint": "planar_path_length_mm",
+        "impaired_mean": null,
+        "motor_scale": 1.0,
+        "no_farther_count": null
+      },
+      {
+        "aggregate_recovery_fraction": null,
+        "category": "impaired_candidate",
+        "classification": "REFERENCE",
+        "condition_id": "impaired_candidate",
+        "condition_label": "frozen candidate",
+        "condition_mean": 12.302040063313584,
+        "control_mean": null,
+        "coupling_scale": 0.75,
+        "direction_toward_control_count": null,
+        "endpoint": "mean_planar_speed_mm_s",
+        "impaired_mean": null,
+        "motor_scale": 0.8,
+        "no_farther_count": null
+      },
+      {
+        "aggregate_recovery_fraction": null,
+        "category": "impaired_candidate",
+        "classification": "REFERENCE",
+        "condition_id": "impaired_candidate",
+        "condition_label": "frozen candidate",
+        "condition_mean": 17.308442670909542,
+        "control_mean": null,
+        "coupling_scale": 0.75,
+        "direction_toward_control_count": null,
+        "endpoint": "planar_path_length_mm",
+        "impaired_mean": null,
+        "motor_scale": 0.8,
+        "no_farther_count": null
+      },
+      {
+        "aggregate_recovery_fraction": 0.34260277654496735,
+        "category": "partial_rescue",
+        "classification": "DIRECTIONALLY_RESCUED",
+        "condition_id": "motor_partial_rescue",
+        "condition_label": "motor partial restoration",
+        "condition_mean": 12.798554263221726,
+        "control_mean": 13.751281674590993,
+        "coupling_scale": 0.75,
+        "direction_toward_control_count": 5,
+        "endpoint": "mean_planar_speed_mm_s",
+        "impaired_mean": 12.302040063313584,
+        "motor_scale": 0.9,
+        "no_farther_count": 5
+      },
+      {
+        "aggregate_recovery_fraction": 0.3769885932181204,
+        "category": "partial_rescue",
+        "classification": "DIRECTIONALLY_RESCUED",
+        "condition_id": "motor_partial_rescue",
+        "condition_label": "motor partial restoration",
+        "condition_mean": 18.06483724383281,
+        "control_mean": 19.31485503067457,
+        "coupling_scale": 0.75,
+        "direction_toward_control_count": 5,
+        "endpoint": "planar_path_length_mm",
+        "impaired_mean": 17.308442670909542,
+        "motor_scale": 0.9,
+        "no_farther_count": 5
+      },
+      {
+        "aggregate_recovery_fraction": 0.05819831544405736,
+        "category": "partial_rescue",
+        "classification": "MIXED",
+        "condition_id": "coordination_partial_rescue",
+        "condition_label": "coordination partial restoration",
+        "condition_mean": 12.38638348376136,
+        "control_mean": 13.751281674590993,
+        "coupling_scale": 0.875,
+        "direction_toward_control_count": 4,
+        "endpoint": "mean_planar_speed_mm_s",
+        "impaired_mean": 12.302040063313584,
+        "motor_scale": 0.8,
+        "no_farther_count": 4
+      },
+      {
+        "aggregate_recovery_fraction": 0.007263689687290947,
+        "category": "partial_rescue",
+        "classification": "MIXED",
+        "condition_id": "coordination_partial_rescue",
+        "condition_label": "coordination partial restoration",
+        "condition_mean": 17.32301662767562,
+        "control_mean": 19.31485503067457,
+        "coupling_scale": 0.875,
+        "direction_toward_control_count": 3,
+        "endpoint": "planar_path_length_mm",
+        "impaired_mean": 17.308442670909542,
+        "motor_scale": 0.8,
+        "no_farther_count": 3
+      },
+      {
+        "aggregate_recovery_fraction": 0.36014860249643493,
+        "category": "partial_rescue",
+        "classification": "DIRECTIONALLY_RESCUED",
+        "condition_id": "combined_partial_rescue",
+        "condition_label": "combined partial restoration",
+        "condition_mean": 12.823982404294824,
+        "control_mean": 13.751281674590993,
+        "coupling_scale": 0.875,
+        "direction_toward_control_count": 5,
+        "endpoint": "mean_planar_speed_mm_s",
+        "impaired_mean": 12.302040063313584,
+        "motor_scale": 0.9,
+        "no_farther_count": 5
+      },
+      {
+        "aggregate_recovery_fraction": 0.35399358544714715,
+        "category": "partial_rescue",
+        "classification": "DIRECTIONALLY_RESCUED",
+        "condition_id": "combined_partial_rescue",
+        "condition_label": "combined partial restoration",
+        "condition_mean": 18.018699776028235,
+        "control_mean": 19.31485503067457,
+        "coupling_scale": 0.875,
+        "direction_toward_control_count": 5,
+        "endpoint": "planar_path_length_mm",
+        "impaired_mean": 17.308442670909542,
+        "motor_scale": 0.9,
+        "no_farther_count": 5
+      },
+      {
+        "aggregate_recovery_fraction": 1.0,
+        "category": "restoration_reference",
+        "classification": "REFERENCE",
+        "condition_id": "full_computational_restoration_reference",
+        "condition_label": "full restoration reference",
+        "condition_mean": 13.751281674590993,
+        "control_mean": 13.751281674590993,
+        "coupling_scale": 1.0,
+        "direction_toward_control_count": 5,
+        "endpoint": "mean_planar_speed_mm_s",
+        "impaired_mean": 12.302040063313584,
+        "motor_scale": 1.0,
+        "no_farther_count": 5
+      },
+      {
+        "aggregate_recovery_fraction": 1.0,
+        "category": "restoration_reference",
+        "classification": "REFERENCE",
+        "condition_id": "full_computational_restoration_reference",
+        "condition_label": "full restoration reference",
+        "condition_mean": 19.31485503067457,
+        "control_mean": 19.31485503067457,
+        "coupling_scale": 1.0,
+        "direction_toward_control_count": 5,
+        "endpoint": "planar_path_length_mm",
+        "impaired_mean": 17.308442670909542,
+        "motor_scale": 1.0,
+        "no_farther_count": 5
+      }
+    ],
+    "endpoint_means": {
+      "mean_planar_speed_mm_s": {
+        "combined_partial_rescue": 12.823982404294824,
+        "control": 13.751281674590993,
+        "coordination_partial_rescue": 12.38638348376136,
+        "full_computational_restoration_reference": 13.751281674590993,
+        "impaired_candidate": 12.302040063313584,
+        "motor_partial_rescue": 12.798554263221726
+      },
+      "planar_path_length_mm": {
+        "combined_partial_rescue": 18.018699776028235,
+        "control": 19.31485503067457,
+        "coordination_partial_rescue": 17.32301662767562,
+        "full_computational_restoration_reference": 19.31485503067457,
+        "impaired_candidate": 17.308442670909542,
+        "motor_partial_rescue": 18.06483724383281
+      }
+    },
+    "interpretation_boundary": "Computational reversibility only; not biological rescue or treatment response.",
+    "preregistered_design": {
+      "control": {
+        "coupling_scale": 1.0,
+        "motor_scale": 1.0
+      },
+      "frozen_impaired_candidate": {
+        "coupling_scale": 0.75,
+        "motor_scale": 0.8
+      },
+      "full_restoration_reference_condition_id": "full_computational_restoration_reference",
+      "midpoint_derivation": {
+        "alternative_rescue_values_permitted": false,
+        "coupling_partial_rescue": {
+          "control_value": 1.0,
+          "formula": "(0.75 + 1.0) / 2",
+          "impaired_value": 0.75,
+          "midpoint_value": 0.875
+        },
+        "derivation_selected_before_execution": true,
+        "motor_partial_rescue": {
+          "control_value": 1.0,
+          "formula": "(0.8 + 1.0) / 2",
+          "impaired_value": 0.8,
+          "midpoint_value": 0.9
+        }
+      },
+      "no_parameter_sweep": true,
+      "no_post_hoc_tuning": true,
+      "not_biological_rescue": true,
+      "primary_endpoints": [
+        "mean_planar_speed_mm_s",
+        "planar_path_length_mm"
+      ],
+      "rescue_condition_ids": [
+        "motor_partial_rescue",
+        "coordination_partial_rescue",
+        "combined_partial_rescue"
+      ],
+      "secondary_endpoints": [
+        "planar_displacement_mm",
+        "trajectory_efficiency",
+        "heading_yaw_abs_change_rad",
+        "body_height_min_mm",
+        "body_height_mean_mm",
+        "body_height_range_mm",
+        "joint_angle_action_abs_mean"
+      ]
+    },
+    "source_experiment_id": "milestone_e5_preregistered_computational_rescue",
+    "source_git_commit": "7cffac001488589d089bc49266aa103e7458f476"
+  },
+  "experiment_id": "milestone_e6_reproducible_evidence_synthesis",
+  "frozen_candidate_definition": {
+    "coupling_scale": 0.75,
+    "motor_scale": 0.8,
+    "selection_basis": "Frozen E2/E3 computational candidate; no E6 tuning."
+  },
+  "git_commit": "53e41d17365f56509ca708ba3352ddf724b0e89a",
+  "input_evidence_manifest": [
+    {
+      "bytes": 7129,
+      "experiment_id": "milestone_c_unperturbed_locomotion_baseline",
+      "git_commit": "91bc44c25dd25ea1ac409001efafc74dda018ce8",
+      "key": "baseline",
+      "overall_pass": true,
+      "path": "results/baseline/healthy_baseline.json",
+      "sha256": "ad1632987b1c320920f7b2d24e164efa764e3fc94fa556ccb71083ba56d93250"
+    },
+    {
+      "bytes": 35521,
+      "experiment_id": "milestone_d_identity",
+      "git_commit": "f886c204d8ad3a95dcd953418a8f9df51927137f",
+      "key": "perturbation_identity",
+      "overall_pass": true,
+      "path": "results/perturbations/identity.json",
+      "sha256": "bd7083c03cfc5232525444a7f5a4a50f68ccc0b2161da696ee09eb6c675c63f8"
+    },
+    {
+      "bytes": 30059,
+      "experiment_id": "milestone_d_action_scale_080",
+      "git_commit": "f886c204d8ad3a95dcd953418a8f9df51927137f",
+      "key": "perturbation_action_scale",
+      "overall_pass": true,
+      "path": "results/perturbations/action_scale_080.json",
+      "sha256": "711be20203b1c54b1c39e5fd5c45a91ae0fe5c8e2bb6fecbd5ce2dea244a73d7"
+    },
+    {
+      "bytes": 268806,
+      "experiment_id": "milestone_e1_parameter_response",
+      "git_commit": "7cb2ed580b8eabb6a363b27f481564751eeb9e48",
+      "key": "e1",
+      "overall_pass": true,
+      "path": "results/sweeps/milestone_e1.json",
+      "sha256": "e05b167bf5352e3f3324d88f04ac24cf0c0396d05952828f81a2747b528514be"
+    },
+    {
+      "bytes": 333195,
+      "experiment_id": "milestone_e2_combined_phenotype_characterization",
+      "git_commit": "433269ed11e0475eb973b62d31f469d66843872f",
+      "key": "e2",
+      "overall_pass": true,
+      "path": "results/sweeps/milestone_e2_combined.json",
+      "sha256": "3f48f6d12257fdcc68d2f1048cba06d79a5e1b3c0f7a16e98d714469e1b6fd29"
+    },
+    {
+      "bytes": 223628,
+      "experiment_id": "milestone_e3_candidate_robustness",
+      "git_commit": "730ab3acd8e5535b93f320a62c19080feca0448f",
+      "key": "e3",
+      "overall_pass": true,
+      "path": "results/validation/milestone_e3_candidate_robustness.json",
+      "sha256": "1569e724ff04bf12d2e4e70ad315b605df76698bba1ac9a8c2e1d311f6a69c11"
+    },
+    {
+      "bytes": 23775,
+      "experiment_id": "milestone_e4_literature_grounded_concordance",
+      "git_commit": "9a13b43b2619e2423c96cf390a3dcbddc9f248fe",
+      "key": "e4",
+      "overall_pass": true,
+      "path": "results/validation/milestone_e4_concordance.json",
+      "sha256": "0c3b509b7585b0f92e97b3e74161af736c03df1483e0f7b6bf53dcd17746c20e"
+    },
+    {
+      "bytes": 1131787,
+      "experiment_id": "milestone_e5_preregistered_computational_rescue",
+      "git_commit": "7cffac001488589d089bc49266aa103e7458f476",
+      "key": "e5",
+      "overall_pass": true,
+      "path": "results/validation/milestone_e5_computational_rescue.json",
+      "sha256": "8041881ef96fdae6704d01ff8d35505b025062a2f22e9e4583edb81264adbd71"
+    }
+  ],
+  "milestone_status": {
+    "C": "FROZEN",
+    "D": "FROZEN",
+    "E1": "FROZEN",
+    "E2": "FROZEN",
+    "E3": "FROZEN",
+    "E4": "FROZEN",
+    "E5": "FROZEN",
+    "E6": "IMPLEMENTED_AWAITING_REVIEW"
+  },
+  "overall_pass": true,
+  "provenance": {
+    "config_path": "configs/analysis/milestone_e6.yaml",
+    "input_git_commits": {
+      "baseline": "91bc44c25dd25ea1ac409001efafc74dda018ce8",
+      "e1": "7cb2ed580b8eabb6a363b27f481564751eeb9e48",
+      "e2": "433269ed11e0475eb973b62d31f469d66843872f",
+      "e3": "730ab3acd8e5535b93f320a62c19080feca0448f",
+      "e4": "9a13b43b2619e2423c96cf390a3dcbddc9f248fe",
+      "e5": "7cffac001488589d089bc49266aa103e7458f476",
+      "perturbation_action_scale": "f886c204d8ad3a95dcd953418a8f9df51927137f",
+      "perturbation_identity": "f886c204d8ad3a95dcd953418a8f9df51927137f"
+    },
+    "synthesis_git_commit": "53e41d17365f56509ca708ba3352ddf724b0e89a",
+    "synthesis_worktree_dirty": true
+  },
+  "scientific_scope": "Milestone E6 validates internal consistency and reproducible synthesis of frozen computational evidence. It does not validate a Parkinson's disease model, establish biological realism, or make claims about real flies.",
+  "scientific_synthesis": {
+    "literature_grounded_qualitative_findings": [
+      "E4 reports directional qualitative concordance for selected adult walking speed and distance endpoints."
+    ],
+    "not_established": [
+      "validated Parkinson's disease model",
+      "dopamine depletion equivalence",
+      "neuron-loss mapping",
+      "pharmacological or L-DOPA simulation",
+      "biological rescue",
+      "mechanistic equivalence",
+      "disease severity calibration",
+      "statistical significance from the frozen reports"
+    ],
+    "scope": "Milestone E6 validates internal consistency and reproducible synthesis of frozen computational evidence. It does not validate a Parkinson's disease model, establish biological realism, or make claims about real flies.",
+    "supported_computational_findings": [
+      "Reduced motor-command scaling lowers simulated locomotor output.",
+      "Reduced CPG coupling affects simulated locomotor output and directionality.",
+      "The frozen combined candidate shows multi-seed simulated locomotor-output reduction.",
+      "E5 demonstrates computational reversibility, particularly along the motor axis."
+    ]
+  },
+  "timestamp": "2026-08-11T14:03:55.367749+00:00"
+}

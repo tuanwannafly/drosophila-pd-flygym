@@ -1,0 +1,31 @@
+{
+  "campaign_id": "v2_example_campaign",
+  "custom_scenarios": [
+    "example_open_field"
+  ],
+  "interventions": [
+    "none"
+  ],
+  "metadata": {
+    "purpose": "deterministic infrastructure validation",
+    "scientific_evidence": false
+  },
+  "parameter_grid": {
+    "motor_scale": [
+      1.0,
+      0.8
+    ]
+  },
+  "progression_stages": [
+    "Stage0"
+  ],
+  "replicates": 1,
+  "roles": [
+    "Healthy",
+    "Candidate"
+  ],
+  "seeds": [
+    0,
+    1
+  ]
+}

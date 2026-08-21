@@ -1,0 +1,6 @@
+# Milestone D - identity perturbation validation.
+# This config should reproduce the unperturbed baseline within numerical tolerance.
+
+experiment_id: milestone_d_identity_validation
+type: identity
+name: identity

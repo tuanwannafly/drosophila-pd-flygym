@@ -1,0 +1,332 @@
+schema_version: 1
+milestone: E4
+title: "Literature-grounded phenotype concordance"
+status: "LOCAL_EVIDENCE_REPORT"
+scientific_scope: >
+  E4 compares the frozen E3 computational phenotype with selected
+  peer-reviewed adult Drosophila dopamine and Parkinson-model walking
+  observations. The comparison is directional and qualitative only. It does
+  not validate a Parkinson's disease model, infer mechanistic equivalence, or
+  calibrate simulation parameters to biological measurements.
+
+frozen_e3_evidence:
+  path: "results/validation/milestone_e3_candidate_robustness.json"
+  required_git_commit: "730ab3acd8e5535b93f320a62c19080feca0448f"
+  candidate:
+    motor_scale: 0.8
+    coupling_scale: 0.75
+    selected_before_e3_execution: true
+    post_hoc_tuning_permitted: false
+  no_parameter_tuning_in_e4: true
+
+classification_policy:
+  allowed_concordance_labels:
+    - "CONCORDANT"
+    - "DISCORDANT"
+    - "NOT_COMPARABLE"
+    - "INSUFFICIENT_EVIDENCE"
+  allowed_overall_status_labels:
+    - "PARTIAL_PHENOTYPE_CONCORDANCE"
+    - "INSUFFICIENT_CONCORDANCE"
+    - "DISCORDANT"
+  direct_numeric_calibration_allowed: false
+  qualitative_direction_only: true
+  forbidden_interpretations:
+    - "validated Parkinson's disease model"
+    - "biological robustness"
+    - "statistical significance"
+    - "dopamine depletion percentage"
+    - "dopaminergic neuron-loss percentage"
+    - "disease stage"
+    - "biological severity"
+    - "mechanistic equivalence"
+
+evidence_separation:
+  adult_evidence_ids:
+    - "riemensperger_2011_adult_dopamine_deficiency_walking"
+    - "chen_2014_old_adult_a30p_walking"
+  larval_or_non_adult_evidence_ids: []
+  note: >
+    E4 v1 records adult walking evidence only. Larval, climbing, rescue, and
+    other modality evidence may be curated later, but it must remain separated
+    from adult flat-ground walking concordance.
+
+literature_evidence:
+  - evidence_id: "riemensperger_2011_adult_dopamine_deficiency_walking"
+    evidence_tier: "primary_adult"
+    organism: "Drosophila melanogaster"
+    life_stage: "adult"
+    model_or_condition: "neural dopamine deficiency"
+    citation:
+      authors:
+        - "Riemensperger T"
+        - "Isabel G"
+        - "Coulom H"
+        - "Neuser K"
+        - "Seugnet L"
+        - "Kume K"
+        - "Iche-Torres M"
+        - "Cassar M"
+        - "Strauss R"
+        - "Preat T"
+        - "Hirsh J"
+        - "Birman S"
+      title: "Behavioral consequences of dopamine deficiency in the Drosophila central nervous system"
+      journal: "Proceedings of the National Academy of Sciences of the United States of America"
+      year: 2011
+      volume: "108"
+      issue: "2"
+      pages: "834-839"
+      doi: "10.1073/pnas.1010930108"
+      pmid: "21187381"
+      pmcid: "PMC3021077"
+    biological_observations:
+      - endpoint: "walking_speed"
+        direction: "decreased"
+        finding: >
+          Neural dopamine-deficient adult flies showed lower spontaneous
+          walking speed than rescued-control and wild-type groups.
+        quantitative_context:
+          role: "literature_context_only_not_fit_target"
+          da_deficient_median_mm_s: 7.8
+          rescued_control_median_mm_s: 10.8
+          wild_type_median_mm_s: 15.0
+        assay_note: "adult walking assay"
+      - endpoint: "covered_distance"
+        direction: "decreased"
+        finding: >
+          Neural dopamine-deficient adult flies covered less distance than
+          rescued-control and wild-type groups during the reported assay.
+        quantitative_context:
+          role: "literature_context_only_not_fit_target"
+          da_deficient_median_cm: 193.0
+          rescued_control_median_cm: 425.0
+          wild_type_median_cm: 474.0
+        assay_note: "reported 15-minute adult walking distance"
+
+  - evidence_id: "chen_2014_old_adult_a30p_walking"
+    evidence_tier: "primary_adult"
+    organism: "Drosophila melanogaster"
+    life_stage: "old_adult"
+    model_or_condition: "pan-neuronal human alpha-synuclein A30P expression"
+    citation:
+      authors:
+        - "Chen AY"
+        - "Wilburn P"
+        - "Hao X"
+        - "Tully T"
+      title: "Walking deficits and centrophobism in an alpha-synuclein fly model of Parkinson's disease"
+      journal: "Genes, Brain and Behavior"
+      year: 2014
+      volume: "13"
+      issue: "8"
+      pages: "812-820"
+      doi: "10.1111/gbb.12172"
+      pmid: "25113870"
+      pmcid: "PMC4262005"
+    biological_observations:
+      - endpoint: "total_moving_distance"
+        direction: "decreased"
+        finding: >
+          Old adult A30P flies showed decreased total moving distance compared
+          with old control flies.
+        assay_note: "horizontal open-field walking"
+      - endpoint: "distance_per_movement"
+        direction: "decreased"
+        finding: >
+          Old adult A30P flies showed decreased distance per movement compared
+          with old control flies.
+        assay_note: "horizontal open-field walking"
+      - endpoint: "walking_velocity"
+        direction: "decreased"
+        finding: >
+          Old adult A30P flies showed decreased walking velocity compared with
+          old control flies.
+        assay_note: "horizontal open-field walking"
+      - endpoint: "angular_velocity"
+        direction: "decreased"
+        finding: >
+          Old adult A30P flies showed decreased angular velocity compared with
+          old control flies.
+        assay_note: "horizontal open-field walking; age dependence is central"
+      - endpoint: "centrophobism"
+        direction: "increased"
+        finding: >
+          Old adult A30P flies showed increased centrophobism compared with old
+          control flies.
+        assay_note: "open-field center avoidance; not represented in current FlyGym metrics"
+
+endpoint_mappings:
+  - literature_endpoint: "walking_speed"
+    simulation_metric: "mean_planar_speed_mm_s"
+    comparability: "HIGH_QUALITATIVE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      Both endpoints describe walking speed, but the assay geometry, duration,
+      animal preparation, and simulation controller differ.
+  - literature_endpoint: "walking_velocity"
+    simulation_metric: "mean_planar_speed_mm_s"
+    comparability: "HIGH_QUALITATIVE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      The closest current simulation proxy for velocity is mean planar speed.
+  - literature_endpoint: "covered_distance"
+    simulation_metric: "planar_path_length_mm"
+    supplemental_simulation_metric: "planar_displacement_mm"
+    comparability: "MODERATE_QUALITATIVE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      Covered distance is closer to path length than net displacement, but the
+      E3 report records both and uses them only directionally.
+  - literature_endpoint: "total_moving_distance"
+    simulation_metric: "planar_path_length_mm"
+    supplemental_simulation_metric: "planar_displacement_mm"
+    comparability: "MODERATE_QUALITATIVE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      Total moving distance and simulation path length are directionally
+      comparable, but not directly numerically calibrated.
+  - literature_endpoint: "distance_per_movement"
+    simulation_metric: "NONE"
+    comparability: "NOT_AVAILABLE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      The current E3 report does not segment movement bouts, so distance per
+      movement is not available.
+  - literature_endpoint: "angular_velocity"
+    simulation_metric: "heading_yaw_change_rad"
+    comparability: "LOW_QUALITATIVE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      E3 records net and absolute yaw change, not angular velocity. This
+      endpoint must not be forced into concordance.
+  - literature_endpoint: "climbing_negative_geotaxis"
+    simulation_metric: "NONE"
+    comparability: "NOT_COMPARABLE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      Current FlyGym evidence is flat-ground walking, not negative geotaxis.
+  - literature_endpoint: "pause_time_or_freezing"
+    simulation_metric: "NONE"
+    comparability: "NOT_AVAILABLE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      Pause and freezing metrics are not currently computed.
+  - literature_endpoint: "centrophobism"
+    simulation_metric: "NONE"
+    comparability: "NOT_AVAILABLE"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      The current simulation does not include open-field arena center
+      avoidance.
+  - literature_endpoint: "thorax_or_body_height"
+    simulation_metric: "body_height_mean_mm"
+    comparability: "UNSUPPORTED_FOR_PD_INTERPRETATION"
+    direct_numeric_calibration_permitted: false
+    rationale: >
+      Body height is an observed simulation phenotype and possible confound,
+      but the selected literature set does not define a matching biological
+      Parkinson-model target.
+
+concordance_assessments:
+  - assessment_id: "adult_dopamine_deficiency_speed"
+    evidence_id: "riemensperger_2011_adult_dopamine_deficiency_walking"
+    literature_endpoint: "walking_speed"
+    biological_observation: "adult neural dopamine deficiency reduces walking speed"
+    computational_proxy: "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate"
+    simulation_metric: "mean_planar_speed_mm_s"
+    simulation_result_expected_direction: "decreased"
+    comparison_basis: "direction_only"
+    direct_numeric_calibration_used: false
+    classification: "CONCORDANT"
+    rationale: >
+      The frozen E3 candidate has lower mean planar speed than its paired
+      baseline across all five seeds.
+  - assessment_id: "adult_dopamine_deficiency_distance"
+    evidence_id: "riemensperger_2011_adult_dopamine_deficiency_walking"
+    literature_endpoint: "covered_distance"
+    biological_observation: "adult neural dopamine deficiency reduces covered distance"
+    computational_proxy: "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate"
+    simulation_metric: "planar_path_length_mm"
+    supplemental_simulation_metric: "planar_displacement_mm"
+    simulation_result_expected_direction: "decreased"
+    comparison_basis: "direction_only"
+    direct_numeric_calibration_used: false
+    classification: "CONCORDANT"
+    rationale: >
+      The frozen E3 candidate has lower path length and lower planar
+      displacement than its paired baseline across all five seeds.
+  - assessment_id: "old_adult_a30p_velocity"
+    evidence_id: "chen_2014_old_adult_a30p_walking"
+    literature_endpoint: "walking_velocity"
+    biological_observation: "old adult A30P flies show reduced walking velocity"
+    computational_proxy: "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate"
+    simulation_metric: "mean_planar_speed_mm_s"
+    simulation_result_expected_direction: "decreased"
+    comparison_basis: "direction_only"
+    direct_numeric_calibration_used: false
+    classification: "CONCORDANT"
+    rationale: >
+      The frozen E3 candidate shows a lower mean planar speed than baseline.
+  - assessment_id: "old_adult_a30p_total_moving_distance"
+    evidence_id: "chen_2014_old_adult_a30p_walking"
+    literature_endpoint: "total_moving_distance"
+    biological_observation: "old adult A30P flies show reduced total moving distance"
+    computational_proxy: "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate"
+    simulation_metric: "planar_path_length_mm"
+    supplemental_simulation_metric: "planar_displacement_mm"
+    simulation_result_expected_direction: "decreased"
+    comparison_basis: "direction_only"
+    direct_numeric_calibration_used: false
+    classification: "CONCORDANT"
+    rationale: >
+      E3 path length and displacement are both lower in the candidate than in
+      the paired baseline.
+  - assessment_id: "old_adult_a30p_distance_per_movement"
+    evidence_id: "chen_2014_old_adult_a30p_walking"
+    literature_endpoint: "distance_per_movement"
+    biological_observation: "old adult A30P flies show reduced distance per movement"
+    computational_proxy: "NONE_CURRENTLY"
+    simulation_metric: "NONE"
+    comparison_basis: "not_comparable"
+    direct_numeric_calibration_used: false
+    classification: "NOT_COMPARABLE"
+    rationale: >
+      E3 does not segment movement bouts, so distance per movement is currently
+      unavailable.
+  - assessment_id: "old_adult_a30p_angular_velocity"
+    evidence_id: "chen_2014_old_adult_a30p_walking"
+    literature_endpoint: "angular_velocity"
+    biological_observation: "old adult A30P flies show reduced angular velocity"
+    computational_proxy: "NONE_CURRENTLY"
+    simulation_metric: "heading_yaw_change_rad"
+    comparison_basis: "not_comparable"
+    direct_numeric_calibration_used: false
+    classification: "NOT_COMPARABLE"
+    rationale: >
+      E3 yaw change is not angular velocity. The observed yaw response is
+      variable and must not be treated as direct concordance.
+  - assessment_id: "old_adult_a30p_centrophobism"
+    evidence_id: "chen_2014_old_adult_a30p_walking"
+    literature_endpoint: "centrophobism"
+    biological_observation: "old adult A30P flies show increased centrophobism"
+    computational_proxy: "NONE_CURRENTLY"
+    simulation_metric: "NONE"
+    comparison_basis: "not_comparable"
+    direct_numeric_calibration_used: false
+    classification: "NOT_COMPARABLE"
+    rationale: >
+      The current flat-ground FlyGym report does not model an open-field arena
+      center-avoidance endpoint.
+  - assessment_id: "simulation_body_height"
+    evidence_id: "none_currently_curated"
+    literature_endpoint: "thorax_or_body_height"
+    biological_observation: "no selected adult dopamine or alpha-synuclein walking target"
+    computational_proxy: "frozen E3 candidate body-height response"
+    simulation_metric: "body_height_mean_mm"
+    comparison_basis: "unsupported_endpoint"
+    direct_numeric_calibration_used: false
+    classification: "INSUFFICIENT_EVIDENCE"
+    rationale: >
+      E3 body height changes substantially, but this endpoint is not supported
+      for Parkinson interpretation by the selected literature set.

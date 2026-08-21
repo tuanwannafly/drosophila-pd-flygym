@@ -1,0 +1,6 @@
+{
+  "status": "PLANNING_ONLY",
+  "algorithm": "sha256",
+  "files": {},
+  "notes": "Populate only from approved real dataset artifacts after execution authorization."
+}

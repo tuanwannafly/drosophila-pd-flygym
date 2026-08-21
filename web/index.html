@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fly Studio Web Platform</title>
+    <link rel="stylesheet" href="theme.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="app-container">
+        <header id="toolbar"></header>
+        <section id="experiment-dashboard" aria-label="Digital Laboratory dashboard"></section>
+        <div id="main-content">
+            <aside id="experiment-manager" aria-label="Experiment manager"></aside>
+            <aside id="sidebar"></aside>
+            <main id="viewer-container">
+                <div id="viewer"></div>
+                <div id="overlay"></div>
+            </main>
+            <aside id="inspector"></aside>
+        </div>
+        <footer id="timeline-container">
+            <div id="playback-controls"></div>
+            <div id="timeline"></div>
+            <div id="behavior-timeline"></div>
+            <div id="rollout-charts" aria-label="FlyGym rollout charts"></div>
+            <section id="research-workbench" aria-label="Parkinson research workbench"></section>
+            <section id="comparison-viewer" aria-label="Synchronized rollout comparison"></section>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div id="settings-modal" class="modal hidden"></div>
+    <div id="project-loader-modal" class="modal hidden"></div>
+
+    <!-- Scripts -->
+    <script src="main.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+schema_id: drosophila-pd-flygym.dataset.metadata.healthy
+inherits: ../metadata_schema.yaml
+required_additional:
+  - baseline_configuration
+  - simulation_provenance

@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drosophila-pd-flygym"
+version = "1.0.0"
+description = "Computational Drosophila locomotion research software with FlyGym integration."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+dependencies = [
+  "numpy>=1.26",
+  "PyYAML>=6.0",
+  "matplotlib>=3.8,<4",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.0",
+  "jsonschema>=4.0",
+]
+e2e = [
+  "playwright>=1.45",
+]
+docs = [
+  "python-docx>=1.2,<2",
+  "reportlab>=4.0,<5",
+]
+simulation = [
+  "flygym==2.1.0",
+  "mujoco==3.9.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TanVi3001/drosophila-pd-flygym"
+Repository = "https://github.com/TanVi3001/drosophila-pd-flygym"
+Issues = "https://github.com/TanVi3001/drosophila-pd-flygym/issues"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["drosophila_pd*"]
+namespaces = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

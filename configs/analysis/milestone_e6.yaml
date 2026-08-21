@@ -1,0 +1,19 @@
+experiment_id: milestone_e6_reproducible_evidence_synthesis
+
+required_evidence:
+  baseline: results/baseline/healthy_baseline.json
+  perturbation_identity: results/perturbations/identity.json
+  perturbation_action_scale: results/perturbations/action_scale_080.json
+  e1: results/sweeps/milestone_e1.json
+  e2: results/sweeps/milestone_e2_combined.json
+  e3: results/validation/milestone_e3_candidate_robustness.json
+  e4: results/validation/milestone_e4_concordance.json
+  e5: results/validation/milestone_e5_computational_rescue.json
+
+frozen_candidate:
+  motor_scale: 0.8
+  coupling_scale: 0.75
+
+artifacts:
+  figures_dir: results/analysis/figures
+  tables_dir: results/analysis/tables

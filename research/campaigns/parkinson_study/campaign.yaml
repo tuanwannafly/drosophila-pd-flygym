@@ -1,0 +1,28 @@
+campaign_id: project_b_parkinson_study_preparation
+name: Parkinson Study Preparation
+status: PLANNING_ONLY
+execution_enabled: false
+experiment_count: 100
+experiment_id_pattern: PD_[001-100]
+seed_policy:
+  type: deterministic
+  values: 0-99
+configuration_policy: PENDING_APPROVED_COMPUTATIONAL_CONFIGURATION
+validation_profile: existing_v7_v8_v9_integrity_and_reproducibility_gates
+expected_outputs:
+  - rollout
+  - measurements
+  - analysis
+  - statistics
+  - validation
+  - reports
+  - manifest
+  - checksum
+guardrails:
+  no_rollout_during_planning: true
+  no_simulation_during_planning: true
+  no_fabricated_data: true
+  no_new_algorithm: true
+  no_frozen_evidence_overwrite: true
+  no_biological_claim: true
+  explicit_execution_authorization_required: true

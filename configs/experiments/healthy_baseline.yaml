@@ -1,0 +1,46 @@
+# Milestone C - unperturbed locomotion baseline.
+# This configuration is for a deterministic software/simulation reference run.
+# It is not a Parkinson's disease model and is not biological validation.
+
+experiment_id: milestone_c_unperturbed_locomotion_baseline
+random_seed: 0
+
+fly:
+  name: healthy_baseline
+  joint_stiffness: 0.05
+  joint_damping: 0.06
+  passive_tarsus_stiffness: 7.5
+  passive_tarsus_damping: 0.01
+  add_adhesion: true
+  adhesion_gain: 40.0
+  colorize: false
+
+actuators:
+  type: position
+  gain: 45.0
+  forcerange: [-65.0, 65.0]
+  expected_actuated_dofs: 42
+
+world:
+  type: FlatGroundWorld
+  spawn_position_mm: [0.0, 0.0, 0.5]
+  spawn_orientation_quat: [1.0, 0.0, 0.0, 0.0]
+  spawn_position_source: "FlyGym 2.1.0 tutorial 4a_cpg_controller.ipynb uses [0, 0, 0.5] for the flat-ground CPG walking demo."
+  add_ground_contact_sensors: false
+
+simulation:
+  duration_s: 0.5
+  timestep_s: 0.0001
+  warmup_duration_s: 0.05
+
+controller:
+  type: official_flygym_cpg_tripod
+  intrinsic_frequency_hz: 12.0
+  intrinsic_amplitude: 1.0
+  coupling_strength: 10.0
+  convergence_coef: 20.0
+
+pass_criteria:
+  minimum_body_height_mm: -1.0
+  require_finite_observations: true
+  require_finite_metrics: true

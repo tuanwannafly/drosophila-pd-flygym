@@ -1,0 +1,13 @@
+condition_id,condition_label,category,motor_scale,coupling_scale,classification,endpoint,control_mean,impaired_mean,condition_mean,aggregate_recovery_fraction,direction_toward_control_count,no_farther_count
+control,control,control,1.0,1.0,REFERENCE,mean_planar_speed_mm_s,,,13.751281674590993,,,
+control,control,control,1.0,1.0,REFERENCE,planar_path_length_mm,,,19.31485503067457,,,
+impaired_candidate,frozen candidate,impaired_candidate,0.8,0.75,REFERENCE,mean_planar_speed_mm_s,,,12.302040063313584,,,
+impaired_candidate,frozen candidate,impaired_candidate,0.8,0.75,REFERENCE,planar_path_length_mm,,,17.308442670909542,,,
+motor_partial_rescue,motor partial restoration,partial_rescue,0.9,0.75,DIRECTIONALLY_RESCUED,mean_planar_speed_mm_s,13.751281674590993,12.302040063313584,12.798554263221726,0.34260277654496735,5,5
+motor_partial_rescue,motor partial restoration,partial_rescue,0.9,0.75,DIRECTIONALLY_RESCUED,planar_path_length_mm,19.31485503067457,17.308442670909542,18.06483724383281,0.3769885932181204,5,5
+coordination_partial_rescue,coordination partial restoration,partial_rescue,0.8,0.875,MIXED,mean_planar_speed_mm_s,13.751281674590993,12.302040063313584,12.38638348376136,0.05819831544405736,4,4
+coordination_partial_rescue,coordination partial restoration,partial_rescue,0.8,0.875,MIXED,planar_path_length_mm,19.31485503067457,17.308442670909542,17.32301662767562,0.007263689687290947,3,3
+combined_partial_rescue,combined partial restoration,partial_rescue,0.9,0.875,DIRECTIONALLY_RESCUED,mean_planar_speed_mm_s,13.751281674590993,12.302040063313584,12.823982404294824,0.36014860249643493,5,5
+combined_partial_rescue,combined partial restoration,partial_rescue,0.9,0.875,DIRECTIONALLY_RESCUED,planar_path_length_mm,19.31485503067457,17.308442670909542,18.018699776028235,0.35399358544714715,5,5
+full_computational_restoration_reference,full restoration reference,restoration_reference,1.0,1.0,REFERENCE,mean_planar_speed_mm_s,13.751281674590993,12.302040063313584,13.751281674590993,1.0,5,5
+full_computational_restoration_reference,full restoration reference,restoration_reference,1.0,1.0,REFERENCE,planar_path_length_mm,19.31485503067457,17.308442670909542,19.31485503067457,1.0,5,5

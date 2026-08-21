@@ -1,0 +1,1971 @@
+{
+  "module_count": 237,
+  "modules": [
+    {
+      "exports": [
+        "EvidenceSynthesisConfig",
+        "EvidenceValidationError",
+        "build_synthesis",
+        "generate_figures",
+        "generate_tables",
+        "load_evidence_reports",
+        "load_synthesis_config",
+        "run_evidence_synthesis",
+        "validate_frozen_evidence"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/analysis/evidence_synthesis.py"
+    },
+    {
+      "exports": [
+        "AuditError",
+        "AuditSafetyError",
+        "assert_pre_materialized",
+        "build_block_8_12_report",
+        "build_unavailable_report",
+        "collect_block_8_12_observations",
+        "compare_to_expected",
+        "git_commit",
+        "instantiate_neuromechfly",
+        "package_version",
+        "runtime_environment",
+        "write_json_report"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/anatomy/audit.py"
+    },
+    {
+      "exports": [
+        "MaterializationError",
+        "MaterializationSafetyError",
+        "assert_materialization_pre_state",
+        "build_base_skeleton_for_materialization",
+        "build_milestone_8b_materialization_report",
+        "build_milestone_8b_unavailable_report",
+        "collect_post_materialization_snapshot",
+        "collect_pre_materialization_snapshot",
+        "compare_milestone_8b",
+        "compare_to_historical_blocks",
+        "materialize_joints_explicit_gate",
+        "state_transition"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/anatomy/materialization.py"
+    },
+    {
+      "exports": [
+        "OrientationError",
+        "OrientationSafetyError",
+        "add_joints_orientation",
+        "assert_orientation_pre_materialized",
+        "build_block_8_13_orientation_report",
+        "build_block_8_13_unavailable_report",
+        "collect_block_8_13_orientation",
+        "compare_block_8_13_orientation",
+        "inspect_add_joints_source_text",
+        "joint_related_methods",
+        "mapping_container_summary",
+        "mjcf_root_objects"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/anatomy/orientation.py"
+    },
+    {
+      "exports": [
+        "AssayMetricSpec",
+        "AssayResult",
+        "BehavioralAssay",
+        "RolloutAssayInput",
+        "metric_names"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/assays/base.py"
+    },
+    {
+      "exports": [
+        "FreezingAssay"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/assays/freezing.py"
+    },
+    {
+      "exports": [
+        "GaitAssay"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/assays/gait.py"
+    },
+    {
+      "exports": [
+        "OpenFieldAssay"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/assays/open_field.py"
+    },
+    {
+      "exports": [
+        "run_behavioral_assay_suite"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/assays/suite.py"
+    },
+    {
+      "exports": [
+        "TurningAssay"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/assays/turning.py"
+    },
+    {
+      "exports": [
+        "export_advanced_visualization_set",
+        "export_replay_dashboard",
+        "plot_behavioral_embeddings",
+        "plot_behavioral_network_graph",
+        "plot_behavioral_state_timeline",
+        "plot_intervention_timeline",
+        "plot_progression_map",
+        "plot_radar_plot",
+        "plot_sankey_transition_diagram",
+        "plot_similarity_heatmap",
+        "plot_trajectory_clusters"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/advanced_visualization.py"
+    },
+    {
+      "exports": [
+        "analytics_panel_inventory",
+        "build_ai_analytics_dashboard",
+        "export_ai_analytics_dashboard"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_analytics.py"
+    },
+    {
+      "exports": [
+        "BenchmarkCase",
+        "export_benchmark_report",
+        "run_behavior_benchmark"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_benchmark.py"
+    },
+    {
+      "exports": [
+        "ClassificationResult",
+        "classify_feature_matrix",
+        "distance_based_classifier",
+        "plugin_classifier",
+        "rule_based_classifier"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_classification.py"
+    },
+    {
+      "exports": [
+        "BehaviorDataset",
+        "BehaviorIndex",
+        "BehaviorSample",
+        "BehaviorSequenceDataset",
+        "DatasetExporter",
+        "DatasetLoader",
+        "DatasetManifest",
+        "build_behavior_index",
+        "create_dataset_manifest",
+        "verify_dataset_integrity"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_dataset.py"
+    },
+    {
+      "exports": [
+        "synthetic_behavior_dataset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_examples.py"
+    },
+    {
+      "exports": [
+        "extract_behavior_features",
+        "generate_feature_matrix"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_features.py"
+    },
+    {
+      "exports": [
+        "generate_ai_behavior_report"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_report.py"
+    },
+    {
+      "exports": [
+        "behavior_embeddings",
+        "dbscan_cluster",
+        "hierarchical_cluster",
+        "kmeans_cluster",
+        "nearest_neighbors",
+        "pca_embedding",
+        "similarity_search",
+        "spectral_cluster",
+        "standardize_features",
+        "tsne_embedding",
+        "umap_embedding"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/ai_unsupervised.py"
+    },
+    {
+      "exports": [
+        "compare_behavior_conditions"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/behavior_comparison.py"
+    },
+    {
+      "exports": [
+        "Campaign",
+        "CampaignCheckpoint",
+        "CampaignConfig",
+        "CampaignHistory",
+        "CampaignManifest",
+        "CampaignResume",
+        "CampaignRunner",
+        "CampaignScheduler",
+        "ExperimentPlan",
+        "create_campaign",
+        "generate_experiment_matrix",
+        "load_campaign_config",
+        "resume_campaign",
+        "save_campaign",
+        "utc_timestamp"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/campaign.py"
+    },
+    {
+      "exports": [
+        "CampaignArtifactManager",
+        "ManagedArtifact",
+        "artifact_manifest_from_paths",
+        "deterministic_artifact_layout"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/campaign_artifacts.py"
+    },
+    {
+      "exports": [
+        "CampaignDatasetBuilder",
+        "load_campaign_results",
+        "merge_campaign_datasets",
+        "validate_campaign_dataset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/campaign_dataset.py"
+    },
+    {
+      "exports": [
+        "CampaignFigureFactory",
+        "generate_paper_assets"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/campaign_figures.py"
+    },
+    {
+      "exports": [
+        "CampaignProvenance",
+        "collect_campaign_provenance",
+        "current_git_commit",
+        "directory_manifest",
+        "file_sha256",
+        "stable_hash",
+        "write_provenance_manifest"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/campaign_provenance.py"
+    },
+    {
+      "exports": [
+        "replay_campaign_plan",
+        "verify_artifact_hashes",
+        "verify_campaign_replay",
+        "verify_dataset_package",
+        "verify_manifest_signature"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/campaign_reproducibility.py"
+    },
+    {
+      "exports": [
+        "ComparisonCondition",
+        "ComparisonPlaybackPlan",
+        "build_comparison_playback_plan",
+        "compare_rollouts"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/comparison.py"
+    },
+    {
+      "exports": [
+        "build_behavior_dashboard",
+        "export_behavior_dashboard",
+        "plot_trajectory_explorer"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/dashboard.py"
+    },
+    {
+      "exports": [
+        "Arena",
+        "ArenaZone",
+        "BehaviorComparison",
+        "BehaviorDashboard",
+        "BehaviorEpisode",
+        "BehaviorReport",
+        "BehaviorSequence",
+        "ProgressionStage",
+        "ProgressionTimeline"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/data_model.py"
+    },
+    {
+      "exports": [
+        "DigitalTwin",
+        "TwinConfiguration",
+        "TwinHistory",
+        "TwinMetadata",
+        "TwinReplay",
+        "TwinScenario",
+        "TwinSnapshot",
+        "TwinState"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/digital_twin.py"
+    },
+    {
+      "exports": [
+        "ExportRequest",
+        "RolloutExportResult",
+        "export_rollout_package"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/export.py"
+    },
+    {
+      "exports": [
+        "GaitAnalysisConfig",
+        "GaitInput",
+        "analyze_gait"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/gait.py"
+    },
+    {
+      "exports": [
+        "GaitAnimationRequest",
+        "GaitAnimationResult",
+        "render_gait_animation"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/gait_animation.py"
+    },
+    {
+      "exports": [
+        "GaitExportRequest",
+        "GaitExportResult",
+        "export_gait_package"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/gait_export.py"
+    },
+    {
+      "exports": [
+        "plot_contact_raster",
+        "plot_coordination_matrix",
+        "plot_foot_trajectories",
+        "plot_footfall_diagram",
+        "plot_gait_timeline",
+        "plot_joint_trajectories",
+        "plot_phase_wheel",
+        "plot_stride_plot",
+        "render_gait_visualization_set"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/gait_visualization.py"
+    },
+    {
+      "exports": [
+        "InterventionDefinition",
+        "InterventionTimeline",
+        "ParameterSchedule",
+        "StagedIntervention",
+        "apply_intervention_parameters",
+        "compare_intervention_reports",
+        "intervention_from_config",
+        "intervention_to_json",
+        "replay_intervention"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/intervention.py"
+    },
+    {
+      "exports": [
+        "ExperimentCatalog",
+        "ExperimentRecord",
+        "LabLayout",
+        "build_experiment_catalog",
+        "build_interactive_lab",
+        "load_lab_layout",
+        "save_lab_layout"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/lab.py"
+    },
+    {
+      "exports": [
+        "measure_rollout_behavior"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/measurement.py"
+    },
+    {
+      "exports": [
+        "analyze_open_field",
+        "export_open_field_report"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/open_field.py"
+    },
+    {
+      "exports": [
+        "interpolate_stages",
+        "interpolated_stage_at",
+        "progression_from_config",
+        "progression_to_json",
+        "replay_progression",
+        "stage_at"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/progression.py"
+    },
+    {
+      "exports": [
+        "OfflineRenderRequest",
+        "OfflineRenderResult",
+        "render_offline"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/rendering.py"
+    },
+    {
+      "exports": [
+        "RolloutData"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/rollout.py"
+    },
+    {
+      "exports": [
+        "ScenarioDefinition",
+        "ScenarioResult",
+        "batch_execute_scenarios",
+        "build_scenario",
+        "compare_scenarios",
+        "scenario_report_to_json"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/scenario.py"
+    },
+    {
+      "exports": [
+        "BehaviorStateMachineConfig",
+        "analyze_state_sequence",
+        "classify_behavior_states",
+        "reconstruct_state_timeline"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/state_machine.py"
+    },
+    {
+      "exports": [
+        "PlaybackOverlayConfig",
+        "SynchronizedPlaybackRequest",
+        "SynchronizedPlaybackResult",
+        "render_synchronized_playback"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/video_system.py"
+    },
+    {
+      "exports": [
+        "CameraPreset",
+        "ViewerPlan",
+        "build_viewer_plan",
+        "plot_rollout_summary"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/behavior_platform/visualization.py"
+    },
+    {
+      "exports": [
+        "BenchmarkResult",
+        "BenchmarkSuite"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/benchmarking.py"
+    },
+    {
+      "exports": [
+        "CPGControllerConfig",
+        "build_official_cpg_controller"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/controllers/healthy_baseline.py"
+    },
+    {
+      "exports": [
+        "DebugLogger",
+        "DiagnosticReport",
+        "PerformanceTrace",
+        "StructuredEventLog",
+        "TimingTrace"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/debug_utils.py"
+    },
+    {
+      "exports": [
+        "APIExplorer",
+        "ArchitectureSnapshot",
+        "DependencyGraphGenerator",
+        "HookExplorer",
+        "ModuleIndex",
+        "ModuleRecord",
+        "PluginRegistryViewer"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/developer_tooling.py"
+    },
+    {
+      "exports": [
+        "CandidateRobustnessConfig",
+        "E3CandidateDefinition",
+        "build_aggregate_statistics",
+        "build_candidate_robustness_checks",
+        "build_candidate_robustness_report",
+        "build_candidate_robustness_unavailable_report",
+        "build_sign_consistency",
+        "classify_robustness",
+        "load_candidate_robustness_config",
+        "run_candidate_robustness_validation"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/candidate_robustness.py"
+    },
+    {
+      "exports": [
+        "CombinedPhenotypeConditionSpec",
+        "CombinedPhenotypeSweepConfig",
+        "build_combined_checks",
+        "build_combined_phenotype_report",
+        "build_combined_phenotype_unavailable_report",
+        "build_condition_characterization",
+        "build_interaction_analysis",
+        "load_combined_phenotype_sweep_config",
+        "run_combined_phenotype_sweep"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/combined_phenotype.py"
+    },
+    {
+      "exports": [
+        "ComputationalRescueConditionSpec",
+        "ComputationalRescueConfig",
+        "build_computational_rescue_checks",
+        "build_computational_rescue_report",
+        "build_computational_rescue_unavailable_report",
+        "build_condition_assessments",
+        "build_full_restoration_reference_equivalence",
+        "build_recovery_fraction",
+        "classify_rescue_condition",
+        "extract_e5_metric_values",
+        "load_computational_rescue_config",
+        "run_computational_rescue_validation"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/computational_rescue.py"
+    },
+    {
+      "exports": [
+        "HealthyBaselineConfig",
+        "build_healthy_baseline_unavailable_report",
+        "load_healthy_baseline_config",
+        "run_healthy_baseline",
+        "run_locomotion"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/healthy_baseline.py"
+    },
+    {
+      "exports": [
+        "RolloutArrays",
+        "build_measurement_refresh_report",
+        "build_measurement_refresh_unavailable_report",
+        "export_rollout_artifacts",
+        "load_measurement_extension_config",
+        "run_measurement_enabled_evidence_refresh",
+        "run_measurement_enabled_rollout"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/measurement_refresh.py"
+    },
+    {
+      "exports": [
+        "ParameterSweepConfig",
+        "SweepConditionSpec",
+        "SweepFamilyConfig",
+        "build_parameter_sweep_report",
+        "build_parameter_sweep_unavailable_report",
+        "build_response_curves",
+        "build_sweep_checks",
+        "load_parameter_sweep_config",
+        "run_parameter_sweep"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/parameter_sweep.py"
+    },
+    {
+      "exports": [
+        "build_controlled_variables",
+        "build_paired_checks",
+        "build_paired_perturbation_report",
+        "build_perturbation_unavailable_report",
+        "run_paired_perturbation_experiment"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/perturbation_experiment.py"
+    },
+    {
+      "exports": [
+        "build_e3_simulation_phenotype",
+        "build_e4_checks",
+        "build_milestone_e4_concordance_report",
+        "build_unsupported_comparisons",
+        "classify_overall_scientific_status",
+        "load_e4_evidence_matrix",
+        "load_json_report"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/experiments/phenotype_concordance.py"
+    },
+    {
+      "exports": [
+        "AnimationAsset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/animation_asset.py"
+    },
+    {
+      "exports": [
+        "AnimationPose"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/animation_pose.py"
+    },
+    {
+      "exports": [
+        "AssetBundle"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/asset_bundle.py"
+    },
+    {
+      "exports": [
+        "AssetCache"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/asset_cache.py"
+    },
+    {
+      "exports": [
+        "AssetDatabase"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/asset_database.py"
+    },
+    {
+      "exports": [
+        "AssetLoader"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/asset_loader.py"
+    },
+    {
+      "exports": [
+        "AssetManifest"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/asset_manifest.py"
+    },
+    {
+      "exports": [
+        "AssetReference"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/asset_reference.py"
+    },
+    {
+      "exports": [
+        "AssetValidator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/asset_validator.py"
+    },
+    {
+      "exports": [
+        "CameraPanel",
+        "CameraPreset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/camera_panel.py"
+    },
+    {
+      "exports": [
+        "EventTrack"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/event_track.py"
+    },
+    {
+      "exports": [
+        "FrameScheduler"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/frame_scheduler.py"
+    },
+    {
+      "exports": [
+        "FlyStudioPipeline"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/integration/pipeline.py"
+    },
+    {
+      "exports": [
+        "PipelineExamples"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/integration/pipeline_examples.py"
+    },
+    {
+      "exports": [
+        "PipelineReport"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/integration/pipeline_report.py"
+    },
+    {
+      "exports": [
+        "PipelineValidator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/integration/pipeline_validator.py"
+    },
+    {
+      "exports": [
+        "Interpolator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/interpolator.py"
+    },
+    {
+      "exports": [
+        "JointPose"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/joint_pose.py"
+    },
+    {
+      "exports": [
+        "KeyframeBuilder"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/keyframe_builder.py"
+    },
+    {
+      "exports": [
+        "Manifest",
+        "ManifestEntry"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/manifest.py"
+    },
+    {
+      "exports": [
+        "MaterialAsset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/material_asset.py"
+    },
+    {
+      "exports": [
+        "MeshAsset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/mesh_asset.py"
+    },
+    {
+      "exports": [
+        "ProjectMetadata"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/metadata.py"
+    },
+    {
+      "exports": [
+        "Migration"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/migration.py"
+    },
+    {
+      "exports": [
+        "MotionPlayer"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/motion_player.py"
+    },
+    {
+      "exports": [
+        "PackageBuilder"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/package_builder.py"
+    },
+    {
+      "exports": [
+        "PackageLoader"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/package_loader.py"
+    },
+    {
+      "exports": [
+        "PackageSerializer"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/package_serializer.py"
+    },
+    {
+      "exports": [
+        "PackageValidator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/package_validator.py"
+    },
+    {
+      "exports": [
+        "PlaybackCache"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_cache.py"
+    },
+    {
+      "exports": [
+        "PlaybackClip"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_clip.py"
+    },
+    {
+      "exports": [
+        "PlaybackFrame"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_frame.py"
+    },
+    {
+      "exports": [
+        "PlaybackPanel"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_panel.py"
+    },
+    {
+      "exports": [
+        "PlaybackSerializer"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_serializer.py"
+    },
+    {
+      "exports": [
+        "PlaybackSession"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_session.py"
+    },
+    {
+      "exports": [
+        "PlaybackStatistics"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_statistics.py"
+    },
+    {
+      "exports": [
+        "PlaybackTrack"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/playback_track.py"
+    },
+    {
+      "exports": [
+        "PoseBuilder"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/pose_builder.py"
+    },
+    {
+      "exports": [
+        "PoseCache"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/pose_cache.py"
+    },
+    {
+      "exports": [
+        "PoseInterpolator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/pose_interpolator.py"
+    },
+    {
+      "exports": [
+        "PoseSerializer"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/pose_serializer.py"
+    },
+    {
+      "exports": [
+        "PoseStatistics"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/pose_statistics.py"
+    },
+    {
+      "exports": [
+        "PoseValidator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/pose_validator.py"
+    },
+    {
+      "exports": [
+        "PreviewGenerator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/preview_generator.py"
+    },
+    {
+      "exports": [
+        "ProjectAssets"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/project_assets.py"
+    },
+    {
+      "exports": [
+        "ProjectPackage"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/project_package.py"
+    },
+    {
+      "exports": [
+        "ProjectWorkspace"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/project_workspace.py"
+    },
+    {
+      "exports": [
+        "RecordingPanel"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/recording_panel.py"
+    },
+    {
+      "exports": [
+        "ResourceManager"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/resource_manager.py"
+    },
+    {
+      "exports": [
+        "RetargetMapping"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/retarget_mapping.py"
+    },
+    {
+      "exports": [
+        "RetargetProfile"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/retarget_profile.py"
+    },
+    {
+      "exports": [
+        "SelectionPanel"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/selection_panel.py"
+    },
+    {
+      "exports": [
+        "SkeletonPose"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/skeleton_pose.py"
+    },
+    {
+      "exports": [
+        "StatisticsPanel"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/statistics_panel.py"
+    },
+    {
+      "exports": [
+        "SyncManager"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/sync_manager.py"
+    },
+    {
+      "exports": [
+        "TextureAsset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/texture_asset.py"
+    },
+    {
+      "exports": [
+        "ThumbnailGenerator"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/thumbnail_generator.py"
+    },
+    {
+      "exports": [
+        "TimelineController"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/timeline_controller.py"
+    },
+    {
+      "exports": [
+        "TimelinePanel"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/timeline_panel.py"
+    },
+    {
+      "exports": [
+        "TrajectoryAsset"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/trajectory_asset.py"
+    },
+    {
+      "exports": [
+        "Transform"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/transform.py"
+    },
+    {
+      "exports": [
+        "Version"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/versioning.py"
+    },
+    {
+      "exports": [
+        "ViewerEvents"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/viewer_events.py"
+    },
+    {
+      "exports": [
+        "ViewerLayout"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/viewer_layout.py"
+    },
+    {
+      "exports": [
+        "ViewerPreferences"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/viewer_preferences.py"
+    },
+    {
+      "exports": [
+        "ViewerSerializer"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/viewer_serializer.py"
+    },
+    {
+      "exports": [
+        "ViewerSession"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/viewer_session.py"
+    },
+    {
+      "exports": [
+        "ViewerState"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/viewer_state.py"
+    },
+    {
+      "exports": [
+        "ViewportController"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/flystudio/viewport_controller.py"
+    },
+    {
+      "exports": [
+        "compute_walking_bout_metrics",
+        "compute_walking_bouts_from_positions"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/metrics/bouts.py"
+    },
+    {
+      "exports": [
+        "compare_locomotion_reports",
+        "evaluate_identity_equivalence"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/metrics/comparison.py"
+    },
+    {
+      "exports": [
+        "check_locomotion_pass_criteria",
+        "compute_locomotion_metrics"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/metrics/locomotion.py"
+    },
+    {
+      "exports": [
+        "compute_extended_locomotion_metrics"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/metrics/measurement_extension.py"
+    },
+    {
+      "exports": [
+        "compute_open_field_metrics",
+        "open_field_unavailable"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/metrics/open_field.py"
+    },
+    {
+      "exports": [
+        "compute_trajectory_timeseries",
+        "trajectory_csv_rows",
+        "write_trajectory_csv"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/metrics/trajectory.py"
+    },
+    {
+      "exports": [
+        "compute_turning_metrics",
+        "compute_turning_metrics_from_quaternions"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/metrics/turning.py"
+    },
+    {
+      "exports": [
+        "compare_computational_reports"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/parkinson/comparison.py"
+    },
+    {
+      "exports": [
+        "ComputationalPDIndex",
+        "ParkinsonMotorConfig",
+        "ParkinsonMotorModel",
+        "build_behavior_model",
+        "compute_motor_impairment_indices",
+        "extract_motor_features"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/parkinson/model.py"
+    },
+    {
+      "exports": [
+        "generate_computational_pd_report",
+        "render_markdown_report"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/parkinson/report.py"
+    },
+    {
+      "exports": [
+        "bootstrap_confidence_interval",
+        "compare_feature_sets",
+        "correlation_matrix",
+        "cross_validate_index",
+        "feature_ablation",
+        "leave_one_out_feature_validation",
+        "outlier_sensitivity",
+        "validate_computational_report"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/parkinson/validation.py"
+    },
+    {
+      "exports": [
+        "plot_behavior_timeline",
+        "plot_correlation_heatmap",
+        "plot_distributions",
+        "plot_feature_importance",
+        "plot_index_breakdown",
+        "plot_motor_feature_timelines",
+        "plot_parallel_coordinates",
+        "plot_radar",
+        "render_pd_figures"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/parkinson/visualization.py"
+    },
+    {
+      "exports": [
+        "ActionPerturbationContext",
+        "CPGCouplingScalePerturbation",
+        "CompositePerturbation",
+        "ControllerPerturbationContext",
+        "GlobalActionScalePerturbation",
+        "IdentityPerturbation",
+        "Perturbation",
+        "load_perturbation_config",
+        "perturbation_from_mapping",
+        "perturbation_metadata_complete"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/perturbations/base.py"
+    },
+    {
+      "exports": [
+        "summarize_action_transformation",
+        "summarize_controller_transformation"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/perturbations/validation.py"
+    },
+    {
+      "exports": [
+        "HealthCheck",
+        "ProjectHealth"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/project_health.py"
+    },
+    {
+      "exports": [
+        "ReleaseCandidateBuilder",
+        "ReleaseCandidateConfig"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/release_candidate.py"
+    },
+    {
+      "exports": [
+        "CompatibilityMatrix",
+        "MigrationNotes",
+        "ReleaseManifest",
+        "ReleaseNotesGenerator",
+        "VersionMetadata"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/release_engineering.py"
+    },
+    {
+      "exports": [
+        "benchmark_operations",
+        "benchmark_scalability"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/scientific_validation/benchmark.py"
+    },
+    {
+      "exports": [
+        "ReferenceDataset",
+        "ReferenceDatasetManager"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/scientific_validation/datasets.py"
+    },
+    {
+      "exports": [
+        "compare_analysis_mappings",
+        "compare_feature_mappings",
+        "compare_rollouts",
+        "compare_series"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/scientific_validation/metrics.py"
+    },
+    {
+      "exports": [
+        "generate_validation_report",
+        "render_validation_markdown"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/scientific_validation/report.py"
+    },
+    {
+      "exports": [
+        "hash_payload",
+        "repeated_execution_check",
+        "seed_consistency_check"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/scientific_validation/reproducibility.py"
+    },
+    {
+      "exports": [
+        "effect_size_consistency",
+        "validate_statistical_stability"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/scientific_validation/statistics.py"
+    },
+    {
+      "exports": [
+        "render_validation_figures"
+      ],
+      "kind": "python",
+      "path": "src/drosophila_pd/scientific_validation/visualization.py"
+    },
+    {
+      "exports": [
+        "AnalysisCache",
+        "BoundedCache"
+      ],
+      "kind": "javascript",
+      "path": "web/analysis_cache.js"
+    },
+    {
+      "exports": [
+        "FeatureGraph",
+        "createDefaultFeatureGraph"
+      ],
+      "kind": "javascript",
+      "path": "web/analysis_graph.js"
+    },
+    {
+      "exports": [
+        "buildComparisonMatrix"
+      ],
+      "kind": "javascript",
+      "path": "web/analysis_matrix.js"
+    },
+    {
+      "exports": [
+        "NORMALIZATION_SCOPES",
+        "normalizeBatch",
+        "normalizeFeatureBundle",
+        "normalizeValues"
+      ],
+      "kind": "javascript",
+      "path": "web/analysis_normalization.js"
+    },
+    {
+      "exports": [
+        "OUTLIER_METHODS",
+        "detectFeatureOutliers",
+        "detectOutliers"
+      ],
+      "kind": "javascript",
+      "path": "web/analysis_outliers.js"
+    },
+    {
+      "exports": [
+        "AnalysisPipeline",
+        "buildPipelineReport"
+      ],
+      "kind": "javascript",
+      "path": "web/analysis_pipeline.js"
+    },
+    {
+      "exports": [
+        "inspectBatchQuality",
+        "inspectRolloutQuality"
+      ],
+      "kind": "javascript",
+      "path": "web/analysis_quality.js"
+    },
+    {
+      "exports": [
+        "App"
+      ],
+      "kind": "javascript",
+      "path": "web/app.js"
+    },
+    {
+      "exports": [
+        "BehaviorTimeline"
+      ],
+      "kind": "javascript",
+      "path": "web/behavior_timeline.js"
+    },
+    {
+      "exports": [
+        "Camera"
+      ],
+      "kind": "javascript",
+      "path": "web/camera.js"
+    },
+    {
+      "exports": [
+        "RolloutComparisonViewer"
+      ],
+      "kind": "javascript",
+      "path": "web/comparison_viewer.js"
+    },
+    {
+      "exports": [
+        "BodyModel",
+        "COMModel",
+        "ComponentCollection",
+        "ComponentModel",
+        "DIGITAL_FLY_COMPONENTS",
+        "DigitalFly",
+        "HeadModel",
+        "HierarchyModel",
+        "JointModel",
+        "LegModel",
+        "MotionModel",
+        "OrientationModel",
+        "ParkinsonStateModel",
+        "PoseModel",
+        "SkeletonModel",
+        "TrajectoryRegistry",
+        "WingModel"
+      ],
+      "kind": "javascript",
+      "path": "web/digital_fly.js"
+    },
+    {
+      "exports": [
+        "Bone3D",
+        "DEFAULT_FLY_SKELETON",
+        "DigitalFly3D",
+        "Joint3D",
+        "Skeleton3D",
+        "blendPoses",
+        "composeTransforms",
+        "computeSkeletonMetrics",
+        "createTransform",
+        "interpolatePose",
+        "interpolateTransform",
+        "multiplyQuaternions",
+        "normalizeQuaternion",
+        "quaternionFromAxisAngle",
+        "rotateVector",
+        "slerpQuaternions",
+        "validateSkeleton3D",
+        "validateTrajectoryOwnership",
+        "vector3"
+      ],
+      "kind": "javascript",
+      "path": "web/digital_fly_3d.js"
+    },
+    {
+      "exports": [
+        "DigitalFly3DRenderer"
+      ],
+      "kind": "javascript",
+      "path": "web/digital_fly_3d_renderer.js"
+    },
+    {
+      "exports": [
+        "DigitalLaboratory",
+        "EntityStore",
+        "LABORATORY_ENTITY_TYPES"
+      ],
+      "kind": "javascript",
+      "path": "web/digital_laboratory.js"
+    },
+    {
+      "exports": [
+        "AnalyticsDashboard",
+        "buildAnalyticsDashboard"
+      ],
+      "kind": "javascript",
+      "path": "web/experiment_analytics.js"
+    },
+    {
+      "exports": [
+        "ExperimentComparisonModel"
+      ],
+      "kind": "javascript",
+      "path": "web/experiment_comparison.js"
+    },
+    {
+      "exports": [
+        "ExperimentReportGenerator"
+      ],
+      "kind": "javascript",
+      "path": "web/experiment_reports.js"
+    },
+    {
+      "exports": [
+        "ComparisonWorkspace",
+        "DatasetManager",
+        "EXPERIMENT_KINDS",
+        "ExperimentManager",
+        "ExperimentWorkspace",
+        "LayoutManager",
+        "PluginRegistry",
+        "SnapshotStore"
+      ],
+      "kind": "javascript",
+      "path": "web/experiment_workspace.js"
+    },
+    {
+      "exports": [
+        "ExperimentWorkspacePanel"
+      ],
+      "kind": "javascript",
+      "path": "web/experiment_workspace_panel.js"
+    },
+    {
+      "exports": [
+        "FlyGymRolloutLoader",
+        "RolloutFormatError",
+        "detectRolloutVersion",
+        "flattenChannelSeries",
+        "toWorkspaceData"
+      ],
+      "kind": "javascript",
+      "path": "web/flygym_rollout.js"
+    },
+    {
+      "exports": [
+        "Inspector"
+      ],
+      "kind": "javascript",
+      "path": "web/inspector.js"
+    },
+    {
+      "exports": [
+        "IntegrationWorkflow",
+        "MemoryStorage"
+      ],
+      "kind": "javascript",
+      "path": "web/integration_workflow.js"
+    },
+    {
+      "exports": [
+        "JSONLoader"
+      ],
+      "kind": "javascript",
+      "path": "web/json_loader.js"
+    },
+    {
+      "exports": [
+        "LaboratoryDashboard"
+      ],
+      "kind": "javascript",
+      "path": "web/laboratory_dashboard.js"
+    },
+    {
+      "exports": [
+        "Layout"
+      ],
+      "kind": "javascript",
+      "path": "web/layout.js"
+    },
+    {
+      "exports": [
+        "Overlay"
+      ],
+      "kind": "javascript",
+      "path": "web/overlay.js"
+    },
+    {
+      "exports": [
+        "COMPARISON_LABELS",
+        "compareFeatureBundles",
+        "comparePair",
+        "correlation",
+        "euclideanDistance",
+        "rankConditions",
+        "similarity"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_comparison.js"
+    },
+    {
+      "exports": [
+        "ParkinsonAnalyticsEngine"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_engine.js"
+    },
+    {
+      "exports": [
+        "AnalyticsExporter"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_export.js"
+    },
+    {
+      "exports": [
+        "FEATURE_NAMES",
+        "FeatureCache",
+        "extractFeatureBundle",
+        "unavailableBundle"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_features.js"
+    },
+    {
+      "exports": [
+        "computeParkinsonScore"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_score.js"
+    },
+    {
+      "exports": [
+        "BEHAVIOR_LABELS",
+        "labelFrame",
+        "segmentBehavior",
+        "segmentationSummary"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_segmentation.js"
+    },
+    {
+      "exports": [
+        "DEFAULT_HISTOGRAM_BINS",
+        "StatisticsCache",
+        "histogram",
+        "quantile",
+        "summarizeFeatureBundle",
+        "summarizeFeatureValues"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_statistics.js"
+    },
+    {
+      "exports": [
+        "AnalyticsVisualizer",
+        "renderAnalyticsSVG"
+      ],
+      "kind": "javascript",
+      "path": "web/parkinson_visualization.js"
+    },
+    {
+      "exports": [
+        "Playback"
+      ],
+      "kind": "javascript",
+      "path": "web/playback.js"
+    },
+    {
+      "exports": [
+        "PLAYBACK_STATES",
+        "PlaybackController"
+      ],
+      "kind": "javascript",
+      "path": "web/playback_controller.js"
+    },
+    {
+      "exports": [
+        "PLUGIN_CAPABILITIES",
+        "PLUGIN_HOOKS",
+        "PluginContext",
+        "PluginLoader",
+        "PluginManifestError",
+        "PluginPlatform"
+      ],
+      "kind": "javascript",
+      "path": "web/plugin_platform.js"
+    },
+    {
+      "exports": [
+        "analysisPlugin"
+      ],
+      "kind": "javascript",
+      "path": "web/plugins/analysis_plugin.js"
+    },
+    {
+      "exports": [
+        "exportPlugin"
+      ],
+      "kind": "javascript",
+      "path": "web/plugins/export_plugin.js"
+    },
+    {
+      "exports": [
+        "statisticsPlugin"
+      ],
+      "kind": "javascript",
+      "path": "web/plugins/statistics_plugin.js"
+    },
+    {
+      "exports": [
+        "ProjectLoader"
+      ],
+      "kind": "javascript",
+      "path": "web/project_loader.js"
+    },
+    {
+      "exports": [
+        "ChartCache",
+        "FrameCache",
+        "LazyRollout",
+        "TrajectoryCache"
+      ],
+      "kind": "javascript",
+      "path": "web/rollout_cache.js"
+    },
+    {
+      "exports": [
+        "RolloutChartRenderer",
+        "chartToSVG"
+      ],
+      "kind": "javascript",
+      "path": "web/rollout_charts.js"
+    },
+    {
+      "exports": [
+        "COMPARISON_CONDITIONS",
+        "buildComparisonReport",
+        "compareRollouts"
+      ],
+      "kind": "javascript",
+      "path": "web/rollout_comparison.js"
+    },
+    {
+      "exports": [
+        "RolloutExporter"
+      ],
+      "kind": "javascript",
+      "path": "web/rollout_export.js"
+    },
+    {
+      "exports": [
+        "ROLLOUT_STATISTIC_NAMES",
+        "computeRolloutStatistics",
+        "unavailableStatistics"
+      ],
+      "kind": "javascript",
+      "path": "web/rollout_statistics.js"
+    },
+    {
+      "exports": [
+        "SessionRecorder"
+      ],
+      "kind": "javascript",
+      "path": "web/session_recorder.js"
+    },
+    {
+      "exports": [
+        "Settings"
+      ],
+      "kind": "javascript",
+      "path": "web/settings.js"
+    },
+    {
+      "exports": [
+        "Sidebar"
+      ],
+      "kind": "javascript",
+      "path": "web/sidebar.js"
+    },
+    {
+      "exports": [
+        "adjustPValues"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_corrections.js"
+    },
+    {
+      "exports": [
+        "correlationMatrix",
+        "kendall",
+        "partialCorrelation",
+        "pearson",
+        "spearman"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_correlation.js"
+    },
+    {
+      "exports": [
+        "describe",
+        "distribution"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_descriptive.js"
+    },
+    {
+      "exports": [
+        "effectSizes"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_effects.js"
+    },
+    {
+      "exports": [
+        "StatisticalEngine"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_engine.js"
+    },
+    {
+      "exports": [
+        "erf",
+        "finiteValues",
+        "mean",
+        "median",
+        "normalCDF",
+        "quantile",
+        "seededRandom",
+        "shuffle",
+        "standardDeviation",
+        "twoSidedNormalP",
+        "variance"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_math.js"
+    },
+    {
+      "exports": [
+        "linearRegression",
+        "polynomialRegression",
+        "residualAnalysis",
+        "robustRegression"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_regression.js"
+    },
+    {
+      "exports": [
+        "StatisticalReport"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_report.js"
+    },
+    {
+      "exports": [
+        "bootstrapStatistic",
+        "jackknife"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_resampling.js"
+    },
+    {
+      "exports": [
+        "kolmogorovSmirnov",
+        "mannWhitney",
+        "permutationTest",
+        "welchTTest",
+        "wilcoxonSignedRank"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_tests.js"
+    },
+    {
+      "exports": [
+        "checkAssumptions"
+      ],
+      "kind": "javascript",
+      "path": "web/statistical_validation.js"
+    },
+    {
+      "exports": [
+        "Statistics"
+      ],
+      "kind": "javascript",
+      "path": "web/statistics.js"
+    },
+    {
+      "exports": [
+        "Timeline"
+      ],
+      "kind": "javascript",
+      "path": "web/timeline.js"
+    },
+    {
+      "exports": [
+        "Toolbar"
+      ],
+      "kind": "javascript",
+      "path": "web/toolbar.js"
+    },
+    {
+      "exports": [
+        "DEFAULT_STRESS_SIZES",
+        "REQUIRED_STAGES",
+        "VerificationSuite"
+      ],
+      "kind": "javascript",
+      "path": "web/verification_suite.js"
+    },
+    {
+      "exports": [
+        "Viewer"
+      ],
+      "kind": "javascript",
+      "path": "web/viewer.js"
+    },
+    {
+      "exports": [
+        "ViewportRenderer"
+      ],
+      "kind": "javascript",
+      "path": "web/viewport_renderer.js"
+    },
+    {
+      "exports": [
+        "WORKSPACE_EVENTS",
+        "Workspace"
+      ],
+      "kind": "javascript",
+      "path": "web/workspace.js"
+    },
+    {
+      "exports": [
+        "WorkspacePersistence",
+        "serializeWorkspace"
+      ],
+      "kind": "javascript",
+      "path": "web/workspace_persistence.js"
+    }
+  ]
+}

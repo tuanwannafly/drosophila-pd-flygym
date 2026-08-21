@@ -1,0 +1,57 @@
+name: Markdown Validation
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  markdown:
+    name: Markdown formatting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Markdown formatting
+        shell: python
+        run: |
+          from pathlib import Path
+          import sys
+
+          excluded_parts = {
+              ".git",
+              ".pytest_cache",
+              ".ruff_cache",
+              ".mypy_cache",
+              ".tox",
+              ".nox",
+              "__pycache__",
+              "notebooks",
+          }
+          errors = []
+          for path in sorted(Path(".").rglob("*.md")):
+              if any(part in excluded_parts for part in path.parts):
+                  continue
+              text = path.read_text(encoding="utf-8")
+              if text and not text.endswith("\n"):
+                  errors.append(f"{path}: missing final newline")
+              for line_number, line in enumerate(text.splitlines(), start=1):
+                  if line.rstrip(" \t") != line:
+                      errors.append(f"{path}:{line_number}: trailing whitespace")
+              fence_count = sum(
+                  1
+                  for line in text.splitlines()
+                  if line.lstrip().startswith("```")
+              )
+              if fence_count % 2:
+                  errors.append(f"{path}: unbalanced fenced code blocks")
+          if errors:
+              print("\n".join(errors))
+              sys.exit(1)
+          print("Markdown formatting validation passed.")

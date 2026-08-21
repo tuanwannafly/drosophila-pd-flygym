@@ -1,0 +1,21 @@
+{
+  "dataset_id": "healthy_baseline_campaign_01",
+  "dataset_type": "healthy",
+  "dataset_version": "0.1.0",
+  "status": "PLANNING_ONLY",
+  "source_commit": "REPLACE_WITH_EXECUTION_COMMIT",
+  "configuration": "configs/experiments/healthy_baseline.yaml",
+  "environment": {
+    "python": "3.12.x",
+    "flygym": "2.1.0",
+    "mujoco": "3.9.0"
+  },
+  "entries": [],
+  "checksums": {},
+  "citation": "CITATION.cff and the approved campaign report citation",
+  "scientific_scope": "Unperturbed computational baseline outputs only; not biological validation.",
+  "limitations": [
+    "No rollout has been executed in this planning package.",
+    "Large raw artifacts require an approved external or curated storage location."
+  ]
+}

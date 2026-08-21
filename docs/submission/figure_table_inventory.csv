@@ -1,0 +1,14 @@
+identifier,filename,source,manuscript_section,evidence_dependency
+Figure 1,results/analysis/figures/e1_parameter_response.png,results/analysis/milestone_e6_synthesis.json,3.3 Motor-vigor and coordination response curves,results/sweeps/milestone_e1.json
+Figure 2,results/analysis/figures/e2_condition_comparison.png,results/analysis/milestone_e6_synthesis.json,3.4 Combined perturbations and candidate selection,results/sweeps/milestone_e2_combined.json
+Figure 3,results/analysis/figures/e3_paired_seed_robustness.png,results/analysis/milestone_e6_synthesis.json,3.5 Multi-seed robustness,results/validation/milestone_e3_candidate_robustness.json
+Figure 4,results/analysis/figures/e5_computational_reversibility.png,results/analysis/milestone_e6_synthesis.json,3.7 Computational reversibility,results/validation/milestone_e5_computational_rescue.json
+Table 1,docs/report/final_report.md,docs/report/final_report.md,2.2 Unperturbed locomotion baseline,"results/baseline/healthy_baseline.json; results/sweeps/milestone_e1.json; results/validation/milestone_e3_candidate_robustness.json; results/validation/milestone_e5_computational_rescue.json"
+Table 2,docs/report/final_report.md,docs/report/final_report.md,3.5 Multi-seed robustness,results/validation/milestone_e3_candidate_robustness.json
+Table 3,docs/report/final_report.md,docs/report/final_report.md,3.6 Qualitative adult walking concordance,results/validation/milestone_e4_concordance.json
+Table 4,docs/report/final_report.md,docs/report/final_report.md,3.7 Computational reversibility,results/validation/milestone_e5_computational_rescue.json
+Supplementary Table S1,results/analysis/tables/evidence_manifest.csv,results/analysis/milestone_e6_synthesis.json,6 Reproducibility,results/analysis/milestone_e6_synthesis.json
+Supplementary Table S2,results/analysis/tables/e1_parameter_response.csv,results/analysis/milestone_e6_synthesis.json,3.3 Motor-vigor and coordination response curves,results/sweeps/milestone_e1.json
+Supplementary Table S3,results/analysis/tables/e2_condition_summary.csv,results/analysis/milestone_e6_synthesis.json,3.4 Combined perturbations and candidate selection,results/sweeps/milestone_e2_combined.json
+Supplementary Table S4,results/analysis/tables/e3_seed_summary.csv,results/analysis/milestone_e6_synthesis.json,3.5 Multi-seed robustness,results/validation/milestone_e3_candidate_robustness.json
+Supplementary Table S5,results/analysis/tables/e5_reversibility_summary.csv,results/analysis/milestone_e6_synthesis.json,3.7 Computational reversibility,results/validation/milestone_e5_computational_rescue.json

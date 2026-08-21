@@ -1,0 +1,6 @@
+schema_id: drosophila-pd-flygym.dataset.manifest.benchmark
+inherits: ../manifest_schema.yaml
+dataset_type: benchmark
+required_additional:
+  - operation
+  - input_description

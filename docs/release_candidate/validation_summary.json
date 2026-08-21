@@ -1,0 +1,7 @@
+{
+  "evidence_modified": false,
+  "scientific_validation_input_required": true,
+  "scope": "Software integration and release readiness only.",
+  "simulation_executed": false,
+  "status": "static_and_contract_checks_only"
+}

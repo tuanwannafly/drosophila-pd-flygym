@@ -1,0 +1,20 @@
+campaign_id: project_y_perturbation
+name: Perturbation Campaign
+campaign_type: perturbation
+status: PLANNED
+execution_enabled: false
+datasets: []
+expected_outputs: [measurements, analysis, validation, reports, manifest]
+matrix:
+  dataset: [PENDING_DATASET]
+  seed: [0]
+  controller: [PENDING_CONTROLLER]
+  terrain: [PENDING_TERRAIN]
+  noise: [false]
+  perturbation: [PENDING_COMPUTATIONAL_PERTURBATION]
+  duration: [0.0]
+  replicates: 1
+  priority: 0
+validation_status: PENDING
+publication_readiness: PLANNING_ONLY
+guardrails: {no_simulation_during_planning: true, no_fabricated_data: true, no_biological_claim: true}

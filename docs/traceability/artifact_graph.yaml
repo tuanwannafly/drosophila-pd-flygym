@@ -1,0 +1,832 @@
+graph:
+  schema_version: 1
+  workflow: Workflow_v2_Phase_G2
+  release_tag: v1.0.0
+  release_commit: b06bef93b9a12d921377ad72ee85d1ad2a4f44a0
+  edge_policy: repository_supported_relationships_only
+
+  nodes:
+    - id: notebook_session01
+      type: notebook
+      path: notebooks/session_01_environment/FlyBrain_Session01_Setup.ipynb
+      status: historical
+      support: docs/session_inventory/session01_traceability.yaml
+    - id: notebook_session02
+      type: notebook
+      path: notebooks/session_02_healthy_baseline/Session_02_Healthy_Baseline.ipynb
+      status: protected_historical
+      support: docs/session_inventory/session02_traceability.yaml
+
+    - id: inventory_session_index
+      type: inventory
+      path: docs/session_inventory/session_index.md
+      status: phase_g1_output
+    - id: inventory_session01
+      type: inventory
+      path: docs/session_inventory/session01_traceability.yaml
+      status: phase_g1_output
+    - id: inventory_session02
+      type: inventory
+      path: docs/session_inventory/session02_traceability.yaml
+      status: phase_g1_output
+    - id: inventory_mapping
+      type: inventory
+      path: docs/session_inventory/canonical_mapping.csv
+      status: phase_g1_output
+
+    - id: module_anatomy_audit
+      type: canonical_module
+      path: src/drosophila_pd/anatomy/audit.py
+    - id: module_anatomy_orientation
+      type: canonical_module
+      path: src/drosophila_pd/anatomy/orientation.py
+    - id: module_anatomy_materialization
+      type: canonical_module
+      path: src/drosophila_pd/anatomy/materialization.py
+    - id: module_experiment_baseline
+      type: canonical_module
+      path: src/drosophila_pd/experiments/healthy_baseline.py
+    - id: module_controller_baseline
+      type: canonical_module
+      path: src/drosophila_pd/controllers/healthy_baseline.py
+    - id: module_metrics_locomotion
+      type: canonical_module
+      path: src/drosophila_pd/metrics/locomotion.py
+    - id: module_metrics_comparison
+      type: canonical_module
+      path: src/drosophila_pd/metrics/comparison.py
+    - id: module_perturbation_base
+      type: canonical_module
+      path: src/drosophila_pd/perturbations/base.py
+    - id: module_perturbation_validation
+      type: canonical_module
+      path: src/drosophila_pd/perturbations/validation.py
+    - id: module_experiment_perturbation
+      type: canonical_module
+      path: src/drosophila_pd/experiments/perturbation_experiment.py
+    - id: module_experiment_e1
+      type: canonical_module
+      path: src/drosophila_pd/experiments/parameter_sweep.py
+    - id: module_experiment_e2
+      type: canonical_module
+      path: src/drosophila_pd/experiments/combined_phenotype.py
+    - id: module_experiment_e3
+      type: canonical_module
+      path: src/drosophila_pd/experiments/candidate_robustness.py
+    - id: module_experiment_e4
+      type: canonical_module
+      path: src/drosophila_pd/experiments/phenotype_concordance.py
+    - id: module_experiment_e5
+      type: canonical_module
+      path: src/drosophila_pd/experiments/computational_rescue.py
+    - id: module_analysis_e6
+      type: canonical_module
+      path: src/drosophila_pd/analysis/evidence_synthesis.py
+
+    - id: config_baseline
+      type: config
+      path: configs/experiments/healthy_baseline.yaml
+    - id: config_identity
+      type: config
+      path: configs/experiments/perturbations/identity.yaml
+    - id: config_action_scale
+      type: config
+      path: configs/experiments/perturbations/action_scale_080.yaml
+    - id: config_e1
+      type: config
+      path: configs/experiments/sweeps/milestone_e1.yaml
+    - id: config_e2
+      type: config
+      path: configs/experiments/sweeps/milestone_e2.yaml
+    - id: config_e3
+      type: config
+      path: configs/experiments/validation/milestone_e3.yaml
+    - id: config_e4
+      type: config
+      path: docs/scientific/e4_evidence_matrix.yaml
+    - id: config_e5
+      type: config
+      path: configs/experiments/validation/milestone_e5.yaml
+    - id: config_e6
+      type: config
+      path: configs/analysis/milestone_e6.yaml
+
+    - id: script_audit_812
+      type: script
+      path: scripts/audit_block_8_12.py
+    - id: script_audit_813
+      type: script
+      path: scripts/audit_block_8_13.py
+    - id: script_materialization_8b
+      type: script
+      path: scripts/run_joint_materialization_milestone.py
+    - id: script_baseline
+      type: script
+      path: scripts/run_healthy_baseline.py
+    - id: script_perturbation
+      type: script
+      path: scripts/run_perturbation_experiment.py
+    - id: script_e1
+      type: script
+      path: scripts/run_parameter_sweep.py
+    - id: script_e2
+      type: script
+      path: scripts/run_combined_phenotype_sweep.py
+    - id: script_e3
+      type: script
+      path: scripts/run_candidate_robustness.py
+    - id: script_e4
+      type: script
+      path: scripts/run_phenotype_concordance.py
+    - id: script_e5
+      type: script
+      path: scripts/run_computational_rescue.py
+    - id: script_e6
+      type: script
+      path: scripts/run_evidence_synthesis.py
+    - id: script_build_report
+      type: script
+      path: scripts/build_final_report.py
+
+    - id: milestone_812
+      type: milestone
+      path: Block_8.12
+      status: frozen
+    - id: milestone_813
+      type: milestone
+      path: Block_8.13
+      status: frozen
+    - id: milestone_8b
+      type: milestone
+      path: Milestone_8B
+      status: frozen
+    - id: milestone_c
+      type: milestone
+      path: Milestone_C
+      status: frozen
+    - id: milestone_d
+      type: milestone
+      path: Milestone_D
+      status: frozen
+    - id: milestone_e1
+      type: milestone
+      path: Milestone_E1
+      status: frozen
+    - id: milestone_e2
+      type: milestone
+      path: Milestone_E2
+      status: frozen
+    - id: milestone_e3
+      type: milestone
+      path: Milestone_E3
+      status: frozen
+    - id: milestone_e4
+      type: milestone
+      path: Milestone_E4
+      status: frozen
+    - id: milestone_e5
+      type: milestone
+      path: Milestone_E5
+      status: frozen
+    - id: milestone_e6
+      type: milestone
+      path: Milestone_E6
+      status: frozen_by_release_docs
+      internal_report_status: IMPLEMENTED_AWAITING_REVIEW
+    - id: milestone_f
+      type: milestone
+      path: Milestone_F
+      status: frozen
+
+    - id: evidence_812
+      type: evidence_json
+      path: results/baseline/block_8_12_audit.json
+      execution_commit: 1de7c8bfea84699fee2849d977a393013428739a
+      overall_pass: true
+    - id: evidence_813
+      type: evidence_json
+      path: results/baseline/block_8_13_orientation.json
+      execution_commit: 6d22ac55cedbec6d6e71ddf77acb6b439218141d
+      overall_pass: true
+    - id: evidence_8b
+      type: evidence_json
+      path: results/baseline/milestone_8b_materialization.json
+      execution_commit: a43823a80149c671691b8324037bbd9e2f30542c
+      overall_pass: true
+    - id: evidence_c
+      type: evidence_json
+      path: results/baseline/healthy_baseline.json
+      execution_commit: 91bc44c25dd25ea1ac409001efafc74dda018ce8
+      overall_pass: true
+    - id: evidence_d_identity
+      type: evidence_json
+      path: results/perturbations/identity.json
+      execution_commit: f886c204d8ad3a95dcd953418a8f9df51927137f
+      overall_pass: true
+    - id: evidence_d_action
+      type: evidence_json
+      path: results/perturbations/action_scale_080.json
+      execution_commit: f886c204d8ad3a95dcd953418a8f9df51927137f
+      overall_pass: true
+    - id: evidence_e1
+      type: evidence_json
+      path: results/sweeps/milestone_e1.json
+      execution_commit: 7cb2ed580b8eabb6a363b27f481564751eeb9e48
+      overall_pass: true
+    - id: evidence_e2
+      type: evidence_json
+      path: results/sweeps/milestone_e2_combined.json
+      execution_commit: 433269ed11e0475eb973b62d31f469d66843872f
+      overall_pass: true
+    - id: evidence_e3
+      type: evidence_json
+      path: results/validation/milestone_e3_candidate_robustness.json
+      execution_commit: 730ab3acd8e5535b93f320a62c19080feca0448f
+      overall_pass: true
+    - id: evidence_e4
+      type: evidence_json
+      path: results/validation/milestone_e4_concordance.json
+      execution_commit: 9a13b43b2619e2423c96cf390a3dcbddc9f248fe
+      overall_pass: true
+    - id: evidence_e5
+      type: evidence_json
+      path: results/validation/milestone_e5_computational_rescue.json
+      execution_commit: 7cffac001488589d089bc49266aa103e7458f476
+      overall_pass: true
+    - id: evidence_e6
+      type: evidence_json
+      path: results/analysis/milestone_e6_synthesis.json
+      execution_commit: 53e41d17365f56509ca708ba3352ddf724b0e89a
+      overall_pass: true
+
+    - id: figure_e1
+      type: figure
+      path: results/analysis/figures/e1_parameter_response.png
+    - id: figure_e2
+      type: figure
+      path: results/analysis/figures/e2_condition_comparison.png
+    - id: figure_e3
+      type: figure
+      path: results/analysis/figures/e3_paired_seed_robustness.png
+    - id: figure_e5
+      type: figure
+      path: results/analysis/figures/e5_computational_reversibility.png
+    - id: table_evidence_manifest
+      type: table
+      path: results/analysis/tables/evidence_manifest.csv
+    - id: table_e1
+      type: table
+      path: results/analysis/tables/e1_parameter_response.csv
+    - id: table_e2
+      type: table
+      path: results/analysis/tables/e2_condition_summary.csv
+    - id: table_e3
+      type: table
+      path: results/analysis/tables/e3_seed_summary.csv
+    - id: table_e5
+      type: table
+      path: results/analysis/tables/e5_reversibility_summary.csv
+
+    - id: manuscript_source
+      type: manuscript_source
+      path: docs/report/final_report.md
+      source_commit: 004488cf7fd5e980137a209d360b977716865e1a
+    - id: paper_2_1
+      type: manuscript_section
+      path: docs/report/final_report.md:2.1
+    - id: paper_2_2
+      type: manuscript_section
+      path: docs/report/final_report.md:2.2
+    - id: paper_2_3
+      type: manuscript_section
+      path: docs/report/final_report.md:2.3
+    - id: paper_2_4
+      type: manuscript_section
+      path: docs/report/final_report.md:2.4
+    - id: paper_2_5
+      type: manuscript_section
+      path: docs/report/final_report.md:2.5
+    - id: paper_2_6
+      type: manuscript_section
+      path: docs/report/final_report.md:2.6
+    - id: paper_2_7
+      type: manuscript_section
+      path: docs/report/final_report.md:2.7
+    - id: paper_2_8
+      type: manuscript_section
+      path: docs/report/final_report.md:2.8
+    - id: paper_2_9
+      type: manuscript_section
+      path: docs/report/final_report.md:2.9
+    - id: paper_2_10
+      type: manuscript_section
+      path: docs/report/final_report.md:2.10
+    - id: paper_2_11
+      type: manuscript_section
+      path: docs/report/final_report.md:2.11
+    - id: paper_2_4_to_2_6
+      type: manuscript_section
+      path: docs/report/final_report.md:2.4-2.6
+    - id: paper_2_7_to_2_11
+      type: manuscript_section
+      path: docs/report/final_report.md:2.7-2.11
+    - id: paper_3_1
+      type: manuscript_section
+      path: docs/report/final_report.md:3.1
+    - id: paper_3_2
+      type: manuscript_section
+      path: docs/report/final_report.md:3.2
+    - id: paper_3_3
+      type: manuscript_section
+      path: docs/report/final_report.md:3.3
+    - id: paper_3_4
+      type: manuscript_section
+      path: docs/report/final_report.md:3.4
+    - id: paper_3_5
+      type: manuscript_section
+      path: docs/report/final_report.md:3.5
+    - id: paper_3_6
+      type: manuscript_section
+      path: docs/report/final_report.md:3.6
+    - id: paper_3_7
+      type: manuscript_section
+      path: docs/report/final_report.md:3.7
+    - id: paper_3_8
+      type: manuscript_section
+      path: docs/report/final_report.md:3.8
+    - id: paper_4_to_7
+      type: manuscript_section
+      path: docs/report/final_report.md:4-7
+    - id: paper_6
+      type: manuscript_section
+      path: docs/report/final_report.md:6
+    - id: paper_references
+      type: manuscript_section
+      path: docs/report/final_report.md:References
+    - id: paper_appendix_a
+      type: manuscript_section
+      path: docs/report/final_report.md:Appendix_A
+    - id: paper_appendix_b
+      type: manuscript_section
+      path: docs/report/final_report.md:Appendix_B
+    - id: paper_appendix_c
+      type: manuscript_section
+      path: docs/report/final_report.md:Appendix_C
+    - id: report_reproducibility
+      type: supporting_report
+      path: docs/report/reproducibility.md
+    - id: report_evidence_traceability
+      type: supporting_report
+      path: docs/report/evidence_traceability.md
+    - id: report_figure_captions
+      type: supporting_report
+      path: docs/report/figure_captions.md
+
+    - id: release_docx
+      type: release_artifact
+      path: dist/Drosophila_PD_FlyGym_Final_Report.docx
+    - id: release_pdf
+      type: release_artifact
+      path: dist/Drosophila_PD_FlyGym_Final_Report.pdf
+    - id: release_manifest
+      type: release_artifact
+      path: dist/final_report_manifest.json
+    - id: release_notes
+      type: release_artifact
+      path: docs/release/v1.0.0.md
+
+  edges:
+    - from: notebook_session01
+      to: inventory_session01
+      relation: inventoried_by
+      support: docs/session_inventory/session01_traceability.yaml
+    - from: notebook_session02
+      to: inventory_session02
+      relation: inventoried_by
+      support: docs/session_inventory/session02_traceability.yaml
+    - from: notebook_session01
+      to: module_experiment_baseline
+      relation: historical_setup_reused_by
+      support: docs/session_inventory/canonical_mapping.csv:S01-B5
+    - from: notebook_session01
+      to: module_anatomy_materialization
+      relation: historical_materialization_consolidated_by
+      support: docs/session_inventory/canonical_mapping.csv:S01-B8
+    - from: notebook_session02
+      to: module_anatomy_audit
+      relation: historical_block_canonicalized_by
+      support: docs/session_inventory/canonical_mapping.csv:S02-B8.12
+    - from: notebook_session02
+      to: module_anatomy_orientation
+      relation: historical_block_canonicalized_by
+      support: docs/session_inventory/canonical_mapping.csv:S02-B8.13
+    - from: notebook_session02
+      to: module_anatomy_materialization
+      relation: historical_blocks_consolidated_by
+      support: docs/session_inventory/canonical_mapping.csv:S02-B8.14_TO_B8.19B
+
+    - from: module_anatomy_audit
+      to: script_audit_812
+      relation: implementation_entrypoint
+      support: scripts/audit_block_8_12.py
+    - from: module_anatomy_orientation
+      to: script_audit_813
+      relation: implementation_entrypoint
+      support: scripts/audit_block_8_13.py
+    - from: module_anatomy_materialization
+      to: script_materialization_8b
+      relation: implementation_entrypoint
+      support: scripts/run_joint_materialization_milestone.py
+    - from: module_experiment_baseline
+      to: script_baseline
+      relation: implementation_entrypoint
+      support: scripts/run_healthy_baseline.py
+    - from: module_experiment_perturbation
+      to: script_perturbation
+      relation: implementation_entrypoint
+      support: scripts/run_perturbation_experiment.py
+    - from: module_experiment_e1
+      to: script_e1
+      relation: implementation_entrypoint
+      support: scripts/run_parameter_sweep.py
+    - from: module_experiment_e2
+      to: script_e2
+      relation: implementation_entrypoint
+      support: scripts/run_combined_phenotype_sweep.py
+    - from: module_experiment_e3
+      to: script_e3
+      relation: implementation_entrypoint
+      support: scripts/run_candidate_robustness.py
+    - from: module_experiment_e4
+      to: script_e4
+      relation: implementation_entrypoint
+      support: scripts/run_phenotype_concordance.py
+    - from: module_experiment_e5
+      to: script_e5
+      relation: implementation_entrypoint
+      support: scripts/run_computational_rescue.py
+    - from: module_analysis_e6
+      to: script_e6
+      relation: implementation_entrypoint
+      support: scripts/run_evidence_synthesis.py
+
+    - from: config_baseline
+      to: script_baseline
+      relation: runtime_configuration
+      support: docs/report/reproducibility.md:Milestone_C
+    - from: config_baseline
+      to: script_perturbation
+      relation: baseline_configuration
+      support: docs/report/reproducibility.md:Milestone_D
+    - from: config_baseline
+      to: script_e1
+      relation: baseline_configuration
+      support: docs/report/reproducibility.md:Milestone_E1
+    - from: config_baseline
+      to: script_e2
+      relation: baseline_configuration
+      support: docs/report/reproducibility.md:Milestone_E2
+    - from: config_baseline
+      to: script_e3
+      relation: baseline_configuration
+      support: docs/report/reproducibility.md:Milestone_E3
+    - from: config_baseline
+      to: script_e5
+      relation: baseline_configuration
+      support: docs/report/reproducibility.md:Milestone_E5
+    - from: config_identity
+      to: script_perturbation
+      relation: perturbation_configuration
+      support: docs/report/reproducibility.md:Milestone_D
+    - from: config_action_scale
+      to: script_perturbation
+      relation: perturbation_configuration
+      support: docs/report/reproducibility.md:Milestone_D
+    - from: config_e1
+      to: script_e1
+      relation: sweep_configuration
+      support: docs/report/reproducibility.md:Milestone_E1
+    - from: config_e2
+      to: script_e2
+      relation: sweep_configuration
+      support: docs/report/reproducibility.md:Milestone_E2
+    - from: config_e3
+      to: script_e3
+      relation: validation_configuration
+      support: docs/report/reproducibility.md:Milestone_E3
+    - from: config_e4
+      to: script_e4
+      relation: literature_matrix_configuration
+      support: docs/report/reproducibility.md:Milestone_E4
+    - from: config_e5
+      to: script_e5
+      relation: validation_configuration
+      support: docs/report/reproducibility.md:Milestone_E5
+    - from: config_e6
+      to: script_e6
+      relation: synthesis_configuration
+      support: docs/report/reproducibility.md:Milestone_E6
+
+    - from: script_audit_812
+      to: evidence_812
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Block_8.12
+    - from: script_audit_813
+      to: evidence_813
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Block_8.13
+    - from: script_materialization_8b
+      to: evidence_8b
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_8B
+    - from: script_baseline
+      to: evidence_c
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_C
+    - from: script_perturbation
+      to: evidence_d_identity
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_D
+    - from: script_perturbation
+      to: evidence_d_action
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_D
+    - from: script_e1
+      to: evidence_e1
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_E1
+    - from: script_e2
+      to: evidence_e2
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_E2
+    - from: script_e3
+      to: evidence_e3
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_E3
+    - from: script_e4
+      to: evidence_e4
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_E4
+    - from: script_e5
+      to: evidence_e5
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_E5
+    - from: script_e6
+      to: evidence_e6
+      relation: writes_evidence
+      support: docs/report/reproducibility.md:Milestone_E6
+
+    - from: evidence_e1
+      to: figure_e1
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.figures
+    - from: evidence_e1
+      to: table_e1
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.tables
+    - from: evidence_e2
+      to: figure_e2
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.figures
+    - from: evidence_e2
+      to: table_e2
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.tables
+    - from: evidence_e3
+      to: figure_e3
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.figures
+    - from: evidence_e3
+      to: table_e3
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.tables
+    - from: evidence_e5
+      to: figure_e5
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.figures
+    - from: evidence_e5
+      to: table_e5
+      relation: synthesized_into
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.tables
+    - from: evidence_e6
+      to: table_evidence_manifest
+      relation: writes_artifact
+      support: results/analysis/milestone_e6_synthesis.json:artifacts.tables
+
+    - from: evidence_c
+      to: paper_3_1
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T01
+    - from: evidence_d_identity
+      to: paper_3_2
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T02
+    - from: evidence_d_action
+      to: paper_3_2
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T03
+    - from: evidence_e1
+      to: paper_3_3
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T04-T05
+    - from: evidence_e2
+      to: paper_3_4
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T06
+    - from: evidence_e3
+      to: paper_3_5
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T07
+    - from: evidence_e4
+      to: paper_3_6
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T08
+    - from: evidence_e5
+      to: paper_3_7
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T09
+    - from: evidence_e6
+      to: paper_3_8
+      relation: supports_claims
+      support: docs/report/evidence_traceability.md:T11
+    - from: evidence_e6
+      to: paper_4_to_7
+      relation: supports_boundary
+      support: docs/report/evidence_traceability.md:T12
+    - from: evidence_812
+      to: paper_appendix_a
+      relation: supports_chain_item
+      support: docs/report/final_report.md:Appendix_A_item_1
+    - from: evidence_813
+      to: paper_appendix_a
+      relation: supports_chain_item
+      support: docs/report/final_report.md:Appendix_A_item_1
+    - from: evidence_8b
+      to: paper_appendix_a
+      relation: supports_chain_item
+      support: docs/report/final_report.md:Appendix_A_item_2
+
+    - from: figure_e1
+      to: paper_3_3
+      relation: embedded_in
+      support: docs/report/final_report.md:Figure_1
+    - from: figure_e2
+      to: paper_3_4
+      relation: embedded_in
+      support: docs/report/final_report.md:Figure_2
+    - from: figure_e3
+      to: paper_3_5
+      relation: embedded_in
+      support: docs/report/final_report.md:Figure_3
+    - from: figure_e5
+      to: paper_3_7
+      relation: embedded_in
+      support: docs/report/final_report.md:Figure_4
+    - from: table_e1
+      to: paper_3_3
+      relation: supports_table
+      support: docs/report/evidence_traceability.md:T04-T05
+    - from: table_e2
+      to: paper_3_4
+      relation: supports_table
+      support: docs/report/evidence_traceability.md:T06
+    - from: table_e3
+      to: paper_3_5
+      relation: supports_table
+      support: docs/report/evidence_traceability.md:T07
+    - from: table_e5
+      to: paper_3_7
+      relation: supports_table
+      support: docs/report/evidence_traceability.md:T09
+    - from: table_evidence_manifest
+      to: paper_3_8
+      relation: supports_artifact_inventory
+      support: docs/report/evidence_traceability.md:T11
+
+    - from: manuscript_source
+      to: script_build_report
+      relation: canonical_build_input
+      support: dist/final_report_manifest.json:build.command
+    - from: script_build_report
+      to: release_docx
+      relation: builds
+      support: dist/final_report_manifest.json:artifacts
+    - from: script_build_report
+      to: release_pdf
+      relation: builds
+      support: dist/final_report_manifest.json:artifacts
+    - from: manuscript_source
+      to: release_manifest
+      relation: provenance_recorded_by
+      support: dist/final_report_manifest.json:manuscript
+    - from: release_docx
+      to: release_manifest
+      relation: hashed_by
+      support: dist/final_report_manifest.json:artifacts
+    - from: release_pdf
+      to: release_manifest
+      relation: hashed_by
+      support: dist/final_report_manifest.json:artifacts
+    - from: release_manifest
+      to: release_notes
+      relation: release_inventory
+      support: docs/release/v1.0.0.md:Included_final_artifacts
+
+  milestone_contracts:
+    - id: milestone_812
+      status: frozen
+      inputs: [notebook_session02, module_anatomy_audit, script_audit_812]
+      outputs: [evidence_812]
+      validation: [tests/test_block_8_12_invariants.py]
+      evidence: [evidence_812]
+      paper_sections: [paper_2_1, paper_6, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_813
+      status: frozen
+      inputs: [notebook_session02, module_anatomy_orientation, script_audit_813]
+      outputs: [evidence_813]
+      validation: [tests/test_block_8_13_orientation.py]
+      evidence: [evidence_813]
+      paper_sections: [paper_2_1, paper_6, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_8b
+      status: frozen
+      inputs: [evidence_812, evidence_813, module_anatomy_materialization, script_materialization_8b]
+      outputs: [evidence_8b]
+      validation: [tests/test_joint_materialization.py]
+      evidence: [evidence_8b]
+      paper_sections: [paper_2_1, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_c
+      status: frozen
+      inputs: [evidence_8b, config_baseline, module_experiment_baseline, module_controller_baseline, module_metrics_locomotion, script_baseline]
+      outputs: [evidence_c]
+      validation: [tests/test_healthy_baseline.py, tests/test_locomotion_metrics.py]
+      evidence: [evidence_c]
+      paper_sections: [paper_2_2, paper_3_1, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_d
+      status: frozen
+      inputs: [evidence_c, config_baseline, config_identity, config_action_scale, module_perturbation_base, module_perturbation_validation, module_experiment_perturbation, script_perturbation]
+      outputs: [evidence_d_identity, evidence_d_action]
+      validation: [tests/test_perturbations.py, tests/test_perturbation_experiment.py]
+      evidence: [evidence_d_identity, evidence_d_action]
+      paper_sections: [paper_2_3, paper_3_2, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_e1
+      status: frozen
+      inputs: [evidence_c, evidence_d_identity, evidence_d_action, config_baseline, config_e1, module_experiment_e1, script_e1]
+      outputs: [evidence_e1]
+      validation: [tests/test_parameter_sweep.py]
+      evidence: [evidence_e1]
+      paper_sections: [paper_2_4_to_2_6, paper_3_3, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_e2
+      status: frozen
+      inputs: [evidence_e1, config_baseline, config_e2, module_experiment_e2, script_e2]
+      outputs: [evidence_e2]
+      validation: [tests/test_combined_phenotype.py]
+      evidence: [evidence_e2]
+      paper_sections: [paper_2_6, paper_2_7_to_2_11, paper_3_4, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_e3
+      status: frozen
+      inputs: [evidence_e2, config_baseline, config_e3, module_experiment_e3, script_e3]
+      outputs: [evidence_e3]
+      validation: [tests/test_candidate_robustness.py]
+      evidence: [evidence_e3]
+      paper_sections: [paper_2_8, paper_3_5, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_e4
+      status: frozen
+      inputs: [evidence_e3, config_e4, module_experiment_e4, script_e4]
+      outputs: [evidence_e4]
+      validation: [tests/test_phenotype_concordance.py]
+      evidence: [evidence_e4]
+      paper_sections: [paper_2_9, paper_3_6, paper_appendix_a, paper_appendix_b, paper_references]
+      release_artifact: release_notes
+    - id: milestone_e5
+      status: frozen
+      inputs: [evidence_e3, evidence_e4, config_baseline, config_e5, module_experiment_e5, script_e5]
+      outputs: [evidence_e5]
+      validation: [tests/test_computational_rescue.py]
+      evidence: [evidence_e5]
+      paper_sections: [paper_2_10, paper_3_7, paper_appendix_a, paper_appendix_b]
+      release_artifact: release_notes
+    - id: milestone_e6
+      status: frozen_by_release_docs
+      internal_report_status: IMPLEMENTED_AWAITING_REVIEW
+      inputs: [evidence_c, evidence_d_identity, evidence_d_action, evidence_e1, evidence_e2, evidence_e3, evidence_e4, evidence_e5, config_e6, module_analysis_e6, script_e6]
+      outputs: [evidence_e6, figure_e1, figure_e2, figure_e3, figure_e5, table_evidence_manifest, table_e1, table_e2, table_e3, table_e5]
+      validation: [tests/test_evidence_synthesis.py]
+      evidence: [evidence_e6]
+      paper_sections: [paper_2_11, paper_3_8, paper_6, paper_appendix_c]
+      release_artifact: release_notes
+    - id: milestone_f
+      status: frozen
+      inputs: [manuscript_source, evidence_e6, figure_e1, figure_e2, figure_e3, figure_e5, table_evidence_manifest, table_e1, table_e2, table_e3, table_e5, script_build_report]
+      outputs: [release_docx, release_pdf, release_manifest]
+      validation: [tests/test_final_report_package.py]
+      evidence: [release_manifest]
+      paper_sections: [manuscript_source, paper_4_to_7, paper_appendix_a, paper_appendix_b, paper_appendix_c]
+      release_artifact: release_notes

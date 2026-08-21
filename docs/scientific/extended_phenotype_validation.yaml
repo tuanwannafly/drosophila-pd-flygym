@@ -1,0 +1,209 @@
+schema_version: 1
+phase: G8
+title: "Extended phenotype validation"
+status: "EVIDENCE_GAP_LOCAL_G7_PACKAGE_NOT_FOUND"
+scope: >
+  G8 evaluates whether the G5 measurement modules and G7 measurement-enabled
+  outputs currently support additional behavioral phenotypes for the frozen
+  computational candidate. This is an analysis and traceability artifact only.
+  It does not rerun simulations, introduce perturbations, tune parameters,
+  modify controllers, reinterpret the frozen candidate, or change any frozen
+  release evidence.
+source_inputs:
+  requested:
+    - "results/validation/g7_measurement_enabled_evidence_refresh/measurement_enabled_evidence.json"
+    - "src/drosophila_pd/metrics/bouts.py"
+    - "src/drosophila_pd/metrics/trajectory.py"
+    - "src/drosophila_pd/metrics/turning.py"
+    - "src/drosophila_pd/metrics/open_field.py"
+    - "docs/scientific/literature_database.yaml"
+    - "docs/scientific/biological_mapping.yaml"
+    - "docs/scientific/phenotype_validation.yaml"
+  local_g7_evidence_found: false
+  local_g7_search_summary: >
+    No measurement-enabled G7 evidence report or per-rollout measurement outputs
+    were present under results/ in this checkout at the time of G8 analysis.
+frozen_candidate:
+  motor_scale: 0.8
+  coupling_scale: 0.75
+  status: "unchanged"
+validation_policy:
+  support_levels:
+    - SUPPORTED
+    - PARTIALLY_SUPPORTED
+    - NOT_SUPPORTED
+  no_simulation_execution: true
+  no_new_perturbations: true
+  no_parameter_tuning: true
+  no_candidate_reinterpretation: true
+  no_biological_pd_validation_claim: true
+  measurement_capability_is_not_evidence: true
+  missing_g7_outputs_prevent_extended_endpoint_support: true
+endpoint_validations:
+  - endpoint_id: walking_bouts
+    behavioral_endpoint: "walking bouts"
+    g5_module: "drosophila_pd.metrics.bouts"
+    g5_measurements:
+      - walking_bouts
+      - bout_count
+      - walking_duration_s
+    g3_g4_mapping:
+      - movement_bout_distance
+    required_g7_outputs:
+      - walking_bouts.csv
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      G5 can segment walking bouts, but no G7 candidate/baseline walking-bout
+      outputs are locally available for validation.
+
+  - endpoint_id: pause_bouts
+    behavioral_endpoint: "pause bouts"
+    g5_module: "drosophila_pd.metrics.bouts"
+    g5_measurements:
+      - pause_bouts
+      - pause_count
+    g3_g4_mapping:
+      - freezing_pause_stop_duration
+    required_g7_outputs:
+      - pause_bouts.csv
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      G5 can segment pause bouts, but no G7 pause-bout evidence is locally
+      available. The biological stop-duration mapping remains unvalidated.
+
+  - endpoint_id: pause_duration
+    behavioral_endpoint: "pause duration"
+    g5_module: "drosophila_pd.metrics.bouts"
+    g5_measurements:
+      - pause_bouts.duration_s
+      - pause_duration_s
+    g3_g4_mapping:
+      - freezing_pause_stop_duration
+    required_g7_outputs:
+      - pause_bouts.csv
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      Pause duration requires G7 per-rollout pause segmentation and threshold
+      metadata. Those artifacts are absent locally.
+
+  - endpoint_id: walking_duty_cycle
+    behavioral_endpoint: "walking duty cycle"
+    g5_module: "drosophila_pd.metrics.bouts"
+    g5_measurements:
+      - walking_duty_cycle
+      - walking_duration_s
+      - pause_duration_s
+    g3_g4_mapping:
+      - movement_bout_distance
+      - freezing_pause_stop_duration
+    required_g7_outputs:
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      Walking duty cycle is measurable from G5 bout segmentation, but the
+      required G7 summaries are not present in this checkout.
+
+  - endpoint_id: yaw_rate
+    behavioral_endpoint: "yaw rate / angular velocity"
+    g5_module: "drosophila_pd.metrics.turning"
+    g5_measurements:
+      - yaw_rate_rad_s
+      - yaw_rate_abs_mean_rad_s
+    g3_g4_mapping:
+      - angular_velocity_turning
+    required_g7_outputs:
+      - yaw_rate.csv
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      Frozen evidence contains only run-level yaw summaries. G5 yaw-rate
+      validation requires G7 orientation time-series outputs, which are absent.
+
+  - endpoint_id: turn_bouts
+    behavioral_endpoint: "turn bouts"
+    g5_module: "drosophila_pd.metrics.turning"
+    g5_measurements:
+      - turn_bouts
+      - turn_count
+    g3_g4_mapping:
+      - angular_velocity_turning
+    required_g7_outputs:
+      - turn_bouts.csv
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      Turn bouts require G7 yaw-rate segmentation outputs absent from local G7
+      evidence.
+
+  - endpoint_id: cumulative_turning
+    behavioral_endpoint: "cumulative turning"
+    g5_module: "drosophila_pd.metrics.turning"
+    g5_measurements:
+      - cumulative_turning_rad
+      - net_turning_rad
+    g3_g4_mapping:
+      - angular_velocity_turning
+    required_g7_outputs:
+      - yaw_rate.csv
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      Cumulative turning is implemented as a computational metric, but no G7
+      baseline/candidate values are available for endpoint validation.
+
+  - endpoint_id: left_right_asymmetry
+    behavioral_endpoint: "left/right turning asymmetry"
+    g5_module: "drosophila_pd.metrics.turning"
+    g5_measurements:
+      - left_turning_rad
+      - right_turning_rad
+      - left_right_asymmetry
+    g3_g4_mapping:
+      - angular_velocity_turning
+    required_g7_outputs:
+      - yaw_rate.csv
+      - g5_measurements.json
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      Left/right asymmetry requires G7 time-resolved turning outputs and a
+      prespecified interpretation. The local repository has neither evidence
+      output.
+
+  - endpoint_id: exploration_metrics
+    behavioral_endpoint: "open-field exploration metrics"
+    g5_module: "drosophila_pd.metrics.open_field"
+    g5_measurements:
+      - center_occupancy
+      - border_occupancy
+      - radial_distance_mm
+      - exploration_index
+    g3_g4_mapping:
+      - centrophobism_center_avoidance
+    required_g7_outputs:
+      - trajectory.csv
+      - g5_measurements.json
+      - open_field_geometry_metadata
+    g7_outputs_found: false
+    support_level: NOT_SUPPORTED
+    rationale: >
+      Optional open-field metrics require raw trajectories and declared virtual
+      arena geometry. No G7 package or open-field geometry evidence is present.
+summary:
+  supported_count: 0
+  partially_supported_count: 0
+  not_supported_count: 9
+  main_conclusion: >
+    In this checkout, G8 does not add validated extended behavioral phenotypes.
+    G5 provides measurement capability, but the G7 measurement-enabled evidence
+    package required to evaluate those measurements is not present locally.

@@ -1,0 +1,21 @@
+{
+  "files": [
+    "api_index.json",
+    "architecture.pdf.note",
+    "artifact_manifest.json",
+    "coverage_report.json",
+    "dependency_graph.dot",
+    "dependency_graph.json",
+    "health_report.json",
+    "module_index.json",
+    "performance_report.json",
+    "plugin_registry.json",
+    "release.html",
+    "release.json",
+    "release.md",
+    "validation_summary.json"
+  ],
+  "generated_at": "2026-08-14T05:36:19.717729+00:00",
+  "scientific_boundary": "Integration/release readiness only. No new scientific result, biological validation, clinical claim, or simulation output is generated.",
+  "version": "v1.0.0-rc"
+}

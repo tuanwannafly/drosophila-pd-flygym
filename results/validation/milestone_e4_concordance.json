@@ -1,0 +1,582 @@
+{
+  "checks": {
+    "adult_larval_evidence_separated": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "angular_velocity_not_forced": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "body_height_not_interpreted_as_pd": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "direct_numeric_calibration_not_used": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "distance_direction_concordant": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e3_report_passed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "e3_robustness_classification": {
+      "expected": "ROBUST",
+      "observed": "ROBUST",
+      "pass": true
+    },
+    "frozen_candidate_coupling_scale": {
+      "expected": 0.75,
+      "observed": 0.75,
+      "pass": true
+    },
+    "frozen_candidate_motor_scale": {
+      "expected": 0.8,
+      "observed": 0.8,
+      "pass": true
+    },
+    "matrix_candidate_matches_e3": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "no_parameter_tuning_in_e4": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "no_weighted_pd_score": {
+      "expected": false,
+      "observed": false,
+      "pass": true
+    },
+    "overall_status_allowed": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "post_hoc_tuning_forbidden": {
+      "expected": false,
+      "observed": false,
+      "pass": true
+    },
+    "scientific_scope_preserved": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "speed_direction_concordant": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "valid_concordance_labels": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    },
+    "valid_endpoint_mappings": {
+      "expected": true,
+      "observed": true,
+      "pass": true
+    }
+  },
+  "concordance_assessments": [
+    {
+      "assessment_id": "adult_dopamine_deficiency_speed",
+      "biological_observation": "adult neural dopamine deficiency reduces walking speed",
+      "classification": "CONCORDANT",
+      "comparison_basis": "direction_only",
+      "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "riemensperger_2011_adult_dopamine_deficiency_walking",
+      "literature_endpoint": "walking_speed",
+      "rationale": "The frozen E3 candidate has lower mean planar speed than its paired baseline across all five seeds.\n",
+      "simulation_metric": "mean_planar_speed_mm_s",
+      "simulation_result_expected_direction": "decreased"
+    },
+    {
+      "assessment_id": "adult_dopamine_deficiency_distance",
+      "biological_observation": "adult neural dopamine deficiency reduces covered distance",
+      "classification": "CONCORDANT",
+      "comparison_basis": "direction_only",
+      "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "riemensperger_2011_adult_dopamine_deficiency_walking",
+      "literature_endpoint": "covered_distance",
+      "rationale": "The frozen E3 candidate has lower path length and lower planar displacement than its paired baseline across all five seeds.\n",
+      "simulation_metric": "planar_path_length_mm",
+      "simulation_result_expected_direction": "decreased",
+      "supplemental_simulation_metric": "planar_displacement_mm"
+    },
+    {
+      "assessment_id": "old_adult_a30p_velocity",
+      "biological_observation": "old adult A30P flies show reduced walking velocity",
+      "classification": "CONCORDANT",
+      "comparison_basis": "direction_only",
+      "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "chen_2014_old_adult_a30p_walking",
+      "literature_endpoint": "walking_velocity",
+      "rationale": "The frozen E3 candidate shows a lower mean planar speed than baseline.\n",
+      "simulation_metric": "mean_planar_speed_mm_s",
+      "simulation_result_expected_direction": "decreased"
+    },
+    {
+      "assessment_id": "old_adult_a30p_total_moving_distance",
+      "biological_observation": "old adult A30P flies show reduced total moving distance",
+      "classification": "CONCORDANT",
+      "comparison_basis": "direction_only",
+      "computational_proxy": "frozen E3 motor_scale 0.8 plus coupling_scale 0.75 candidate",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "chen_2014_old_adult_a30p_walking",
+      "literature_endpoint": "total_moving_distance",
+      "rationale": "E3 path length and displacement are both lower in the candidate than in the paired baseline.\n",
+      "simulation_metric": "planar_path_length_mm",
+      "simulation_result_expected_direction": "decreased",
+      "supplemental_simulation_metric": "planar_displacement_mm"
+    },
+    {
+      "assessment_id": "old_adult_a30p_distance_per_movement",
+      "biological_observation": "old adult A30P flies show reduced distance per movement",
+      "classification": "NOT_COMPARABLE",
+      "comparison_basis": "not_comparable",
+      "computational_proxy": "NONE_CURRENTLY",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "chen_2014_old_adult_a30p_walking",
+      "literature_endpoint": "distance_per_movement",
+      "rationale": "E3 does not segment movement bouts, so distance per movement is currently unavailable.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "assessment_id": "old_adult_a30p_angular_velocity",
+      "biological_observation": "old adult A30P flies show reduced angular velocity",
+      "classification": "NOT_COMPARABLE",
+      "comparison_basis": "not_comparable",
+      "computational_proxy": "NONE_CURRENTLY",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "chen_2014_old_adult_a30p_walking",
+      "literature_endpoint": "angular_velocity",
+      "rationale": "E3 yaw change is not angular velocity. The observed yaw response is variable and must not be treated as direct concordance.\n",
+      "simulation_metric": "heading_yaw_change_rad"
+    },
+    {
+      "assessment_id": "old_adult_a30p_centrophobism",
+      "biological_observation": "old adult A30P flies show increased centrophobism",
+      "classification": "NOT_COMPARABLE",
+      "comparison_basis": "not_comparable",
+      "computational_proxy": "NONE_CURRENTLY",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "chen_2014_old_adult_a30p_walking",
+      "literature_endpoint": "centrophobism",
+      "rationale": "The current flat-ground FlyGym report does not model an open-field arena center-avoidance endpoint.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "assessment_id": "simulation_body_height",
+      "biological_observation": "no selected adult dopamine or alpha-synuclein walking target",
+      "classification": "INSUFFICIENT_EVIDENCE",
+      "comparison_basis": "unsupported_endpoint",
+      "computational_proxy": "frozen E3 candidate body-height response",
+      "direct_numeric_calibration_used": false,
+      "evidence_id": "none_currently_curated",
+      "literature_endpoint": "thorax_or_body_height",
+      "rationale": "E3 body height changes substantially, but this endpoint is not supported for Parkinson interpretation by the selected literature set.\n",
+      "simulation_metric": "body_height_mean_mm"
+    }
+  ],
+  "e3_simulation_phenotype": {
+    "duration_s": 1.0,
+    "frozen_candidate": {
+      "coupling_scale": 0.75,
+      "motor_scale": 0.8,
+      "post_hoc_tuning_permitted": false,
+      "selected_before_e3_execution": true
+    },
+    "interpretation_boundary": "These are simulation metrics from the frozen E3 candidate only; they are not biological measurements.",
+    "metrics": {
+      "body_height_mean_mm": {
+        "absolute_delta_mean": 0.5445163890827617,
+        "baseline_mean": 0.9465522152698778,
+        "candidate_mean": 1.4910686043526398,
+        "count": 5,
+        "relative_delta_mean": 0.5752553496242726,
+        "relative_delta_percent_mean": 57.52553496242726
+      },
+      "heading_yaw_abs_change_rad": {
+        "absolute_delta_mean": 0.10734785759133234,
+        "baseline_mean": 0.10385794490113649,
+        "candidate_mean": 0.21120580249246884,
+        "count": 5,
+        "relative_delta_mean": 2.609787273773441,
+        "relative_delta_percent_mean": 260.9787273773441
+      },
+      "joint_angle_action_abs_mean": {
+        "absolute_delta_mean": -0.20507768642687846,
+        "baseline_mean": 1.0256368082597096,
+        "candidate_mean": 0.820559121832831,
+        "count": 5,
+        "relative_delta_mean": -0.19995156821323032,
+        "relative_delta_percent_mean": -19.995156821323032
+      },
+      "mean_planar_speed_mm_s": {
+        "absolute_delta_mean": -1.4492416112774094,
+        "baseline_mean": 13.751281674590993,
+        "candidate_mean": 12.302040063313584,
+        "count": 5,
+        "relative_delta_mean": -0.1053649998704906,
+        "relative_delta_percent_mean": -10.53649998704906
+      },
+      "planar_displacement_mm": {
+        "absolute_delta_mean": -1.4492416112774094,
+        "baseline_mean": 13.751281674590993,
+        "candidate_mean": 12.302040063313584,
+        "count": 5,
+        "relative_delta_mean": -0.1053649998704906,
+        "relative_delta_percent_mean": -10.53649998704906
+      },
+      "planar_path_length_mm": {
+        "absolute_delta_mean": -2.006412359765025,
+        "baseline_mean": 19.31485503067457,
+        "candidate_mean": 17.308442670909542,
+        "count": 5,
+        "relative_delta_mean": -0.10386359062038664,
+        "relative_delta_percent_mean": -10.386359062038665
+      },
+      "trajectory_efficiency": {
+        "absolute_delta_mean": -0.0012169839946827743,
+        "baseline_mean": 0.7119806020699851,
+        "candidate_mean": 0.7107636180753024,
+        "count": 5,
+        "relative_delta_mean": -0.0016292589177790413,
+        "relative_delta_percent_mean": -0.16292589177790412
+      }
+    },
+    "qualitative_summary": {
+      "absolute_yaw_change": "increased",
+      "body_height_mean": "increased",
+      "displacement_delta_negative_seed_count": 5,
+      "mean_speed": "decreased",
+      "planar_displacement": "decreased",
+      "planar_path_length": "decreased",
+      "speed_delta_negative_seed_count": 5,
+      "trajectory_efficiency": "decreased",
+      "trajectory_efficiency_negative_seed_count": 3,
+      "yaw_abs_change_positive_seed_count": 4
+    },
+    "robustness_classification": "ROBUST",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "sign_consistency": {
+      "completed_seed_count": 5,
+      "metrics": {
+        "displacement_delta": {
+          "all_negative": true,
+          "all_positive": false,
+          "count": 5,
+          "negative": 5,
+          "positive": 0,
+          "zero": 0
+        },
+        "speed_delta": {
+          "all_negative": true,
+          "all_positive": false,
+          "count": 5,
+          "negative": 5,
+          "positive": 0,
+          "zero": 0
+        },
+        "trajectory_efficiency_delta": {
+          "all_negative": false,
+          "all_positive": false,
+          "count": 5,
+          "negative": 3,
+          "positive": 2,
+          "zero": 0
+        },
+        "yaw_abs_change_delta": {
+          "all_negative": false,
+          "all_positive": false,
+          "count": 5,
+          "negative": 1,
+          "positive": 4,
+          "zero": 0
+        }
+      },
+      "number_of_seeds_negative_displacement_delta": 5,
+      "number_of_seeds_negative_speed_delta": 5,
+      "number_of_seeds_negative_trajectory_efficiency_delta": 3,
+      "number_of_seeds_positive_yaw_abs_change_delta": 4,
+      "seed_count": 5
+    },
+    "source_experiment_id": "milestone_e3_candidate_robustness",
+    "source_git_commit": "730ab3acd8e5535b93f320a62c19080feca0448f",
+    "source_overall_pass": true
+  },
+  "endpoint_mappings": [
+    {
+      "comparability": "HIGH_QUALITATIVE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "walking_speed",
+      "rationale": "Both endpoints describe walking speed, but the assay geometry, duration, animal preparation, and simulation controller differ.\n",
+      "simulation_metric": "mean_planar_speed_mm_s"
+    },
+    {
+      "comparability": "HIGH_QUALITATIVE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "walking_velocity",
+      "rationale": "The closest current simulation proxy for velocity is mean planar speed.\n",
+      "simulation_metric": "mean_planar_speed_mm_s"
+    },
+    {
+      "comparability": "MODERATE_QUALITATIVE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "covered_distance",
+      "rationale": "Covered distance is closer to path length than net displacement, but the E3 report records both and uses them only directionally.\n",
+      "simulation_metric": "planar_path_length_mm",
+      "supplemental_simulation_metric": "planar_displacement_mm"
+    },
+    {
+      "comparability": "MODERATE_QUALITATIVE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "total_moving_distance",
+      "rationale": "Total moving distance and simulation path length are directionally comparable, but not directly numerically calibrated.\n",
+      "simulation_metric": "planar_path_length_mm",
+      "supplemental_simulation_metric": "planar_displacement_mm"
+    },
+    {
+      "comparability": "NOT_AVAILABLE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "distance_per_movement",
+      "rationale": "The current E3 report does not segment movement bouts, so distance per movement is not available.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "LOW_QUALITATIVE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "angular_velocity",
+      "rationale": "E3 records net and absolute yaw change, not angular velocity. This endpoint must not be forced into concordance.\n",
+      "simulation_metric": "heading_yaw_change_rad"
+    },
+    {
+      "comparability": "NOT_COMPARABLE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "climbing_negative_geotaxis",
+      "rationale": "Current FlyGym evidence is flat-ground walking, not negative geotaxis.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "NOT_AVAILABLE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "pause_time_or_freezing",
+      "rationale": "Pause and freezing metrics are not currently computed.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "NOT_AVAILABLE",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "centrophobism",
+      "rationale": "The current simulation does not include open-field arena center avoidance.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "UNSUPPORTED_FOR_PD_INTERPRETATION",
+      "direct_numeric_calibration_permitted": false,
+      "literature_endpoint": "thorax_or_body_height",
+      "rationale": "Body height is an observed simulation phenotype and possible confound, but the selected literature set does not define a matching biological Parkinson-model target.\n",
+      "simulation_metric": "body_height_mean_mm"
+    }
+  ],
+  "evidence_separation": {
+    "adult_evidence_ids": [
+      "riemensperger_2011_adult_dopamine_deficiency_walking",
+      "chen_2014_old_adult_a30p_walking"
+    ],
+    "larval_or_non_adult_evidence_ids": [],
+    "note": "E4 v1 records adult walking evidence only. Larval, climbing, rescue, and other modality evidence may be curated later, but it must remain separated from adult flat-ground walking concordance.\n"
+  },
+  "experiment_id": "milestone_e4_literature_grounded_concordance",
+  "git_commit": "9a13b43b2619e2423c96cf390a3dcbddc9f248fe",
+  "literature_evidence": [
+    {
+      "biological_observations": [
+        {
+          "assay_note": "adult walking assay",
+          "direction": "decreased",
+          "endpoint": "walking_speed",
+          "finding": "Neural dopamine-deficient adult flies showed lower spontaneous walking speed than rescued-control and wild-type groups.\n",
+          "quantitative_context": {
+            "da_deficient_median_mm_s": 7.8,
+            "rescued_control_median_mm_s": 10.8,
+            "role": "literature_context_only_not_fit_target",
+            "wild_type_median_mm_s": 15.0
+          }
+        },
+        {
+          "assay_note": "reported 15-minute adult walking distance",
+          "direction": "decreased",
+          "endpoint": "covered_distance",
+          "finding": "Neural dopamine-deficient adult flies covered less distance than rescued-control and wild-type groups during the reported assay.\n",
+          "quantitative_context": {
+            "da_deficient_median_cm": 193.0,
+            "rescued_control_median_cm": 425.0,
+            "role": "literature_context_only_not_fit_target",
+            "wild_type_median_cm": 474.0
+          }
+        }
+      ],
+      "citation": {
+        "authors": [
+          "Riemensperger T",
+          "Isabel G",
+          "Coulom H",
+          "Neuser K",
+          "Seugnet L",
+          "Kume K",
+          "Iche-Torres M",
+          "Cassar M",
+          "Strauss R",
+          "Preat T",
+          "Hirsh J",
+          "Birman S"
+        ],
+        "doi": "10.1073/pnas.1010930108",
+        "issue": "2",
+        "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+        "pages": "834-839",
+        "pmcid": "PMC3021077",
+        "pmid": "21187381",
+        "title": "Behavioral consequences of dopamine deficiency in the Drosophila central nervous system",
+        "volume": "108",
+        "year": 2011
+      },
+      "evidence_id": "riemensperger_2011_adult_dopamine_deficiency_walking",
+      "evidence_tier": "primary_adult",
+      "life_stage": "adult",
+      "model_or_condition": "neural dopamine deficiency",
+      "organism": "Drosophila melanogaster"
+    },
+    {
+      "biological_observations": [
+        {
+          "assay_note": "horizontal open-field walking",
+          "direction": "decreased",
+          "endpoint": "total_moving_distance",
+          "finding": "Old adult A30P flies showed decreased total moving distance compared with old control flies.\n"
+        },
+        {
+          "assay_note": "horizontal open-field walking",
+          "direction": "decreased",
+          "endpoint": "distance_per_movement",
+          "finding": "Old adult A30P flies showed decreased distance per movement compared with old control flies.\n"
+        },
+        {
+          "assay_note": "horizontal open-field walking",
+          "direction": "decreased",
+          "endpoint": "walking_velocity",
+          "finding": "Old adult A30P flies showed decreased walking velocity compared with old control flies.\n"
+        },
+        {
+          "assay_note": "horizontal open-field walking; age dependence is central",
+          "direction": "decreased",
+          "endpoint": "angular_velocity",
+          "finding": "Old adult A30P flies showed decreased angular velocity compared with old control flies.\n"
+        },
+        {
+          "assay_note": "open-field center avoidance; not represented in current FlyGym metrics",
+          "direction": "increased",
+          "endpoint": "centrophobism",
+          "finding": "Old adult A30P flies showed increased centrophobism compared with old control flies.\n"
+        }
+      ],
+      "citation": {
+        "authors": [
+          "Chen AY",
+          "Wilburn P",
+          "Hao X",
+          "Tully T"
+        ],
+        "doi": "10.1111/gbb.12172",
+        "issue": "8",
+        "journal": "Genes, Brain and Behavior",
+        "pages": "812-820",
+        "pmcid": "PMC4262005",
+        "pmid": "25113870",
+        "title": "Walking deficits and centrophobism in an alpha-synuclein fly model of Parkinson's disease",
+        "volume": "13",
+        "year": 2014
+      },
+      "evidence_id": "chen_2014_old_adult_a30p_walking",
+      "evidence_tier": "primary_adult",
+      "life_stage": "old_adult",
+      "model_or_condition": "pan-neuronal human alpha-synuclein A30P expression",
+      "organism": "Drosophila melanogaster"
+    }
+  ],
+  "overall_pass": true,
+  "overall_scientific_status": {
+    "label": "PARTIAL_PHENOTYPE_CONCORDANCE",
+    "reason": "Major adult walking speed and distance directions agree qualitatively with the selected literature, while unsupported endpoints remain explicitly limited.",
+    "scope": "Directional qualitative phenotype concordance only; not Parkinson's disease validation.",
+    "score_created": false
+  },
+  "scientific_scope": "Milestone E4 records qualitative phenotype concordance between the frozen E3 computational candidate and selected peer-reviewed Drosophila walking findings. It does not validate a Parkinson's disease model, tune parameters, infer dopamine depletion, or claim mechanistic equivalence.",
+  "source_evidence": {
+    "e3_evidence_path": "results/validation/milestone_e3_candidate_robustness.json",
+    "matrix_path": "docs/scientific/e4_evidence_matrix.yaml"
+  },
+  "timestamp": "2026-08-11T13:02:43.861621+00:00",
+  "unsupported_comparisons": [
+    {
+      "comparability": "NOT_AVAILABLE",
+      "literature_endpoint": "distance_per_movement",
+      "rationale": "The current E3 report does not segment movement bouts, so distance per movement is not available.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "LOW_QUALITATIVE",
+      "literature_endpoint": "angular_velocity",
+      "rationale": "E3 records net and absolute yaw change, not angular velocity. This endpoint must not be forced into concordance.\n",
+      "simulation_metric": "heading_yaw_change_rad"
+    },
+    {
+      "comparability": "NOT_COMPARABLE",
+      "literature_endpoint": "climbing_negative_geotaxis",
+      "rationale": "Current FlyGym evidence is flat-ground walking, not negative geotaxis.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "NOT_AVAILABLE",
+      "literature_endpoint": "pause_time_or_freezing",
+      "rationale": "Pause and freezing metrics are not currently computed.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "NOT_AVAILABLE",
+      "literature_endpoint": "centrophobism",
+      "rationale": "The current simulation does not include open-field arena center avoidance.\n",
+      "simulation_metric": "NONE"
+    },
+    {
+      "comparability": "UNSUPPORTED_FOR_PD_INTERPRETATION",
+      "literature_endpoint": "thorax_or_body_height",
+      "rationale": "Body height is an observed simulation phenotype and possible confound, but the selected literature set does not define a matching biological Parkinson-model target.\n",
+      "simulation_metric": "body_height_mean_mm"
+    }
+  ]
+}

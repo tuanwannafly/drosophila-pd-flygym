@@ -1,0 +1,5 @@
+schema_id: drosophila-pd-flygym.dataset.metadata.benchmark
+inherits: ../metadata_schema.yaml
+required_additional:
+  - repetitions
+  - measurement_method

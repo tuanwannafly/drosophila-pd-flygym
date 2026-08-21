@@ -1,0 +1,394 @@
+schema_version: 1
+phase: G4
+title: "Biological endpoint mapping"
+status: "POST_RELEASE_TRACEABILITY_ONLY"
+scope: >
+  This file maps adult Drosophila Parkinson or Parkinson-relevant locomotion
+  endpoints from the G3 literature inventory to repository observables from the
+  frozen v1.0.0 evidence chain. It is a documentation and planning artifact
+  only. It does not rerun simulations, reinterpret frozen Milestone E4, or
+  upgrade the project to biological Parkinson's disease validation.
+source_inputs:
+  - "docs/scientific/literature_database.yaml"
+  - "docs/scientific/phenotype_database.csv"
+  - "docs/scientific/behavior_endpoint_matrix.csv"
+  - "docs/scientific/validation_gap_analysis.md"
+  - "docs/scientific/e4_evidence_matrix.yaml"
+  - "results/validation/milestone_e4_concordance.json"
+  - "docs/traceability/claim_traceability.csv"
+  - "docs/report/final_report.md"
+support_level_definitions:
+  SUPPORTED: >
+    A currently measured repository observable corresponds directly enough for
+    qualitative, direction-only comparison under the frozen E4 boundary.
+  PARTIALLY_SUPPORTED: >
+    A currently measured repository observable is related to the biological
+    endpoint, but assay context, segmentation, geometry, or protocol differences
+    prevent direct endpoint equivalence.
+  NOT_SUPPORTED: >
+    The endpoint is absent, non-comparable, or explicitly unsupported by frozen
+    repository metrics.
+mapping_policy:
+  preserve_release_v1_0_0: true
+  no_simulation_execution: true
+  no_notebook_execution: true
+  no_frozen_evidence_modification: true
+  no_e4_reinterpretation: true
+  no_milestone_conclusion_changes: true
+  no_direct_numeric_calibration: true
+  no_pd_validation_claim: true
+  no_dopamine_or_disease_severity_mapping: true
+currently_measured_repository_observables:
+  - mean_planar_speed_mm_s
+  - planar_displacement_mm
+  - planar_path_length_mm
+  - trajectory_efficiency
+  - heading_yaw_change_rad
+  - heading_yaw_abs_change_rad
+  - body_height_min_mm
+  - body_height_mean_mm
+  - body_height_range_mm
+  - joint_action_abs_mean
+  - adhesion_duty_factor_by_leg
+  - adhesion_transition_count_by_leg
+endpoint_mappings:
+  - biological_endpoint_id: adult_walking_speed_velocity
+    biological_endpoint: "adult walking speed / velocity / mean speed"
+    behavior_categories:
+      - adult_walking
+    literature_evidence:
+      - riemensperger_2011_walking_speed
+      - chen_2014_velocity
+      - kajtor_2025_walking_speed
+    repository_observables:
+      primary:
+        - mean_planar_speed_mm_s
+      supplemental: []
+    support_level: SUPPORTED
+    required_assumptions:
+      - "Comparison is qualitative and direction-only."
+      - "Simulation mean planar speed is treated as the closest walking-speed observable."
+      - "Assay geometry, duration, genotype/model, and stimulus context are not matched."
+    validation_evidence:
+      - "docs/scientific/e4_evidence_matrix.yaml"
+      - "results/validation/milestone_e4_concordance.json"
+      - "results/validation/milestone_e3_candidate_robustness.json"
+      - "docs/report/final_report.md:3.6"
+    limitations:
+      - "No direct calibration to experimental speeds."
+      - "Threat-assay speed from Kajtor 2025 is only partially contextualized because no stimulus assay exists."
+    future_implementation_priority: "P0_RETAIN_AND_ANNOTATE"
+
+  - biological_endpoint_id: adult_walking_distance
+    biological_endpoint: "covered distance / total moving distance"
+    behavior_categories:
+      - adult_walking
+      - adult_open_field
+    literature_evidence:
+      - riemensperger_2011_covered_distance
+      - chen_2014_total_moving_distance
+    repository_observables:
+      primary:
+        - planar_path_length_mm
+      supplemental:
+        - planar_displacement_mm
+    support_level: PARTIALLY_SUPPORTED
+    required_assumptions:
+      - "Path length is closer to covered distance than net displacement."
+      - "Displacement is supplemental because it discards path tortuosity."
+      - "Comparison remains direction-only and not numerically calibrated."
+    validation_evidence:
+      - "docs/scientific/e4_evidence_matrix.yaml"
+      - "results/validation/milestone_e4_concordance.json"
+      - "results/validation/milestone_e3_candidate_robustness.json"
+      - "docs/report/final_report.md:3.6"
+    limitations:
+      - "Arena, duration, spontaneous behavior, and tracking protocols differ."
+      - "The current baseline is short flat-ground simulation, not a long open-field assay."
+    future_implementation_priority: "P0_RETAIN_WITH_PATH_LENGTH_PRIMARY"
+
+  - biological_endpoint_id: adult_actometer_locomotor_activity
+    biological_endpoint: "actometer locomotor activity"
+    behavior_categories:
+      - adult_locomotion
+    literature_evidence:
+      - liu_2008_actometer_activity
+    repository_observables:
+      primary:
+        - planar_path_length_mm
+      supplemental:
+        - mean_planar_speed_mm_s
+        - planar_displacement_mm
+    support_level: PARTIALLY_SUPPORTED
+    required_assumptions:
+      - "Both endpoints summarize locomotor output."
+      - "Actometer activity is not equivalent to simulated flat-ground path length."
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+      - "results/analysis/milestone_e6_synthesis.json"
+    limitations:
+      - "Current evidence does not reproduce actometer hardware, sampling, or long-duration activity conditions."
+    future_implementation_priority: "P2_SEPARATE_ACTIVITY_ASSAY"
+
+  - biological_endpoint_id: threat_assay_speed
+    biological_endpoint: "trial-based threat-assay mean speed"
+    behavior_categories:
+      - adult_walking
+      - adult_locomotion
+    literature_evidence:
+      - kajtor_2025_walking_speed
+    repository_observables:
+      primary:
+        - mean_planar_speed_mm_s
+      supplemental: []
+    support_level: PARTIALLY_SUPPORTED
+    required_assumptions:
+      - "The scalar speed observable exists."
+      - "The repository lacks the passing-shadow stimulus and trial alignment."
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+    limitations:
+      - "Cannot assess stimulus-dependent reactivity or threat-specific speed modulation."
+    future_implementation_priority: "P1_STIMULUS_ALIGNED_ASSAY"
+
+  - biological_endpoint_id: movement_bout_distance
+    biological_endpoint: "distance per movement / per-bout distance"
+    behavior_categories:
+      - adult_open_field
+    literature_evidence:
+      - chen_2014_distance_per_movement
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/e4_evidence_matrix.yaml"
+      - "results/validation/milestone_e4_concordance.json"
+    limitations:
+      - "Frozen outputs do not segment movement bouts."
+    future_implementation_priority: "P1_BOUT_SEGMENTATION"
+
+  - biological_endpoint_id: angular_velocity_turning
+    biological_endpoint: "angular velocity / time-resolved turning"
+    behavior_categories:
+      - adult_turning
+    literature_evidence:
+      - chen_2014_angular_velocity
+    repository_observables:
+      primary: []
+      supplemental:
+        - heading_yaw_change_rad
+        - heading_yaw_abs_change_rad
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/e4_evidence_matrix.yaml"
+      - "results/validation/milestone_e4_concordance.json"
+      - "docs/report/final_report.md:5.2"
+    limitations:
+      - "Current yaw outputs are run-level angular displacement summaries, not angular velocity."
+      - "Frozen E4 explicitly did not force angular velocity concordance."
+    future_implementation_priority: "P1_YAW_RATE_AND_TURN_BOUTS"
+
+  - biological_endpoint_id: centrophobism_center_avoidance
+    biological_endpoint: "centrophobism / open-field center avoidance"
+    behavior_categories:
+      - adult_open_field
+    literature_evidence:
+      - chen_2014_centrophobism
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/e4_evidence_matrix.yaml"
+      - "results/validation/milestone_e4_concordance.json"
+    limitations:
+      - "The current FlatGroundWorld evidence has no open-field arena center/periphery definition."
+    future_implementation_priority: "P1_OPEN_FIELD_GEOMETRY"
+
+  - biological_endpoint_id: negative_geotaxis_sing
+    biological_endpoint: "negative geotaxis / SING performance / climbing abilities"
+    behavior_categories:
+      - negative_geotaxis
+    literature_evidence:
+      - riemensperger_2011_negative_geotaxis
+      - riemensperger_2013_progressive_locomotor_deficits
+      - coulom_2004_negative_geotaxis
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+    limitations:
+      - "Current evidence is flat-ground walking only."
+      - "No vertical climbing or SING protocol exists in frozen evidence."
+    future_implementation_priority: "P2_VERTICAL_CLIMBING_ASSAY"
+
+  - biological_endpoint_id: climbing_behavior
+    biological_endpoint: "climbing behavior / climbing assays / climbing impairments"
+    behavior_categories:
+      - climbing
+    literature_evidence:
+      - riemensperger_2013_climbing_impairments
+      - aggarwal_2019_climbing_behavior
+      - aggarwal_2019_locomotor_defects
+      - liu_2008_climbing
+      - poddighe_2014_climbing_behavior
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+    limitations:
+      - "No climb success, vertical displacement, climb velocity, or fine-scale climbing feature exists."
+      - "Poddighe 2014 is marked LIMITED in G3 because of an expression-of-concern caution."
+    future_implementation_priority: "P2_VERTICAL_CLIMBING_ASSAY"
+
+  - biological_endpoint_id: freezing_pause_stop_duration
+    biological_endpoint: "stop durations / freezing / pause behavior"
+    behavior_categories:
+      - freezing_pause
+    literature_evidence:
+      - kajtor_2025_stop_duration
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+    limitations:
+      - "Frozen outputs do not classify stopped versus moving bouts."
+      - "No stimulus-aligned trial structure exists."
+    future_implementation_priority: "P1_BOUT_AND_PAUSE_SEGMENTATION"
+
+  - biological_endpoint_id: stimulus_reactivity
+    biological_endpoint: "trial-based behavioral reactivity"
+    behavior_categories:
+      - adult_locomotion
+    literature_evidence:
+      - kajtor_2025_reactivity
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+    limitations:
+      - "No perturbing sensory stimulus, trial window, or response classification exists."
+    future_implementation_priority: "P1_STIMULUS_RESPONSE_PIPELINE"
+
+  - biological_endpoint_id: per_motor_endpoints
+    biological_endpoint: "proboscis extension speed and duration variability"
+    behavior_categories:
+      - adult_locomotion
+    literature_evidence:
+      - cording_2017_per_speed
+      - cording_2017_per_duration_variability
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+    limitations:
+      - "PER is a reflex motor assay outside the current whole-body walking simulation."
+    future_implementation_priority: "P3_SEPARATE_PER_ASSAY"
+
+  - biological_endpoint_id: tremor
+    biological_endpoint: "tremor amplitude or frequency"
+    behavior_categories:
+      - tremor
+    literature_evidence:
+      - cording_2017_tremor
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+    limitations:
+      - "No prespecified high-frequency body, limb, joint, or PER oscillation metric exists."
+    future_implementation_priority: "P3_TREMOR_METRIC_AFTER_SIGNAL_DESIGN"
+
+  - biological_endpoint_id: biological_rescue_or_treatment
+    biological_endpoint: "L-DOPA, Mucuna, or drug-associated behavioral rescue"
+    behavior_categories:
+      - adult_locomotion
+      - negative_geotaxis
+      - climbing
+    literature_evidence:
+      - liu_2008_ldopa_locomotor_impairment
+      - coulom_2004_ldopa_behavior
+      - poddighe_2014_climbing_behavior
+    repository_observables:
+      primary: []
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/literature_database.yaml"
+      - "results/validation/milestone_e5_computational_rescue.json"
+      - "docs/report/final_report.md:3.7"
+    limitations:
+      - "Milestone E5 is computational reversibility only, not biological rescue."
+      - "No drug, dopamine, toxin, or pharmacological mechanism is implemented."
+    future_implementation_priority: "P3_ONLY_AFTER_BIOLOGICAL_BRIDGE"
+
+  - biological_endpoint_id: inter_leg_coordination
+    biological_endpoint: "inter-leg coordination phase or gait regularity"
+    behavior_categories:
+      - inter_leg_coordination
+    literature_evidence: []
+    repository_observables:
+      primary: []
+      supplemental:
+        - adhesion_duty_factor_by_leg
+        - adhesion_transition_count_by_leg
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "docs/scientific/behavior_endpoint_matrix.csv"
+      - "docs/scientific/validation_gap_analysis.md"
+    limitations:
+      - "G3 found no directly curated adult Parkinson inter-leg coordination paper mapped to current evidence."
+      - "Adhesion summaries are not gait phase or coordination metrics."
+    future_implementation_priority: "P2_TARGETED_GAIT_LITERATURE_AND_PHASE_METRICS"
+
+  - biological_endpoint_id: body_height_posture
+    biological_endpoint: "body or thorax height as a Parkinson phenotype"
+    behavior_categories:
+      - simulation_confound
+    literature_evidence: []
+    repository_observables:
+      primary:
+        - body_height_mean_mm
+        - body_height_min_mm
+        - body_height_range_mm
+      supplemental: []
+    support_level: NOT_SUPPORTED
+    required_assumptions: []
+    validation_evidence:
+      - "results/validation/milestone_e4_concordance.json"
+      - "docs/report/final_report.md:5.2"
+    limitations:
+      - "Body height is a simulation phenotype and confound, not a supported adult PD endpoint in the curated literature."
+    future_implementation_priority: "P0_REPORT_AS_CONFOUND_ONLY"
